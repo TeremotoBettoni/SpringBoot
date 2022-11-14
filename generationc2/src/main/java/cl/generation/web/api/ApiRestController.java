@@ -27,5 +27,10 @@ public class ApiRestController {
 	public String capturaNombre(@PathVariable("nombre") String nombre) {
 		return "capturando el nombre:"+nombre;
 	}
-
+	
+	// http://localhost:8080/api/14/noviembre/2022
+	@RequestMapping("/{dia}/{mes}/{año}")
+	public String capturaFecha(@PathVariable("dia") int dia, @PathVariable("mes")String mes, @PathVariable("año")int año) {
+		return "La fecha capturada es: "+dia+"/"+mes+"/"+año;
+	}
 }
