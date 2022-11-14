@@ -4,9 +4,9 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>INDEX</title>
 </head>
 <body>
-
+	<h1>Hola estoy en el JSP</h1>
 </body>
 </html>

@@ -1,26 +1,47 @@
 package cl.yose.web.models;
 
+import java.util.Date;
+
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.PrePersist;
+import javax.persistence.PreUpdate;
 import javax.persistence.Table;
+import javax.persistence.Transient;
+import javax.validation.constraints.NotNull;
+
+import org.springframework.format.annotation.DateTimeFormat;
 
 @Entity
 
-@Table(name="Usuarios")
+@Table(name="usuarios")
 
 public class Usuario {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	
 	private Long userId;
+	@NotNull
 	private String nombre;
+	@NotNull
 	private String apellido;
+	@NotNull
 	private String email;
+	@NotNull
 	private String contraseña;
+	@Transient
 	private String contraseña2;
+	
+	@Column(updatable=false)
+	@DateTimeFormat(pattern="yyyy-MM-dd")
+	private Date createdAt;
+	
+	@DateTimeFormat(pattern="yyyy-MM-dd")
+	private Date updatedAt;	
+	
 	public Usuario() {
 		super();
 	}
@@ -69,6 +90,17 @@ public class Usuario {
 	public void setContraseña2(String contraseña2) {
 		this.contraseña2 = contraseña2;
 	}
+	
+	// atributos de control
+	@PrePersist
+	protected void onCreate(){
+		this.createdAt = new Date();
+		}
+	@PreUpdate
+	protected void onUpdate(){
+		this.updatedAt = new Date();
+		}
+		   
 	@Override
 	public String toString() {
 		return "Usuario [userId=" + userId + ", nombre=" + nombre + ", apellido=" + apellido + ", email=" + email
