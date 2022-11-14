@@ -21,5 +21,11 @@ public class ApiRestController {
 	public String rutaDinamica(@PathVariable("edad") int edad) {
 		return "capturando edad:"+edad;
 	}
+	
+	// http://localhost:8080/api/nombre/israel
+	@RequestMapping("/nombre/{nombre}")
+	public String capturaNombre(@PathVariable("nombre") String nombre) {
+		return "capturando el nombre:"+nombre;
+	}
 
 }
