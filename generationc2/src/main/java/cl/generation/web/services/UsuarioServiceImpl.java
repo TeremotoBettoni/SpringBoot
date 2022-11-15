@@ -13,11 +13,11 @@ public class UsuarioServiceImpl implements UsuarioService{
 	private UsuarioRepository usuarioRepository;
 	
 	@Override
-	public String guardarUsuario(Usuario usuario) {
+	public Usuario guardarUsuario(Usuario usuario) {
 		// TODO Auto-generated method stub
-		usuarioRepository.save(usuario);
-
-		return null;
+		
+		// aqui como cambiamos el valor a retornar, debemos cambiar el tipo de dato del public por Usuario, al igual que en UsuarioService
+		return usuarioRepository.save(usuario);
 	}
 
 }

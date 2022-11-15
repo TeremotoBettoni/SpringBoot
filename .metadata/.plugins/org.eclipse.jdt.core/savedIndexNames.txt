@@ -62,7 +62,6 @@ INDEX VERSION 1.131+C:\Java\workspace\springboot\.metadata\.plugins\org.eclipse.
 1614076663.index
 1506378269.index
 1088444589.index
-1471613246.index
 1736029357.index
 2760701615.index
 713851350.index
