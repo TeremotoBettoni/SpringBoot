@@ -3,6 +3,7 @@ package cl.generation.web.api;
 
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -33,4 +34,33 @@ public class ApiRestController {
 	public String capturaFecha(@PathVariable("dia") int dia, @PathVariable("mes")String mes, @PathVariable("año")int año) {
 		return "La fecha capturada es: "+dia+"/"+mes+"/"+año;
 	}
+	
+	// http://localhost:8080/api/usuario?usuarioId=1
+	// prticiones de tipo GET
+	@RequestMapping("/usuario")
+	public String parametro(@RequestParam(value="usuarioId", required=false) Integer id) {
+		// las variables primitivas tienen por valor definodo 0
+		// las variables del tipo objeto si pueden ser nulos, por eso vamvioamos id para que sea Integer en lugar de int
+		if(id==null) {
+			return "Parametro no existe";
+		}else {
+			return "Parametro por get "+id;
+		}
+	}
+	
+	// http://localhost:8080/api/usuario2?usuarioId=1&nombre=teresa
+	@RequestMapping("/usuario2")
+	public String parametro2(@RequestParam(value="usuarioId", required=false) Integer id, 
+			@RequestParam(value="nombre", required=false) String nombre) {
+		if(id==null) {
+			return "Parametro no existe en parametro2";
+		}else {
+			return "Parametro por get "+id + " nombre "+nombre;
+		}
+	}
+	
+	
+	
+	
+	
 }
