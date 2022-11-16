@@ -19,7 +19,7 @@ import org.springframework.format.annotation.DateTimeFormat;
 public class Valoracion {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int valoracionId;
+	private Integer valoracionId;
 	
 	private Boolean meGusta;
 	
