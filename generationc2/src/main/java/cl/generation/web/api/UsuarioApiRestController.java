@@ -1,6 +1,10 @@
 package cl.generation.web.api;
 
+import java.util.List;
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -55,5 +59,43 @@ public class UsuarioApiRestController {
 		}
 		return "No se actualizara ningun usuario";
 	}
+	
+	/****************************************************************************/
+	
+	// ahora obtenemos el usuario a partir del id
+	// http://localhost:8080/obtener/usuario
+		@RequestMapping("/obtener/usuario")
+		public String obtenerUsuario(@RequestParam(value = "id", required = false) Long id) {
 
+			return usuarioServiceImpl.obtenerUsuario(id);
+		}
+	/****************************************************************************/
+		
+	// ahora obtenemos el usuario a partir del id
+	// http://localhost:8080/obtenerdato/usuario
+	@RequestMapping("/obtenerdato/usuario")
+	public Optional<Usuario> obtenerDatosUsuario(@RequestParam(value = "id", required = true) Long id) {
+			
+		return usuarioServiceImpl.obtenerDatosUsuario(id);
+	}
+	
+	/****************************************************************************/
+	
+	@RequestMapping("/obtenerdato2/usuario")
+	public Usuario obtenerDatosUsuario2(@RequestParam(value = "id", required = true) Long id) {
+		// http://localhost:8080/obtenerdato2/usuario
+		
+		return usuarioServiceImpl.obtenerDatosUsuario2(id);
+	}
+	
+	/****************************************************************************/
+	// listar todos los usuarios
+	// http://localhost:8080/listar/usuario
+	@GetMapping("/listar/usuario")
+	public List<Usuario> listaUsuarios(){
+		return usuarioServiceImpl.listaUsuarios();
+	}
+	
+
+		
 }
