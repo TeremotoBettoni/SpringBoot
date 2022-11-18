@@ -21,7 +21,7 @@ public class Posteo {
 	
 	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long idPost;
+    private Long id;
     
     @NotNull
     @Size(min = 5, max = 40, message = "Error en el ingreso del titulo")
@@ -44,79 +44,66 @@ public class Posteo {
 		super();
 	}
 
-	public Posteo(Long idPost,
-			@NotNull @Size(min = 5, max = 40, message = "Error en el ingreso del titulo") String titulo,
+	public Posteo(Long id, @NotNull @Size(min = 5, max = 40, message = "Error en el ingreso del titulo") String titulo,
 			@NotNull @Size(min = 5, max = 40, message = "Error en el ingreso del contenido del posteo") String texto,
 			String url, Date createdAt, Date updatedAt) {
 		super();
-		this.idPost = idPost;
+		this.id = id;
 		this.titulo = titulo;
 		this.texto = texto;
 		this.url = url;
 		this.createdAt = createdAt;
 		this.updatedAt = updatedAt;
 	}
+	
 
-
-	public Long getIdPost() {
-		return idPost;
+	public Long getId() {
+		return id;
 	}
 
-
-	public void setIdPost(Long idPost) {
-		this.idPost = idPost;
+	public void setId(Long id) {
+		this.id = id;
 	}
-
 
 	public String getTitulo() {
 		return titulo;
 	}
 
-
 	public void setTitulo(String titulo) {
 		this.titulo = titulo;
 	}
-
 
 	public String getTexto() {
 		return texto;
 	}
 
-
 	public void setTexto(String texto) {
 		this.texto = texto;
 	}
-
 
 	public String getUrl() {
 		return url;
 	}
 
-
 	public void setUrl(String url) {
 		this.url = url;
 	}
-
 
 	public Date getCreatedAt() {
 		return createdAt;
 	}
 
-
 	public void setCreatedAt(Date createdAt) {
 		this.createdAt = createdAt;
 	}
-
 
 	public Date getUpdatedAt() {
 		return updatedAt;
 	}
 
-
 	public void setUpdatedAt(Date updatedAt) {
 		this.updatedAt = updatedAt;
 	}
-
 
 	//atributos de control
     @PrePersist
