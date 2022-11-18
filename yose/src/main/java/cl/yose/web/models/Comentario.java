@@ -20,15 +20,12 @@ import org.springframework.format.annotation.DateTimeFormat;
 public class Comentario {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long idComentario;
+	private Long id;
 
 	@NotNull
-	@Size(min = 1, max = 240, message = "Excedes el limite de carácteres")
+	@Size(min= 0, max = 240, message = "Excedes el limite de carácteres")
 	private String texto;
 	
-	// --------------------------------------------------------
-	//REGISTRO Y MODIFICACION DE FECHAS
-	// para la incersion de un registro
 	@Column(updatable = false) // una vez insertado el dato, no se puede modificar
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date createdAt;
@@ -37,9 +34,54 @@ public class Comentario {
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date updatedAt;
 	
+	
+	public Comentario() {
+		super();
+	}
+	
+	public Comentario(Long id,
+			@NotNull @Size(min = 0, max = 240, message = "Excedes el limite de carácteres") String texto,
+			Date createdAt, Date updatedAt) {
+		super();
+		this.id = id;
+		this.texto = texto;
+		this.createdAt = createdAt;
+		this.updatedAt = updatedAt;
+	}
+	
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public String getTexto() {
+		return texto;
+	}
+
+	public void setTexto(String texto) {
+		this.texto = texto;
+	}
+
+	public Date getCreatedAt() {
+		return createdAt;
+	}
+
+	public void setCreatedAt(Date createdAt) {
+		this.createdAt = createdAt;
+	}
+
+	public Date getUpdatedAt() {
+		return updatedAt;
+	}
+
+	public void setUpdatedAt(Date updatedAt) {
+		this.updatedAt = updatedAt;
+	}
 
 	// Atributos de control
-	// agregar la fecha antes de insertar
 	@PrePersist
 	protected void onCreate() {
 		this.createdAt = new Date();
@@ -50,4 +92,5 @@ public class Comentario {
 	protected void onUpdate() {
 		this.updatedAt = new Date();
 	}
+
 }

@@ -1,12 +1,17 @@
 package cl.generation.web.models;
 
 import java.util.Date;
+import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.PrePersist;
 import javax.persistence.PreUpdate;
 import javax.persistence.Table;
@@ -16,6 +21,8 @@ import javax.validation.constraints.Size;
 
 import org.hibernate.validator.constraints.Range;
 import org.springframework.format.annotation.DateTimeFormat;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 
@@ -35,6 +42,16 @@ public class Usuario {
 	
 	@NotNull
 	private String password;
+	
+	// relacion one to one
+	@JsonIgnore // permite eliminar error de recursividad para que al consultar no muestre los autos
+	@OneToOne(mappedBy = "usuario",cascade = CascadeType.ALL,fetch = FetchType.LAZY)
+	private Auto auto;
+	
+	// relacion OnetoMany
+	
+	@OneToMany(mappedBy = "usuario",cascade = CascadeType.ALL,fetch = FetchType.LAZY)
+	private List<Direccion> direcciones;
 	
 	@Transient
 	private String password2;
@@ -98,6 +115,20 @@ public class Usuario {
 		this.peso = peso;
 	}
 	
+	public Auto getAuto() {
+		return auto;
+	}
+	public void setAuto(Auto auto) {
+		this.auto = auto;
+	}
+	
+	
+	public List<Direccion> getDirecciones() {
+		return direcciones;
+	}
+	public void setDirecciones(List<Direccion> direcciones) {
+		this.direcciones = direcciones;
+	}
 	// atributos de control
 	// agregar a la columna la fecha antes de insertar
 	 @PrePersist

@@ -22,7 +22,7 @@ public class TypePosteo {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long IdTipo;
 	
-	
+	@NotNull
 	private String tipo;
 	
 	@Column(updatable=false)
@@ -65,9 +65,8 @@ public class TypePosteo {
 
 	public void setUpdatedAt(Date updatedAt) {
 		this.updatedAt = updatedAt;
-	}
-	
-	
+
+	}	
 	public String getTipo() {
 		return tipo;
 	}
@@ -75,6 +74,7 @@ public class TypePosteo {
 	public void setTipo(String tipo) {
 		this.tipo = tipo;
 	}
+
 
 	// atributos de control
 	@PrePersist

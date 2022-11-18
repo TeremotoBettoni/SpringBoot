@@ -23,7 +23,7 @@ public class Usuario {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long userId;
+	private Long id;
 	@NotNull
 	private String nombre;
 	@NotNull
@@ -42,24 +42,42 @@ public class Usuario {
 	@DateTimeFormat(pattern="yyyy-MM-dd")
 	private Date updatedAt;	
 	
+	
 	public Usuario() {
 		super();
 	}
-	public Usuario(Long userId, String nombre, String apellido, String email, String contraseña, String contraseña2) {
+	
+	public Usuario(Long id, @NotNull String nombre, @NotNull String apellido, @NotNull String email,
+			@NotNull String contraseña, String contraseña2, Date createdAt, Date updatedAt) {
 		super();
-		this.userId = userId;
+		this.id = id;
 		this.nombre = nombre;
 		this.apellido = apellido;
 		this.email = email;
 		this.contraseña = contraseña;
 		this.contraseña2 = contraseña2;
+		this.createdAt = createdAt;
+		this.updatedAt = updatedAt;
 	}
-	public Long getUserId() {
-		return userId;
+	
+
+	public Long getId() {
+		return id;
 	}
-	public void setUserId(Long userId) {
-		this.userId = userId;
+
+	public void setId(Long id) {
+		this.id = id;
 	}
+
+
+	public Date getUpdatedAt() {
+		return updatedAt;
+	}
+
+	public void setUpdatedAt(Date updatedAt) {
+		this.updatedAt = updatedAt;
+	}
+
 	public String getNombre() {
 		return nombre;
 	}
@@ -90,6 +108,13 @@ public class Usuario {
 	public void setContraseña2(String contraseña2) {
 		this.contraseña2 = contraseña2;
 	}
+	public Date getCreatedAt() {
+		return createdAt;
+	}
+	
+	public void setCreatedAt(Date createdAt) {
+		this.createdAt = createdAt;
+	}
 	
 	// atributos de control
 	@PrePersist
@@ -101,11 +126,5 @@ public class Usuario {
 		this.updatedAt = new Date();
 		}
 		   
-	@Override
-	public String toString() {
-		return "Usuario [userId=" + userId + ", nombre=" + nombre + ", apellido=" + apellido + ", email=" + email
-				+ ", contraseña=" + contraseña + ", contraseña2=" + contraseña2 + "]";
-	}
-
 	
 }

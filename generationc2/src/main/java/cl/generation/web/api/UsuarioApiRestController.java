@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import cl.generation.web.models.Usuario;
-import cl.generation.web.repositories.UsuarioRepository;
 import cl.generation.web.services.UsuarioServiceImpl;
 
 @RestController
