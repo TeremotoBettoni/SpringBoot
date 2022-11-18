@@ -10,6 +10,9 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.PrePersist;
@@ -49,9 +52,20 @@ public class Usuario {
 	private Auto auto;
 	
 	// relacion OnetoMany
-	
+	// cascade es para eliminar toda la columna en caso de que quieres eliminar, y el fetch es para establecer los enlaces ya sea de tipo lazy o each
 	@OneToMany(mappedBy = "usuario",cascade = CascadeType.ALL,fetch = FetchType.LAZY)
 	private List<Direccion> direcciones;
+	
+	// ManyToMany
+	@JsonIgnore
+	@ManyToMany(fetch = FetchType.LAZY)
+	@JoinTable(
+			name="roles_usuarios",//nombre de la tabla relacional
+			joinColumns = @JoinColumn(name="usuario_id"),
+			inverseJoinColumns = @JoinColumn(name="roles_id")
+			)
+	private List<Rol> roles;
+	
 	
 	@Transient
 	private String password2;
@@ -121,8 +135,24 @@ public class Usuario {
 	public void setAuto(Auto auto) {
 		this.auto = auto;
 	}
-	
-	
+	public List<Rol> getRoles() {
+		return roles;
+	}
+	public void setRoles(List<Rol> roles) {
+		this.roles = roles;
+	}
+	public Date getCreatedAt() {
+		return createdAt;
+	}
+	public void setCreatedAt(Date createdAt) {
+		this.createdAt = createdAt;
+	}
+	public Date getUpdatedAt() {
+		return updatedAt;
+	}
+	public void setUpdatedAt(Date updatedAt) {
+		this.updatedAt = updatedAt;
+	}
 	public List<Direccion> getDirecciones() {
 		return direcciones;
 	}
