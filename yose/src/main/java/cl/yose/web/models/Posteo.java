@@ -39,6 +39,11 @@ public class Posteo {
     private String url;
     
     @JsonIgnore
+	@ManyToOne(fetch = FetchType.EAGER)
+	@JoinColumn(name="usuario_id")
+	private Usuario usuario;
+    
+    @JsonIgnore
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "categoria_id")
     private Categoria categoria;
@@ -54,27 +59,26 @@ public class Posteo {
     
     @DateTimeFormat(pattern="yyyy-MM-dd")
     private Date updatedAt;
-    
-    
+
 	public Posteo() {
 		super();
 	}
 	
 	public Posteo(Long id, @NotNull @Size(min = 5, max = 40, message = "Error en el ingreso del titulo") String titulo,
 			@NotNull @Size(min = 5, max = 40, message = "Error en el ingreso del contenido del posteo") String texto,
-			String url, Categoria categoria, TypePosteo typePosteo, Date createdAt, Date updatedAt) {
+			String url, Usuario usuario, Categoria categoria, TypePosteo typePosteo, Date createdAt, Date updatedAt) {
 		super();
 		this.id = id;
 		this.titulo = titulo;
 		this.texto = texto;
 		this.url = url;
+		this.usuario = usuario;
 		this.categoria = categoria;
 		this.typePosteo = typePosteo;
 		this.createdAt = createdAt;
 		this.updatedAt = updatedAt;
 	}
 	
-
 	public Long getId() {
 		return id;
 	}
@@ -105,6 +109,14 @@ public class Posteo {
 
 	public void setUrl(String url) {
 		this.url = url;
+	}
+
+	public Usuario getUsuario() {
+		return usuario;
+	}
+
+	public void setUsuario(Usuario usuario) {
+		this.usuario = usuario;
 	}
 
 	public Categoria getCategoria() {

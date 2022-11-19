@@ -1,12 +1,16 @@
 package cl.yose.web.models;
 
 import java.util.Date;
+import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.PrePersist;
 import javax.persistence.PreUpdate;
 import javax.persistence.Table;
@@ -14,6 +18,7 @@ import javax.persistence.Transient;
 import javax.validation.constraints.NotNull;
 
 import org.springframework.format.annotation.DateTimeFormat;
+
 
 @Entity
 
@@ -35,6 +40,9 @@ public class Usuario {
 	@Transient
 	private String contraseña2;
 	
+	@OneToMany(mappedBy = "usuario",cascade = CascadeType.ALL,fetch = FetchType.LAZY)
+	private List<Posteo> posteo;
+	
 	@Column(updatable=false)
 	@DateTimeFormat(pattern="yyyy-MM-dd")
 	private Date createdAt;
@@ -42,13 +50,12 @@ public class Usuario {
 	@DateTimeFormat(pattern="yyyy-MM-dd")
 	private Date updatedAt;	
 	
-	
 	public Usuario() {
 		super();
 	}
 	
 	public Usuario(Long id, @NotNull String nombre, @NotNull String apellido, @NotNull String email,
-			@NotNull String contraseña, String contraseña2, Date createdAt, Date updatedAt) {
+			@NotNull String contraseña, String contraseña2, List<Posteo> posteo, Date createdAt, Date updatedAt) {
 		super();
 		this.id = id;
 		this.nombre = nombre;
@@ -56,11 +63,11 @@ public class Usuario {
 		this.email = email;
 		this.contraseña = contraseña;
 		this.contraseña2 = contraseña2;
+		this.posteo = posteo;
 		this.createdAt = createdAt;
 		this.updatedAt = updatedAt;
 	}
 	
-
 	public Long getId() {
 		return id;
 	}
@@ -69,6 +76,61 @@ public class Usuario {
 		this.id = id;
 	}
 
+	public String getNombre() {
+		return nombre;
+	}
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+
+	public String getApellido() {
+		return apellido;
+	}
+
+	public void setApellido(String apellido) {
+		this.apellido = apellido;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public String getContraseña() {
+		return contraseña;
+	}
+
+	public void setContraseña(String contraseña) {
+		this.contraseña = contraseña;
+	}
+
+	public String getContraseña2() {
+		return contraseña2;
+	}
+
+	public void setContraseña2(String contraseña2) {
+		this.contraseña2 = contraseña2;
+	}
+
+	public List<Posteo> getPosteo() {
+		return posteo;
+	}
+
+	public void setPosteo(List<Posteo> posteo) {
+		this.posteo = posteo;
+	}
+
+	public Date getCreatedAt() {
+		return createdAt;
+	}
+
+	public void setCreatedAt(Date createdAt) {
+		this.createdAt = createdAt;
+	}
 
 	public Date getUpdatedAt() {
 		return updatedAt;
@@ -78,44 +140,6 @@ public class Usuario {
 		this.updatedAt = updatedAt;
 	}
 
-	public String getNombre() {
-		return nombre;
-	}
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
-	}
-	public String getApellido() {
-		return apellido;
-	}
-	public void setApellido(String apellido) {
-		this.apellido = apellido;
-	}
-	public String getEmail() {
-		return email;
-	}
-	public void setEmail(String email) {
-		this.email = email;
-	}
-	public String getContraseña() {
-		return contraseña;
-	}
-	public void setContraseña(String contraseña) {
-		this.contraseña = contraseña;
-	}
-	public String getContraseña2() {
-		return contraseña2;
-	}
-	public void setContraseña2(String contraseña2) {
-		this.contraseña2 = contraseña2;
-	}
-	public Date getCreatedAt() {
-		return createdAt;
-	}
-	
-	public void setCreatedAt(Date createdAt) {
-		this.createdAt = createdAt;
-	}
-	
 	// atributos de control
 	@PrePersist
 	protected void onCreate(){
