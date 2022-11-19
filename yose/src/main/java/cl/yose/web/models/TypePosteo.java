@@ -1,12 +1,16 @@
 package cl.yose.web.models;
 
 import java.util.Date;
+import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.PrePersist;
 import javax.persistence.PreUpdate;
 import javax.persistence.Table;
@@ -20,10 +24,13 @@ public class TypePosteo {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long IdTipo;
+	private Long id;
 	
 	@NotNull
 	private String tipo;
+	
+	@OneToMany(mappedBy = "typePosteo", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+	private List<Posteo> posteos;
 	
 	@Column(updatable=false)
 	@DateTimeFormat(pattern="yyyy-MM-dd")
@@ -31,24 +38,42 @@ public class TypePosteo {
 	
 	@DateTimeFormat(pattern="yyyy-MM-dd")
 	private Date updatedAt;
-
+	
 	public TypePosteo() {
 		super();
 	}
-
-	public TypePosteo(Long idTipo, Date createdAt, Date updatedAt) {
+	
+	public TypePosteo(Long id, @NotNull String tipo, List<Posteo> posteos, Date createdAt, Date updatedAt) {
 		super();
-		IdTipo = idTipo;
+		this.id = id;
+		this.tipo = tipo;
+		this.posteos = posteos;
 		this.createdAt = createdAt;
 		this.updatedAt = updatedAt;
 	}
-
-	public Long getIdTipo() {
-		return IdTipo;
+	
+	public Long getId() {
+		return id;
 	}
 
-	public void setIdTipo(Long idTipo) {
-		IdTipo = idTipo;
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public String getTipo() {
+		return tipo;
+	}
+
+	public void setTipo(String tipo) {
+		this.tipo = tipo;
+	}
+
+	public List<Posteo> getPosteos() {
+		return posteos;
+	}
+
+	public void setPosteos(List<Posteo> posteos) {
+		this.posteos = posteos;
 	}
 
 	public Date getCreatedAt() {
@@ -65,16 +90,7 @@ public class TypePosteo {
 
 	public void setUpdatedAt(Date updatedAt) {
 		this.updatedAt = updatedAt;
-
-	}	
-	public String getTipo() {
-		return tipo;
 	}
-
-	public void setTipo(String tipo) {
-		this.tipo = tipo;
-	}
-
 
 	// atributos de control
 	@PrePersist

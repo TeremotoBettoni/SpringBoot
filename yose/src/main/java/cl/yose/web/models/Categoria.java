@@ -1,12 +1,16 @@
 package cl.yose.web.models;
 
 import java.util.Date;
+import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.PrePersist;
 import javax.persistence.PreUpdate;
 import javax.persistence.Table;
@@ -20,10 +24,13 @@ public class Categoria {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private long categoriaId;
+	private long id;
 	
 	@NotNull
 	private String detalleCategoria;
+	
+	@OneToMany(mappedBy = "categoria", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+	private List<Posteo> posteos;
 	
 	@Column(updatable=false)
 	@DateTimeFormat(pattern="yyyy-MM-dd")
@@ -32,6 +39,28 @@ public class Categoria {
 	@DateTimeFormat(pattern="yyyy-MM-dd")
 	private Date updatedAt;	
 	
+	public Categoria() {
+		super();
+	}
+	public long getId() {
+		return id;
+	}
+	public void setId(long id) {
+		this.id = id;
+	}
+	public String getDetalleCategoria() {
+		return detalleCategoria;
+	}
+	public void setDetalleCategoria(String detalleCategoria) {
+		this.detalleCategoria = detalleCategoria;
+	}
+	
+	public List<Posteo> getPosteos() {
+		return posteos;
+	}
+	public void setPosteos(List<Posteo> posteos) {
+		this.posteos = posteos;
+	}
 	
 	// atributos de control
 	@PrePersist
