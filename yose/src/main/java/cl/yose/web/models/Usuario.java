@@ -19,11 +19,21 @@ import javax.validation.constraints.NotNull;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
+
+@AllArgsConstructor
+@NoArgsConstructor
+@Getter
+@Setter
+@ToString
 @Entity
-
 @Table(name="usuarios")
-
 public class Usuario {
 	
 	@Id
@@ -43,102 +53,19 @@ public class Usuario {
 	@OneToMany(mappedBy = "usuario",cascade = CascadeType.ALL,fetch = FetchType.LAZY)
 	private List<Posteo> posteo;
 	
+	@OneToMany(mappedBy = "usuario",cascade = CascadeType.ALL,fetch = FetchType.LAZY)
+	private List<Comentario> comentario;
+	
+	@JsonIgnore
+	@OneToMany(mappedBy = "usuario",cascade = CascadeType.ALL,fetch = FetchType.LAZY)
+	private List<Valoracion> valoracion;
+	
 	@Column(updatable=false)
 	@DateTimeFormat(pattern="yyyy-MM-dd")
 	private Date createdAt;
 	
 	@DateTimeFormat(pattern="yyyy-MM-dd")
 	private Date updatedAt;	
-	
-	public Usuario() {
-		super();
-	}
-	
-	public Usuario(Long id, @NotNull String nombre, @NotNull String apellido, @NotNull String email,
-			@NotNull String contraseña, String contraseña2, List<Posteo> posteo, Date createdAt, Date updatedAt) {
-		super();
-		this.id = id;
-		this.nombre = nombre;
-		this.apellido = apellido;
-		this.email = email;
-		this.contraseña = contraseña;
-		this.contraseña2 = contraseña2;
-		this.posteo = posteo;
-		this.createdAt = createdAt;
-		this.updatedAt = updatedAt;
-	}
-	
-	public Long getId() {
-		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
-	}
-
-	public String getNombre() {
-		return nombre;
-	}
-
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
-	}
-
-	public String getApellido() {
-		return apellido;
-	}
-
-	public void setApellido(String apellido) {
-		this.apellido = apellido;
-	}
-
-	public String getEmail() {
-		return email;
-	}
-
-	public void setEmail(String email) {
-		this.email = email;
-	}
-
-	public String getContraseña() {
-		return contraseña;
-	}
-
-	public void setContraseña(String contraseña) {
-		this.contraseña = contraseña;
-	}
-
-	public String getContraseña2() {
-		return contraseña2;
-	}
-
-	public void setContraseña2(String contraseña2) {
-		this.contraseña2 = contraseña2;
-	}
-
-	public List<Posteo> getPosteo() {
-		return posteo;
-	}
-
-	public void setPosteo(List<Posteo> posteo) {
-		this.posteo = posteo;
-	}
-
-	public Date getCreatedAt() {
-		return createdAt;
-	}
-
-	public void setCreatedAt(Date createdAt) {
-		this.createdAt = createdAt;
-	}
-
-	public Date getUpdatedAt() {
-		return updatedAt;
-	}
-
-	public void setUpdatedAt(Date updatedAt) {
-		this.updatedAt = updatedAt;
-	}
 
 	// atributos de control
 	@PrePersist
@@ -149,6 +76,5 @@ public class Usuario {
 	protected void onUpdate(){
 		this.updatedAt = new Date();
 		}
-		   
-	
+
 }

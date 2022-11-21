@@ -13,7 +13,7 @@ public class PaisApiRestController {
 	@Autowired
 	private PaisServiceImpl paisServiceImpl;
 	
-	@RequestMapping("/guardar/pais")
+	@RequestMapping("/pais/guardar")
 	public Pais guardarPais(@RequestBody Pais pais) {
 		return paisServiceImpl.guardarPais(pais);
 		

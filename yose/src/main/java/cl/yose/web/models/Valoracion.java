@@ -4,15 +4,31 @@ import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.PrePersist;
 import javax.persistence.PreUpdate;
 import javax.persistence.Table;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
+
+@AllArgsConstructor
+@NoArgsConstructor
+@Getter
+@Setter
+@ToString
 @Entity
 @Table(name="valoraciones")
 
@@ -23,66 +39,26 @@ public class Valoracion {
 	
 	private Boolean meGusta;
 	
+	@ManyToOne(fetch = FetchType.EAGER)
+	@JoinColumn(name="usuario_id")
+	private Usuario usuario;
+	
+	@JsonIgnore
+	@ManyToOne(fetch = FetchType.EAGER)
+	@JoinColumn(name="posteo_id")
+	private Posteo posteo;
+	
+	@JsonIgnore
+	@ManyToOne(fetch = FetchType.EAGER)
+	@JoinColumn(name="comentario_id")
+	private Comentario comentario;
+	
 	@Column(updatable=false)
 	@DateTimeFormat(pattern="yyyy-MM-dd")
 	private Date createdAt;
 	
 	@DateTimeFormat(pattern="yyyy-MM-dd")
 	private Date updatedAt;	
-
-	public Valoracion() {
-		super();
-	}
-	
-	
-	public Valoracion(Long id, Boolean meGusta, Date createdAt, Date updatedAt) {
-		super();
-		this.id = id;
-		this.meGusta = meGusta;
-		this.createdAt = createdAt;
-		this.updatedAt = updatedAt;
-	}
-	
-
-	public Long getId() {
-		return id;
-	}
-
-
-	public void setId(Long id) {
-		this.id = id;
-	}
-
-
-	public Boolean getMeGusta() {
-		return meGusta;
-	}
-
-
-	public void setMeGusta(Boolean meGusta) {
-		this.meGusta = meGusta;
-	}
-
-
-	public Date getCreatedAt() {
-		return createdAt;
-	}
-
-
-	public void setCreatedAt(Date createdAt) {
-		this.createdAt = createdAt;
-	}
-
-
-	public Date getUpdatedAt() {
-		return updatedAt;
-	}
-
-
-	public void setUpdatedAt(Date updatedAt) {
-		this.updatedAt = updatedAt;
-	}
-
 
 	// atributos de control
 	@PrePersist
@@ -93,8 +69,5 @@ public class Valoracion {
 	protected void onUpdate(){
 		this.updatedAt = new Date();
 		}
-
-
-
 	
 }

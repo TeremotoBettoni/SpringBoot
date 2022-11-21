@@ -14,6 +14,17 @@ import javax.validation.constraints.NotNull;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
+
+@AllArgsConstructor
+@NoArgsConstructor
+@Getter
+@Setter
+@ToString
 @Entity
 @Table(name = "imagenes")
 public class Imagen {
@@ -35,66 +46,6 @@ public class Imagen {
 	// para modificar un registro
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date updatedAt;
-
-	public Imagen() {
-		super();
-	}
-	
-	
-	public Imagen(Long id, @NotNull String ruta, Date createdAt, Date updatedAt) {
-		super();
-		this.id = id;
-		this.ruta = ruta;
-		this.createdAt = createdAt;
-		this.updatedAt = updatedAt;
-	}
-	
-
-	public Long getId() {
-		return id;
-	}
-
-
-	public void setId(Long id) {
-		this.id = id;
-	}
-
-
-	public String getRuta() {
-		return ruta;
-	}
-
-
-
-	public void setRuta(String ruta) {
-		this.ruta = ruta;
-	}
-
-
-
-	public Date getCreatedAt() {
-		return createdAt;
-	}
-
-
-
-	public void setCreatedAt(Date createdAt) {
-		this.createdAt = createdAt;
-	}
-
-
-
-	public Date getUpdatedAt() {
-		return updatedAt;
-	}
-
-
-
-	public void setUpdatedAt(Date updatedAt) {
-		this.updatedAt = updatedAt;
-	}
-
-
 
 	// Atributos de control
 	// agregar la fecha antes de insertar

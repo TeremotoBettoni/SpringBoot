@@ -13,6 +13,17 @@ import javax.persistence.Table;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
+
+@AllArgsConstructor
+@NoArgsConstructor
+@Getter
+@Setter
+@ToString
 @Entity
 @Table(name="colegas")
 public class Colega {
@@ -26,41 +37,6 @@ public class Colega {
 	
 	@DateTimeFormat(pattern="yyyy-MM-dd")
 	private Date updatedAt;	
-	
-	public Colega() {
-		super();
-	}
-	
-	public Colega(long id, Date createdAt, Date updatedAt) {
-		super();
-		this.id = id;
-		this.createdAt = createdAt;
-		this.updatedAt = updatedAt;
-	}
-	
-	public long getId() {
-		return id;
-	}
-
-	public void setId(long id) {
-		this.id = id;
-	}
-
-	public Date getCreatedAt() {
-		return createdAt;
-	}
-
-	public void setCreatedAt(Date createdAt) {
-		this.createdAt = createdAt;
-	}
-
-	public Date getUpdatedAt() {
-		return updatedAt;
-	}
-
-	public void setUpdatedAt(Date updatedAt) {
-		this.updatedAt = updatedAt;
-	}
 
 	// atributos de control
 	@PrePersist

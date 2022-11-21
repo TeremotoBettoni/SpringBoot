@@ -3,6 +3,9 @@ package cl.generation.web.controllers;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import cl.generation.web.models.Rol;
+
+
 @Controller // conectar con sistema
 @RequestMapping ("/usuario") // ahora todas mis rutas tendran este prefijop
 public class UsuarioController {
@@ -27,5 +30,14 @@ public class UsuarioController {
 	public String tbettoni() {
 		System.out.println("El metodo de Teresa");
 		return "teresa";
+	}
+	
+	@RequestMapping("/rol")
+	public Rol obtenerRol() {
+		Rol rol = new Rol();
+		rol.setNombre("ADMIN");
+		rol.setDescripcion("Administra elo sistema");
+		System.out.println("");
+		return rol;
 	}
 }

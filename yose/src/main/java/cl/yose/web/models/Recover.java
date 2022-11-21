@@ -15,7 +15,17 @@ import javax.validation.constraints.Size;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
 
+@AllArgsConstructor
+@NoArgsConstructor
+@Getter
+@Setter
+@ToString
 @Entity
 @Table(name = "recovers")
 public class Recover {
@@ -34,51 +44,6 @@ public class Recover {
 	@DateTimeFormat(pattern="yyyy-MM-dd")
 	private Date updatedAt;	
 
-	public Recover() {
-		super();
-	}
-	
-	public Recover(Long id, @NotNull @Size(min = 8, max = 30, message = "Error en el largo contraseña") String code,
-			Date createdAt, Date updatedAt) {
-		super();
-		this.id = id;
-		this.code = code;
-		this.createdAt = createdAt;
-		this.updatedAt = updatedAt;
-	}
-	
-	public Long getId() {
-		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
-	}
-
-	public String getCode() {
-		return code;
-	}
-
-	public void setCode(String code) {
-		this.code = code;
-	}
-
-	public Date getCreatedAt() {
-		return createdAt;
-	}
-
-	public void setCreatedAt(Date createdAt) {
-		this.createdAt = createdAt;
-	}
-
-	public Date getUpdatedAt() {
-		return updatedAt;
-	}
-
-	public void setUpdatedAt(Date updatedAt) {
-		this.updatedAt = updatedAt;
-	}
-
 	// atributos de control
 	@PrePersist
 	protected void onCreate(){
@@ -88,6 +53,5 @@ public class Recover {
 	protected void onUpdate(){
 		this.updatedAt = new Date();
 		}
-	
 
 }

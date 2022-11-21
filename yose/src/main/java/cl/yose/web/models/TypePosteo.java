@@ -18,6 +18,16 @@ import javax.validation.constraints.NotNull;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
+@AllArgsConstructor
+@NoArgsConstructor
+@Getter
+@Setter
+@ToString
 @Entity
 @Table(name = "typeposteos")
 public class TypePosteo {
@@ -39,59 +49,6 @@ public class TypePosteo {
 	@DateTimeFormat(pattern="yyyy-MM-dd")
 	private Date updatedAt;
 	
-	public TypePosteo() {
-		super();
-	}
-	
-	public TypePosteo(Long id, @NotNull String tipo, List<Posteo> posteos, Date createdAt, Date updatedAt) {
-		super();
-		this.id = id;
-		this.tipo = tipo;
-		this.posteos = posteos;
-		this.createdAt = createdAt;
-		this.updatedAt = updatedAt;
-	}
-	
-	public Long getId() {
-		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
-	}
-
-	public String getTipo() {
-		return tipo;
-	}
-
-	public void setTipo(String tipo) {
-		this.tipo = tipo;
-	}
-
-	public List<Posteo> getPosteos() {
-		return posteos;
-	}
-
-	public void setPosteos(List<Posteo> posteos) {
-		this.posteos = posteos;
-	}
-
-	public Date getCreatedAt() {
-		return createdAt;
-	}
-
-	public void setCreatedAt(Date createdAt) {
-		this.createdAt = createdAt;
-	}
-
-	public Date getUpdatedAt() {
-		return updatedAt;
-	}
-
-	public void setUpdatedAt(Date updatedAt) {
-		this.updatedAt = updatedAt;
-	}
-
 	// atributos de control
 	@PrePersist
 	protected void onCreate(){
