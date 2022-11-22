@@ -50,8 +50,13 @@ public class Comentario {
 	@JoinColumn(name="usuario_id")
 	private Usuario usuario;
 	
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name="posteo_id")
+	private Posteo posteo;
+	
+	
 	@OneToMany(mappedBy = "comentario",cascade = CascadeType.ALL,fetch = FetchType.LAZY)
-	private List<Valoracion> valoracion;
+	private List<ValoracionComentario> valoracionesComentarios;
 	
 	@Column(updatable = false) // una vez insertado el dato, no se puede modificar
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
