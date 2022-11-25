@@ -30,7 +30,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	private JwtUserDetailsService jwtUserDetailsService;
 
 	@Override
-	protected void configure(HttpSecurity httpSecurity) throws Exception {
+	protected void configure(HttpSecurity httpSecurity) throws Exception { // aqui manejaremos los permisos para ingresar a ciertas partes de la plicacion
 		httpSecurity.csrf().disable().authorizeRequests().antMatchers(HttpMethod.POST, "/auth/*").permitAll()
 				.anyRequest().authenticated().and()
 				.exceptionHandling()
