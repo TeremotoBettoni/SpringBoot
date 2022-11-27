@@ -1,6 +1,7 @@
 package cl.yose.web.api;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -9,17 +10,19 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import cl.yose.web.models.Usuario;
 import cl.yose.web.services.UsuarioServiceImpl;
+import cl.yose.web.models.Usuario;
+import lombok.AllArgsConstructor;
 
 
 @RestController
+@AllArgsConstructor
 public class UsuarioApiRestController {
 	
 	@Autowired
-	private UsuarioServiceImpl usuarioServiceImpl;
+	private final UsuarioServiceImpl usuarioServiceImpl;
 	
-	// creamos la Query para guardar
+	/*// creamos la Query para guardar
 	
 	// http://localhost:8080/guardar/usuario
 	@RequestMapping("/guardar/usuario")
@@ -27,7 +30,7 @@ public class UsuarioApiRestController {
 
 			return usuarioServiceImpl.guardarUsuario(usuario);
 		}
-	
+	*/
 	/****************************************************************************/
 	// ahora creamos la de eliminar
 	
@@ -57,9 +60,9 @@ public class UsuarioApiRestController {
 	
 	// http://localhost:8080/obtenerdato/usuario
 	@RequestMapping("/obtenerdato/usuario")
-	public Usuario obtenerDatosUsuario(@RequestParam(value = "id", required = true) Long id) {
+	public Optional<Usuario> obtenerUsuario(@RequestParam(value = "id", required = true) Long id) {
 		
-		return usuarioServiceImpl.obtenerDatosUsuario(id);
+		return usuarioServiceImpl.getUsuarioById(id);
 	}
 	
 	/****************************************************************************/

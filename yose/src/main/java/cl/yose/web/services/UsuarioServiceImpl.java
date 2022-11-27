@@ -1,6 +1,7 @@
 package cl.yose.web.services;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -15,11 +16,21 @@ public class UsuarioServiceImpl implements UsuarioServices {
 	public UsuarioRepository usuarioRepository;
 	
 	@Override
+	public Optional<Usuario> getUsuarioById(Long id){
+		Boolean exists = usuarioRepository.existsById(id);
+		if (exists) {
+			Optional<Usuario> usuario = usuarioRepository.findById(id);
+			return usuario;
+		}
+		return null;
+	}
+	
+	/*@Override
 	public Usuario guardarUsuario(Usuario usuario) {
 		// TODO Auto-generated method stub
 		return usuarioRepository.save(usuario);
 	}
-	
+	*/
 	@Override
 	public String eliminarUsuario(Long id) {
 		Boolean existe = usuarioRepository.existsById(id);
