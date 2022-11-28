@@ -40,6 +40,8 @@ public class JwtUserDetailsService implements UserDetailsService {
 	
 	public Usuario save(UserDTO user) {
 		Usuario newUser = new Usuario();
+		newUser.setNombre(user.getNombre());
+		newUser.setApellido(user.getApellido());
 		newUser.setEmail(user.getEmail());
 		newUser.setContraseña(user.getContraseña());
 		return usuarioRepository.save(newUser);
