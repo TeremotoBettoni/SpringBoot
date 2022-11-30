@@ -18,7 +18,7 @@ public class AutoApiRestController {
 	private AutoServiceImpl autoServiceImpl;
 	
 	@Autowired
-	private UsuarioServiceImpl usuarioServiceImpl;// inyectamos esto p ara poder usarlo en esta clase
+	UsuarioServiceImpl usuarioServiceImpl;// inyectamos esto p ara poder usarlo en esta clase
 	
 	@RequestMapping("/guardar/auto")
 	public Auto guardarAuto(@RequestBody Auto auto, 
@@ -30,6 +30,7 @@ public class AutoApiRestController {
 		Usuario usuario = usuarioServiceImpl.obtenerDatosUsuario2(usuarioId);
 		// para hacer5 lo siguiente tendremos que agregar ahora si los geter y seter en el objeto Auto
 		auto.setUsuario(usuario);
+		
 		
 		
 		return autoServiceImpl.guardarAuto(auto);

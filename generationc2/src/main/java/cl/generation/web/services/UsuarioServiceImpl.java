@@ -3,6 +3,7 @@ package cl.generation.web.services;
 import java.util.List;
 import java.util.Optional;
 
+import org.mindrot.jbcrypt.BCrypt;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -13,15 +14,27 @@ import cl.generation.web.repositories.UsuarioRepository;
 public class UsuarioServiceImpl implements UsuarioService {
 // Aqui se realiza toda la logica de negocio del sistema web
 	@Autowired // con esto inyectamos aqui tambien nuestras dependencias con el repository
-	private UsuarioRepository usuarioRepository;
+	UsuarioRepository usuarioRepository;
 
 	@Override
-	public Usuario guardarUsuario(Usuario usuario) {
-		// TODO Auto-generated method stub
+	public Boolean guardarUsuario(Usuario usuario) {
+		// validar el usuario segun su email
+		Usuario retornoUsuario = usuarioRepository.findByEmail(usuario.getEmail());
+		if (retornoUsuario == null) {
+			//1234 -> 1231245321425fas4352
+			String passHashed = BCrypt.hashpw(usuario.getPassword(), BCrypt.gensalt());
+			//reemplazando el valor por el hash
+			usuario.setPassword(passHashed);
 
+			usuarioRepository.save(usuario);
+			return true;
+		}else {
+			return false;
+		}
+		
 		// aqui como cambiamos el valor a retornar, debemos cambiar el tipo de dato del
 		// public por Usuario, al igual que en UsuarioService
-		return usuarioRepository.save(usuario);
+		
 	}
 
 	/****************************************************************************/

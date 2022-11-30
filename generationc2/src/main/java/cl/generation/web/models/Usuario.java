@@ -27,10 +27,18 @@ import org.springframework.format.annotation.DateTimeFormat;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
+@AllArgsConstructor
+@NoArgsConstructor
+@Getter
+@Setter
+@ToString
 @Entity
-
 @Table(name="usuarios")
-
 public class Usuario {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -41,10 +49,16 @@ public class Usuario {
 	private String nombre;
 	
 	@NotNull
-	private String correo;
+	@Size(min=3, max=15, message="Error en ingreso de nombre")
+	private String apellido;
+	
+	@NotNull
+	private String email;
 	
 	@NotNull
 	private String password;
+	
+	private String nick;
 	
 	// relacion one to one
 	@JsonIgnore // permite eliminar error de recursividad para que al consultar no muestre los autos
@@ -66,11 +80,8 @@ public class Usuario {
 			)
 	private List<Rol> roles;
 	
-	
 	@Transient
 	private String password2;
-	
-	private String nick;
 	
 	@Range(min=40, max=300, message="Peso fuera de rango")
 	private Float peso;
@@ -82,83 +93,6 @@ public class Usuario {
 	@DateTimeFormat(pattern="yyyy-MM-dd")
 	private Date updatedAt;	
 	
-	
-	public Usuario() {
-		super();
-	}
-	public Long getId() {
-		return id;
-	}
-	public void setId(Long id) {
-		this.id = id;
-	}
-	public String getNombre() {
-		return nombre;
-	}
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
-	}
-	public String getCorreo() {
-		return correo;
-	}
-	public void setCorreo(String correo) {
-		this.correo = correo;
-	}
-	public String getPassword() {
-		return password;
-	}
-	public void setPassword(String password) {
-		this.password = password;
-	}
-	public String getPassword2() {
-		return password2;
-	}
-	public void setPassword2(String password2) {
-		this.password2 = password2;
-	}
-	public String getNick() {
-		return nick;
-	}
-	public void setNick(String nick) {
-		this.nick = nick;
-	}
-	public Float getPeso() {
-		return peso;
-	}
-	public void setPeso(Float peso) {
-		this.peso = peso;
-	}
-	
-	public Auto getAuto() {
-		return auto;
-	}
-	public void setAuto(Auto auto) {
-		this.auto = auto;
-	}
-	public List<Rol> getRoles() {
-		return roles;
-	}
-	public void setRoles(List<Rol> roles) {
-		this.roles = roles;
-	}
-	public Date getCreatedAt() {
-		return createdAt;
-	}
-	public void setCreatedAt(Date createdAt) {
-		this.createdAt = createdAt;
-	}
-	public Date getUpdatedAt() {
-		return updatedAt;
-	}
-	public void setUpdatedAt(Date updatedAt) {
-		this.updatedAt = updatedAt;
-	}
-	public List<Direccion> getDirecciones() {
-		return direcciones;
-	}
-	public void setDirecciones(List<Direccion> direcciones) {
-		this.direcciones = direcciones;
-	}
 	// atributos de control
 	// agregar a la columna la fecha antes de insertar
 	 @PrePersist
@@ -169,12 +103,7 @@ public class Usuario {
 	    protected void onUpdate(){
 	        this.updatedAt = new Date();
 	    }
-	    
-	@Override
-	public String toString() {
-		return "Usuario [id=" + id + ", nombre=" + nombre + ", correo=" + correo + ", password=" + password
-				+ ", password2=" + password2 + ", nick=" + nick + "]";
-	}
+	
 	
 	
 }

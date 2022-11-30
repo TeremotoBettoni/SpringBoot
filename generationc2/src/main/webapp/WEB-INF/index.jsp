@@ -7,6 +7,6 @@
 <title>INDEX</title>
 </head>
 <body>
-	<h1>Hola estoy en el JSP</h1>
+	<h1>haz registrado el usuario con exito</h1>
 </body>
 </html>
