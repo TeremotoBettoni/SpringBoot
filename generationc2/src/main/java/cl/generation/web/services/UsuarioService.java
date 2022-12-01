@@ -16,6 +16,10 @@ public interface UsuarioService {
 	
 	/****************************************************************************/
 	public Usuario obtenerDatosUsuario2(Long id);
-
+	
 	public List<Usuario> listaUsuarios();
+	
+	// metodo login
+	public Boolean ingresoUsuario(String email, String password);
+	
 }

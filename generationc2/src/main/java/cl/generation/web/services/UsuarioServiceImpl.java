@@ -124,6 +124,31 @@ public class UsuarioServiceImpl implements UsuarioService {
 		return usuarioRepository.findAll();
 	}
 	
+	/****************************************************************************/
+	@Override
+	public Boolean ingresoUsuario(String email, String password) {
+		System.out.println(email + " " + password);
+		Usuario usuario = usuarioRepository.findByEmail(email);
+		
+		if (usuario!=null) { // existe el email en bd
+			// comparamos contraseña
+			// opcion corta
+			// return BCrypt.checkpw(password, usuario.getPassword());
+			// opcion larga
+			Boolean resultadoPwd = BCrypt.checkpw(password, usuario.getPassword());
+			// resultadoPwd == true; son iguales --> resultadoPwd == false; password distinta
+			if (resultadoPwd) {
+				return true;
+			}else {
+				return false;
+			}
+			
+		}else { // no existe el email en bd
+			return false;
+		}
+		
+	}
+	
 	
 
 }
