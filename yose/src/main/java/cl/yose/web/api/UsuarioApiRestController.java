@@ -41,6 +41,7 @@ public class UsuarioApiRestController {
 		return usuarioServiceImpl.eliminarUsuario(id);
 	}
 	
+	
 	/****************************************************************************/
 	// ahora para actualizar
 

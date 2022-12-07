@@ -4,9 +4,9 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>index</title>
 </head>
 <body>
-
+	<h1>haz registrado el usuario con exito</h1>
 </body>
 </html>
