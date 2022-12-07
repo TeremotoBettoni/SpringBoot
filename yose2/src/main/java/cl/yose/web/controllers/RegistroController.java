@@ -54,10 +54,31 @@ public class RegistroController {
 			}
 
 		} else {
-			model.addAttribute("msgError", "Password distintos");
+			model.addAttribute("msgError", "contraseñas distintas");
 			return "registro.jsp";
 		}
 
 	}
+	
+	// desplegar el jsp
+		// http://localhost:8080/registro/login
+		@GetMapping("/login") // solo para peticiones de ruta
+		public String login() {
+			return "login.jsp";
+		}
+
+		@PostMapping("/login") // para capturar ruta
+		public String ingresoUsuario(@RequestParam("email") String email, @RequestParam("contraseña") String contraseña, Model model) {
+
+			Boolean resultadoLogin = usuarioServiceImpl.ingresoUsuario(email, contraseña);
+
+			if (resultadoLogin) { // resultadoLogin == true, login correcto
+				return "redirect:/home";
+			} else { // resultadoLogin == false, login incorrecto
+				model.addAttribute("msgError", "email o contraseña invalidos");
+				return "login.jsp";
+			}
+
+		}
 	
 }

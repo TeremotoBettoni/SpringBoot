@@ -14,4 +14,6 @@ public interface UsuarioServices {
 		public Usuario obtenerDatosUsuario(Long id);
 		public List<Usuario> listaUsuarios();
 		public Boolean guardarUsuario(Usuario usuario);
+		
+		public Boolean ingresoUsuario(String email, String contraseña);
 }

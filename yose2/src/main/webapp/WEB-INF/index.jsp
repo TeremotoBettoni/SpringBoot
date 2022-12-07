@@ -7,6 +7,6 @@
 <title>YOSE!</title>
 </head>
 <body>
-	<h1>haz registrado el usuario con exito</h1>
+	<h1>Estas en el landynpage de yose!</h1>
 </body>
 </html>
