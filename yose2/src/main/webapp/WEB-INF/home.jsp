@@ -75,7 +75,7 @@
                 <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
                     <li>
                     	<a class="navbar-brand" href="#">
-                        <img src="/assets/img/yose.png" alt="Logo" width="40" class="d-inline-block align-text-top">
+                        <img src="../assets/img/yose.png" alt="Logo" width="40" class="d-inline-block align-text-top">
                        	</a>
                     </li>
                 </ul>
@@ -157,7 +157,7 @@
                     <div class="tab-content" id="myTabContent">
                         <div class="tab-pane fade show active" id="posts" role="tabpanel"
                             aria-labelledby="posts-tab">
-                            <form>
+                            <form action="/home/post" method="post">
                                 <div class="mb-3">
                                     <label for="recipient-name" class="col-form-label">Título:</label>
                                     <input type="text" class="form-control" id="recipient-name">

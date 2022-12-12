@@ -49,7 +49,7 @@
                 
                 <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
                     <li><a class="navbar-brand" href="#">
-                        <img src="Assets/img/yose.png" alt="Logo" width="40" class="d-inline-block align-text-top"></a></li>
+                        <img src="../assets/img/yose.png" alt="Logo" width="40" class="d-inline-block align-text-top"></a></li>
                     <li><a href="#" class="nav-link px-2 text-secondary">Inicio</a></li>
                     <li><a href="#" class="nav-link px-2 text-white">Nosotros</a></li>
                     <li><a href="#" class="nav-link px-2 text-white">Funciones</a></li>
@@ -101,7 +101,7 @@
                 
                 <div class="col-md-9">
                     <div class="ratio ratio-16x9 mx-5 mt-2">
-                        <iframe src="assets/img/YOSE!.mp4" title="Video" allowfullscreen></iframe>
+                        <iframe src="../assets/img/YOSE!.mp4" title="Video" allowfullscreen></iframe>
                     </div>
                 </div>
             </div>
@@ -109,19 +109,19 @@
     </main>
     <footer class="text-center text-lg-start" id="fondoHF">
         <div class="container-fluid">
-                <img src="assets/img/LogoYoSe.png" class="logo" alt="LogoYoSe" width="40">
+                <img src="../assets/img/LogoYoSe.png" class="logo" alt="LogoYoSe" width="40">
                 <div class="container d-flex justify-content-center py-5">
                     <a href="https://es-la.facebook.com/" target="_blank">
-                        <img src="assets/img/facebook.png" width="40" alt="facebook">
+                        <img src="../assets/img/facebook.png" width="40" alt="facebook">
                     </a>
                     <a href="https://twitter.com/?lang=es" target="_blank">
-                        <img src="assets/img/twitter.png" width="40" alt="twitter">
+                        <img src="../assets/img/twitter.png" width="40" alt="twitter">
                     </a>
                     <a href="https://www.instagram.com/" target="_blank">
-                        <img src="assets/img/instagram.png" width="40" alt="instagram">
+                        <img src="../assets/img/instagram.png" width="40" alt="instagram">
                     </a>            
                     <a href="https://www.youtube.com/" target="_blank">
-                        <img src="assets/img/youtube.png" width="40" alt="youtube">
+                        <img src="../assets/img/youtube.png" width="40" alt="youtube">
                     </a>
                 </div>
         </div>
