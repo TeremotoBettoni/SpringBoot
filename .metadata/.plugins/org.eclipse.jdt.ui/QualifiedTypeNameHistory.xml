@@ -56,8 +56,8 @@
     <fullyQualifiedTypeName name="org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory"/>
     <fullyQualifiedTypeName name="org.apache.catalina.connector.Connector"/>
     <fullyQualifiedTypeName name="org.apache.coyote.ajp.AbstractAjpProtocol"/>
-    <fullyQualifiedTypeName name="cl.yose.web.models.Usuario"/>
     <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.GetMapping"/>
     <fullyQualifiedTypeName name="cl.yose.web.services.UsuarioServiceImpl"/>
     <fullyQualifiedTypeName name="org.springframework.stereotype.Controller"/>
+    <fullyQualifiedTypeName name="cl.yose.web.models.Usuario"/>
 </qualifiedTypeNameHistroy>

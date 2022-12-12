@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+<%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -15,6 +16,11 @@
         </style>
 
     </head>
+    <script>
+	function filtraAuto() {
+	  document.getElementById("autoSeleccionado").value = "${auto.id}";
+	}
+	</script>
 
 <body>
     <div class="container">
@@ -53,8 +59,8 @@
                             <a class="nav-link disabled">Disabled</a>
                         </li>
                     </ul>
-                    <form class="d-flex" role="search">
-                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <form action="/home/nav" method="post" class="d-flex" role="search">
+                        <input name="marca" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
                         <button class="btn btn-outline-success" type="submit">Search</button>
                     </form>
                 </div>
@@ -63,42 +69,46 @@
         <!--contenido-->
         <div>
             <h1>Hello, world!</h1>
-
-            <label for="nombre" class="form-label">Nombre</label>
-            <input class="form-control" type="text" id="nombre" name="nombre" placeholder="Ingresa tu nombre">
+            <form action="/home" method="post">
+                <label for="nombre" class="form-label">Autos</label>
+            <select class="form-select" aria-label="Lista de autos" name="autoSeleccionado" id="autoSeleccionado">
+			    <option value="0" selected>Seleccione su auto</option>
+			    <c:forEach items="${listaSelectAutos}" var="auto"> <!-- agregamos de manera dinamica los elementos del select -->
+                    <option value="${auto.id}">${auto.marca} - ${auto.color}</option>
+                </c:forEach>
+			</select>
             <br>
-            <button type="button" class="btn btn-outline-secondary">Secondary</button>
+            <button type="submit" class="btn btn-outline-secondary">Filtrar Auto</button>
+            
+            </form>
             <br> <br>
-            <h2>Usuarios</h2>
+            <h2>Lista de Autos</h2>
             <table class="table">
                 <thead>
                     <tr>
-                        <th scope="col">#</th>
+                        <th scope="col">ID</th>
+                        <th scope="col">Marca</th>
+                        <th scope="col">Color</th>
                         <th scope="col">Nombre</th>
                         <th scope="col">Apellido</th>
-                        <th scope="col">Correo</th>
+                        <th scope="col">correo</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">2</th>
-                        <td>Jacob</td>
-                        <td>Thornton</td>
-                        <td>@fat</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">3</th>
-                        <td colspan="2">Larry the Bird</td>
-                        <td>@twitter</td>
-                    </tr>
+                    <c:forEach items="${autos}" var="auto">
+                    	<tr>
+	                    	<td><c:out value="${auto.id}"></c:out></td> <!-- en caso de no uso del forEach se usa el c:out para poder visualizar -->
+	                    	<td><c:out value="${auto.marca}"></c:out></td>
+	                    	<td>${auto.color}</td>
+	                    	<td>${auto.usuario.nombre}</td>
+	                    	<td>${auto.usuario.apellido}</td>
+	                    	<td>${auto.usuario.email}</td>
+                    	</tr>
+                    </c:forEach>
                 </tbody>
             </table>
+            <br>
+            
         </div>
 
 

@@ -1,5 +1,7 @@
 package cl.generation.web.services;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -22,6 +24,17 @@ public class AutoServiceImpl implements AutoService{
 
 		return autoRepository.findById(id).get();
 	}
+	@Override
+	public List<Auto> listaAuto() {
+		// llamamos a la base de datos desde repository y de decimos que encuentre todos
+		return autoRepository.findAll();
+	}
+	@Override
+	public Auto obtenerAutoNombre(String marca) {
+		// genero la busqueda de auto por marca
+		return autoRepository.findByMarca(marca);
+	}
+	
 
 
 }

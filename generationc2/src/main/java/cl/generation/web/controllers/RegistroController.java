@@ -14,7 +14,7 @@ import cl.generation.web.services.UsuarioServiceImpl;
 @Controller
 @RequestMapping("/registro")
 public class RegistroController {
-	@Autowired
+	@Autowired //inyeccion de dependencias
 	UsuarioServiceImpl usuarioServiceImpl;
 	// http://localhost:8080/registro/usuario
 

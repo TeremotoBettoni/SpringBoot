@@ -23,7 +23,7 @@
     	
     	<c:if test="${msgError!=null}">
     		<div class="alert alert-danger" role="alert">
-		  	<c:out value="${msgError}"></c:out>
+		  	<c:out value="${msgError}"></c:out> <!-- Esta forma de escribir en pleaceholder -->
 			</div>
     	</c:if>
 	    <div class="card">
