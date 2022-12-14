@@ -74,52 +74,64 @@
 	</script>
 <body id="fondo">
 	
-    <header class="p-3 text">
-        <div class="container-fluid">
-            <div class="d-flex">
-                <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-                    <li>
-                    	<a class="navbar-brand" href="#">
-                        <img src="../assets/img/yose.png" alt="Logo" width="40" class="d-inline-block align-text-top">
-                       	</a>
-                    </li>
-                </ul>
-                
-                <div class="text-end">
-                    <div>
-                        
-                    </div>
-                    <button type="button" class="btn btn-outline-warning">Inicio</button>
-                    <select type="button" name="detalleCategoria" id="categoria" class="btn btn-outline-warning">
-	                        <option value= "0" selected>Categorías</option>
-	                        <c:forEach var="categoria" items="${listaCategorias}">
-	                        <option value="${categoria.id}">${categoria.detalleCategoria}</option>
-	                        <!--<option value="2">Programación</option>
-	                       	 <option value="3">Historia</option>
-	                        <option value="4">Ciencias</option>
-	                        -->
-	                    	</c:forEach>
-	                    </select>
+    <header>
+    	<nav class="navbar navbar-expand-lg bg-nav">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">
+                   <img src="../assets/img/yose.png" alt="Logo" width="40" class="d-inline-block align-text-top">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">
+                            	<button type="button" class="btn btn-outline-warning">Inicio</button>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                            <button type="button" class="btn btn-outline-warning">Notificación</button>
+                            </a>
+                        </li>
+                        <li class="nav-link dropdown-toggle">
+                        	<select type="button" name="detalleCategoria" id="categoria" class="btn btn-outline-warning">
+				                 <option value= "0" selected>Categorías</option>
+				                 <c:forEach var="categoria" items="${listaCategorias}">
+				                 <option value="${categoria.id}">${categoria.detalleCategoria}</option>
+				                 </c:forEach>
+				           </select>
+                        </li>
+                            
+                    </ul>
+                    <form action="/home/nav" method="post" class="d-flex" role="search">
+                        <input name="marca" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-warning" type="submit">Buscar</button>
+                    </form>
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+	                    <li class="nav-item dropdown">
+	                            <a class="btn btn-warning" href="#" role="button" data-bs-toggle="dropdown"
+	                                aria-expanded="false">
+	                                <c:out value="${usuarioNombre}"></c:out>
+	                            </a>
+	                         <ul class="dropdown-menu">
+	                        <li><a class="dropdown-item" href="#">Perfil Usuario</a></li>
+	                        <li><a class="dropdown-item" href="#">Configuración</a></li>
+	                        <li>
+	                            <hr class="dropdown-divider">
+	                        </li>
+	                        <li><a class="dropdown-item" href="/registro/logout">Cerar sesión</a></li>
+	                    </ul>
+	                    </li>
+                    </ul>
 
-                    <select type="button" name="notificación" id="notificacion" class="btn btn-outline-warning">
-                        <option selected>Notificaciones</option>
-                    </select>
-                    
-                    
-                    	<li>
-                    		<a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    			<c:out value="${usuarioNombre}"></c:out>
-                    		</a>
-                    		<button type="button" class="btn btn-outline-warning" href="/registro/logout">Cerrar Sesión</button>
-
-                    	</li>
-                     
-                      
-	                
-                    
                 </div>
             </div>
-        </div>
+        </nav>
+
     </header>
     
     <main>
