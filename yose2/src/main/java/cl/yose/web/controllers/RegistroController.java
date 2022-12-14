@@ -82,6 +82,9 @@ public class RegistroController {
 				// guardar en cache para uso o identificacion del usuario una vez logueado para las demas funciones
 				session.setAttribute("usuarioId", usuario.getId());
 				session.setAttribute("usuarioEmail", usuario.getEmail());
+				
+				session.setAttribute("usuarioNombre", usuario.getNombre()+" " + usuario.getApellido());
+				
 				System.out.println("paso Loguion");
 				return "redirect:/home";
 			} else { // resultadoLogin == false, login incorrecto
@@ -89,6 +92,14 @@ public class RegistroController {
 				return "login.jsp";
 			}
 
+		}
+		
+		@RequestMapping("/logout")
+		public String logout(HttpSession session) {
+			if(session.getAttribute("usuarioId")!=null) {
+				session.invalidate();// nos permite anular el login para cerrar secion 
+			}
+			return "redirect:/registro/login";// de esta manera una ves cerrada la secion no te permite ingresar de nuevo a home hasta que se logue primero
 		}
 	
 }

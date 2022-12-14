@@ -33,15 +33,25 @@ public class HomeController {
 	UsuarioServiceImpl usuarioServiceImpl;
 	
 	@GetMapping("")
-	public String home(Model model) {
-		List<Posteo> listaPosteo = posteoServiceImpl.listaPosteo();
-		model.addAttribute("listaPosteos",listaPosteo);
+	public String home(Model model, HttpSession session) {
 		
-		List<Categoria> listaCategorias = categoriaServiceImpl.listaCategorias();
-		System.out.println("Lista de categorias" + listaCategorias);
-		model.addAttribute("listaCategorias", listaCategorias);
+		if(session.getAttribute("usuarioId")!=null) {
+			String nombre = (String) session.getAttribute("usuarioNombre");
+			
+			List<Posteo> listaPosteo = posteoServiceImpl.listaPosteo();
+			model.addAttribute("listaPosteos",listaPosteo);
+			
+			List<Categoria> listaCategorias = categoriaServiceImpl.listaCategorias();
+			System.out.println("Lista de categorias" + listaCategorias);
+			model.addAttribute("listaCategorias", listaCategorias);
+			
+			model.addAttribute("usuarioNombre", nombre);
+			
+			return "home.jsp";
+		} else {
+			return "redirect:/registro/login";
+		}
 		
-		return "home.jsp";
 	}
 	
 	@PostMapping("")

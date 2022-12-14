@@ -77,7 +77,6 @@
     <header class="p-3 text">
         <div class="container-fluid">
             <div class="d-flex">
-                
                 <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
                     <li>
                     	<a class="navbar-brand" href="#">
@@ -105,7 +104,18 @@
                     <select type="button" name="notificación" id="notificacion" class="btn btn-outline-warning">
                         <option selected>Notificaciones</option>
                     </select>
-                    <button type="button" class="btn btn-outline-warning">Perfil</button>
+                    
+                    
+                    	<li>
+                    		<a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    			<c:out value="${usuarioNombre}"></c:out>
+                    		</a>
+                    		<button type="button" class="btn btn-outline-warning" href="/registro/logout">Cerrar Sesión</button>
+
+                    	</li>
+                     
+                      
+	                
                     
                 </div>
             </div>

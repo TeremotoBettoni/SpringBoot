@@ -26,9 +26,10 @@ public class HomeController {
 	public String home(Model model, HttpSession session) { // con model model se pasa informacion desde el controlador al jsp
 		// capturamos aqui en home el session
 		if(session.getAttribute("usuarioId")!=null) { // esto lo que quiere decir es que si el usuario nunca se ha logueado entonces pasa a lo demas
-			
-			//String email = (String) session.getAttribute("usuarioEmail");
-			//Long usuarioId = (Long) session.getAttribute("usuarioId");
+			// capturando variables de session
+			String email = (String) session.getAttribute("usuarioEmail");
+			Long usuarioId = (Long) session.getAttribute("usuarioId");
+			String nombre = (String) session.getAttribute("usuarioNombre");
 			
 			//obtener y almacenar en variable
 			List<Auto> listaAuto = autoServiceImpl.listaAuto();
@@ -37,14 +38,15 @@ public class HomeController {
 			// lista para cargar el selector
 			List<Auto> listaSelectAutos= autoServiceImpl.listaAuto();
 			model.addAttribute("listaSelectAutos", listaSelectAutos);
-	
+			
+			model.addAttribute("usuarioNombre", nombre);
+			
 			return "home.jsp";
 		} else { // si nunca de logueo en el brouse lo regreso al login aunque ingrese la ruta del hom pues le exige loguear
 			return "redirect:/registro/login";
 		}
 		
-		
-		
+
 		
 	}
 	

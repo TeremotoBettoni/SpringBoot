@@ -90,6 +90,7 @@ public class RegistroController {
 			session.setAttribute("usuarioEmail", email);
 			// en el caso de que quiera confirmar el rol en la pagina para limitar los permisos
 			session.setAttribute("usuarioRol", usuario.getRoles());
+			session.setAttribute("usuarioNombre", usuario.getNombre()+" " + usuario.getApellido());
 			
 			return "redirect:/home";
 		} else { // resultadoLogin == false, login incorrecto
@@ -97,6 +98,15 @@ public class RegistroController {
 			return "login.jsp";
 		}
 
+	}
+
+	
+	@RequestMapping("/logout")
+	public String logout(HttpSession session) {
+		if(session.getAttribute("usuarioId")!=null) {
+			session.invalidate();// nos permite anular el login para cerrar secion 
+		}
+		return "redirect:/registro/login";// de esta manera una ves cerrada la secion no te permite ingresar de nuevo a home hasta que se logue primero
 	}
 
 }
