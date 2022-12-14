@@ -16,4 +16,5 @@ public interface UsuarioServices {
 		public Boolean guardarUsuario(Usuario usuario);
 		
 		public Boolean ingresoUsuario(String email, String contraseña);
+		public Usuario obtenerUsuarioEmail(String email);
 }

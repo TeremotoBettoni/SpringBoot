@@ -67,7 +67,13 @@
     </style>
 
 </head>
+<script>
+	function filtraPosteo() {
+	  document.getElementById("categoriaSeleccinada").value = "${posteo.id}";
+	}
+	</script>
 <body id="fondo">
+	
     <header class="p-3 text">
         <div class="container-fluid">
             <div class="d-flex">
@@ -85,13 +91,17 @@
                         
                     </div>
                     <button type="button" class="btn btn-outline-warning">Inicio</button>
-                    <select type="button" name="categoria" id="categoria" class="btn btn-outline-warning">
-                        <option selected>Categorías</option>
-                        <option value="1">Matematica</option>
-                        <option value="2">Programación</option>
-                        <option value="3">Historia</option>
-                        <option value="4">Ciencias</option>
-                    </select>
+                    <select type="button" name="detalleCategoria" id="categoria" class="btn btn-outline-warning">
+	                        <option value= "0" selected>Categorías</option>
+	                        <c:forEach var="categoria" items="${listaCategorias}">
+	                        <option value="${categoria.id}">${categoria.detalleCategoria}</option>
+	                        <!--<option value="2">Programación</option>
+	                       	 <option value="3">Historia</option>
+	                        <option value="4">Ciencias</option>
+	                        -->
+	                    	</c:forEach>
+	                    </select>
+
                     <select type="button" name="notificación" id="notificacion" class="btn btn-outline-warning">
                         <option selected>Notificaciones</option>
                     </select>
@@ -108,41 +118,53 @@
         <br>
         <div class="col-md-6 gedf-main">
             <!--- \\\\\\\Post-->
-            <div class="card gedf-card" id="Carta">
-                <div class="card-header"><!--Header de la card de posteo-->
-                    <div class="d-flex justify-content-between align-items-center">
-                        <div class="d-flex justify-content-between align-items-center">
-                            <div class="mr-2"> <!--Aqui se muestra la foto de per4fil de quien publica-->
-                                <img class="rounded-circle" width="45" src="https://picsum.photos/50/50" alt="foto perfil">
-                            </div>
-                            <div class="ml-2"><!--Aqui se muestra los datos de usuario que realizon el posteo-->
-                                <div class="h7 text-muted">Michel Espinoza</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="card-body">
-                    <a class="card-link" href="#"><!--Aqui deberemos hacer referencia a la BD donde tomara las publicaciones-->
-                        <h5 class="card-title">Publicación de prueba</h5>
-                    </a>
-                    <p class="card-text">
-                        Desarrollador de software FullStack.
-                        Entusiasta por trabajar y aprender cosas nuevas en el mundo de la tecnología.
-    
-                        Tengo conocimientos con el software de Spring Boot usando lenguajes como JAVA, JavaScript, HTML y
-                        MySQL.
-    
-                        Soy graduado de Generation como Desarrollador Full Stack JAVA Junior, trabajando con metodología
-                        ágil con software Jira.
-    
-                        Mi GitHub: https://github.com/MichelGeneration
-                    </p>
-                </div>
-                <div class="card-footer">
-                    <a href="#" class="card-link"><i class="fa fa-gittip"></i>Valoración</a>
-                    <a href="#" class="card-link"><i class="fa fa-comment"></i>Commentarios</a>
-                </div>
-            </div>
+            <c:forEach items="${listaPosteos}" var="posteo">
+         
+            		<div class="card gedf-card" id="Carta">
+	            		
+			                <div class="card-header"><!--Header de la card de posteo-->
+			                    <div class="d-flex justify-content-between align-items-center">
+			                        <div class="d-flex justify-content-between align-items-center">
+			                            <div class="mr-2"> <!--Aqui se muestra la foto de per4fil de quien publica-->
+			                                <img class="rounded-circle" width="45" src="https://picsum.photos/50/50" alt="foto perfil">
+			                            </div>
+			                            <div class="ml-2"><!--Aqui se muestra los datos de usuario que realizon el posteo-->
+			                                <div class="h7 text-muted">
+			                                		
+					                                <c:out value="${posteo.usuario.nombre}"></c:out>
+					                                <c:out value="${posteo.usuario.apellido}"></c:out>
+			                                
+			                                </div>
+			                            </div>
+			                        </div>
+			                    </div>
+		                	</div>
+			                    
+		                <div class="card-body">
+		                	<div class="card-link">
+			                	<div class="card-title">
+				                	<c:out value="${posteo.titulo}"></c:out>
+				                </div>
+			                </div>
+		                	
+		                	<div class="card-text">
+		                		<c:out value="${posteo.texto}"></c:out>
+		                	</div>
+		                	
+		                	<div class="card-text">
+		                		<c:out value="${posteo.url}"></c:out>
+		                	</div>
+ 
+		                </div>
+		                <div class="card-footer">
+		                    <a href="#" class="card-link"><i class="fa fa-gittip"></i>Valoración</a>
+		                    <a href="#" class="card-link"><i class="fa fa-comment"></i>Commentarios</a>
+		                </div>
+		                	
+		          </div>
+            </c:forEach>
+    </div>        	
+            
     <!-- Modal -->
     <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" role="dialog" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
@@ -157,35 +179,34 @@
                     <div class="tab-content" id="myTabContent">
                         <div class="tab-pane fade show active" id="posts" role="tabpanel"
                             aria-labelledby="posts-tab">
-                            <form action="/home/post" method="post">
+                            <form action="/home" method="post"> <!--introducimos la rura en la cual generara la accion-->
                                 <div class="mb-3">
-                                    <label for="recipient-name" class="col-form-label">Título:</label>
-                                    <input type="text" class="form-control" id="recipient-name">
+                                    <label for="titulo" class="col-form-label">Título:</label>
+                                    <input type="text" class="form-control" id="titulo" name="titulo">
                                 </div>
                                 <div class="mb-3">
-                                    <label for="message-text" class="col-form-label">Publicación:</label>
-                                    <textarea class="form-control" id="message-text"></textarea>
+                                    <label for="texto" class="col-form-label">Descripción:</label>
+                                    <textarea class="form-control" id="texto" name="texto"></textarea>
                                 </div>
+                                <div class="mb-3">
+                                    <label for="url" class="col-form-label">URL:</label>
+                                    <input type="text" class="form-control" id="url" name="url">
+                                </div>
+                                
+			                    <div class="modal-footer">
+			                         <button type="submit" class="btn btn-primary">Publicar</button>
+			                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+			                    </div>
                             </form>
 
                         </div>
-                        <div class="tab-pane fade" id="images" role="tabpanel" aria-labelledby="images-tab">
-                            <div class="form-group">
-                                <div class="custom-file">
-                                    <input type="file" class="custom-file-input" id="customFile">
-
-                                </div>
-                            </div>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-primary">Publicar</button>
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-
-                        </div>
+                 
                     </div>
                 </div>
             </div>
-
+	</div>
+	</div>
+	</div>
     </main>
 
     <!--agregamos el js jquery-->

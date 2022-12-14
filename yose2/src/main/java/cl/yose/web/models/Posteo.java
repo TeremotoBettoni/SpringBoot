@@ -27,13 +27,11 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import lombok.ToString;
 
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
 @Setter
-@ToString
 @Entity
 @Table(name="posteos")
 public class Posteo {
@@ -47,7 +45,7 @@ public class Posteo {
     private String titulo;
     
     @NotNull
-    @Size(min = 5, max = 40, message = "Error en el ingreso del contenido del posteo")
+    @Size(min = 5, max = 1000, message = "Error en el ingreso del contenido del posteo")
     private String texto;
     
     private String url;

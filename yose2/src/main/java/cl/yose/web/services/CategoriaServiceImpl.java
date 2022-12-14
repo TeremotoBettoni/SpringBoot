@@ -46,5 +46,5 @@ public class CategoriaServiceImpl implements CategoriaServices {
 		
 		return categoriaRepository.findAll();
 	}
-
+	
 }

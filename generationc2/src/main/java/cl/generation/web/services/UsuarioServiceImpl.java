@@ -148,6 +148,11 @@ public class UsuarioServiceImpl implements UsuarioService {
 		}
 		
 	}
+
+	public Usuario obtenerUsuarioEmail(String email) {
+		// aqui ahora aplicamos una query que busque el usuario segun su email aprovechando el codigo usado anteriormente y implementado en repository
+		return usuarioRepository.findByEmail(email);
+	}
 	
 	
 

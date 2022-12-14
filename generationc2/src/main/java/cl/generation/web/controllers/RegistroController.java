@@ -1,5 +1,7 @@
 package cl.generation.web.controllers;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -71,11 +73,24 @@ public class RegistroController {
 	}
 
 	@PostMapping("/login") // para capturar ruta
-	public String ingresoUsuario(@RequestParam("email") String email, @RequestParam("pass") String pass, Model model) {
+	public String ingresoUsuario(@RequestParam("email") String email, @
+			RequestParam("pass") String pass, 
+			Model model, 
+			HttpSession session) { // el HttpSession permite hacer uso de informacion del cache de usuario para hacer uso de los datos
 
 		Boolean resultadoLogin = usuarioServiceImpl.ingresoUsuario(email, pass);
 
 		if (resultadoLogin) { // resultadoLogin == true, login correcto
+
+			//Creamos el metodo para guardar datos de usuario
+			Usuario usuario = usuarioServiceImpl.obtenerUsuarioEmail(email);
+			// Guardamos información en sesion 
+			session.setAttribute("usuarioId", usuario.getId());
+			// y podemos hacer esto con cuelquier informacion del usuario que queramos contener
+			session.setAttribute("usuarioEmail", email);
+			// en el caso de que quiera confirmar el rol en la pagina para limitar los permisos
+			session.setAttribute("usuarioRol", usuario.getRoles());
+			
 			return "redirect:/home";
 		} else { // resultadoLogin == false, login incorrecto
 			model.addAttribute("msgError", "email o password invalidos o no existen");

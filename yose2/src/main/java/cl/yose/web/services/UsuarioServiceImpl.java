@@ -113,5 +113,11 @@ public class UsuarioServiceImpl implements UsuarioServices {
 		}
 		
 	}
+	
+	@Override
+	public Usuario obtenerUsuarioEmail(String email) {
+		
+		return usuarioRepository.findByEmail(email);
+	}
 
 }

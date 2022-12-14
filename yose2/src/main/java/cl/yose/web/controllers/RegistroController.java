@@ -1,5 +1,7 @@
 package cl.yose.web.controllers;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -68,11 +70,19 @@ public class RegistroController {
 		}
 
 		@PostMapping("/login") // para capturar ruta
-		public String ingresoUsuario(@RequestParam("email") String email, @RequestParam("contraseña") String contraseña, Model model) {
+		public String ingresoUsuario(@RequestParam("email") String email, @RequestParam("contraseña") String contraseña, 
+				Model model, 
+				HttpSession session
+				) {
 
 			Boolean resultadoLogin = usuarioServiceImpl.ingresoUsuario(email, contraseña);
-
+			
 			if (resultadoLogin) { // resultadoLogin == true, login correcto
+				Usuario usuario = usuarioServiceImpl.obtenerUsuarioEmail(email);
+				// guardar en cache para uso o identificacion del usuario una vez logueado para las demas funciones
+				session.setAttribute("usuarioId", usuario.getId());
+				session.setAttribute("usuarioEmail", usuario.getEmail());
+				System.out.println("paso Loguion");
 				return "redirect:/home";
 			} else { // resultadoLogin == false, login incorrecto
 				model.addAttribute("msgError", "email o contraseña invalidos");

@@ -21,5 +21,7 @@ public interface UsuarioService {
 	
 	// metodo login
 	public Boolean ingresoUsuario(String email, String password);
+	// metodo para obtener datos de usuario desde cache o navegador
+	public Usuario obtenerUsuarioEmail(String email);
 	
 }
