@@ -82,7 +82,7 @@
                             <input type="password" class="form-control" id="contraseña2" name="contraseña2" placeholder="Confirmar contraseña">
                         </div>
                         <div class="d-grid gap-2 mt-3">
-                            <button type="submit" class="btn btn-outline-warning">INGRESAR</button>
+                            <button type="submit" class="btn btn-outline-warning">REGISTRAR</button>
                         </div>
                     </form>
                     

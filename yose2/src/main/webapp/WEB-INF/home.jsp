@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
     <%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="en">
@@ -94,12 +94,12 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">
-                            <button type="button" class="btn btn-outline-warning">Notificaci髇</button>
+                            <button type="button" class="btn btn-outline-warning">Notificaci贸n</button>
                             </a>
                         </li>
                         <li class="nav-link dropdown-toggle">
                         	<select type="button" name="detalleCategoria" id="categoria" class="btn btn-outline-warning">
-				                 <option value= "0" selected>Categor韆s</option>
+				                 <option value= "0" selected>Categor铆as</option>
 				                 <c:forEach var="categoria" items="${listaCategorias}">
 				                 <option value="${categoria.id}">${categoria.detalleCategoria}</option>
 				                 </c:forEach>
@@ -119,11 +119,11 @@
 	                            </a>
 	                         <ul class="dropdown-menu">
 	                        <li><a class="dropdown-item" href="#">Perfil Usuario</a></li>
-	                        <li><a class="dropdown-item" href="#">Configuraci髇</a></li>
+	                        <li><a class="dropdown-item" href="#">Configuraci贸n</a></li>
 	                        <li>
 	                            <hr class="dropdown-divider">
 	                        </li>
-	                        <li><a class="dropdown-item" href="/registro/logout">Cerar sesi髇</a></li>
+	                        <li><a class="dropdown-item" href="/registro/logout">Cerar sesi贸n</a></li>
 	                    </ul>
 	                    </li>
                     </ul>
@@ -131,7 +131,6 @@
                 </div>
             </div>
         </nav>
-
     </header>
     
     <main>
@@ -179,7 +178,7 @@
  
 		                </div>
 		                <div class="card-footer">
-		                    <a href="#" class="card-link"><i class="fa fa-gittip"></i>Valoraci髇</a>
+		                    <a href="#" class="card-link"><i class="fa fa-gittip"></i>Valoraci贸n</a>
 		                    <a href="#" class="card-link"><i class="fa fa-comment"></i>Commentarios</a>
 		                </div>
 		                	
@@ -192,7 +191,7 @@
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-header">
-                <h1 class="modal-title fs-5" id="staticBackdropLabel">Crea una publicaci髇</h1>
+                <h1 class="modal-title fs-5" id="staticBackdropLabel">Crea una publicaci贸n</h1>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
@@ -203,11 +202,11 @@
                             aria-labelledby="posts-tab">
                             <form action="/home" method="post"> <!--introducimos la rura en la cual generara la accion-->
                                 <div class="mb-3">
-                                    <label for="titulo" class="col-form-label">T韙ulo:</label>
+                                    <label for="titulo" class="col-form-label">T铆tulo:</label>
                                     <input type="text" class="form-control" id="titulo" name="titulo">
                                 </div>
                                 <div class="mb-3">
-                                    <label for="texto" class="col-form-label">Descripci髇:</label>
+                                    <label for="texto" class="col-form-label">Descripci贸n:</label>
                                     <textarea class="form-control" id="texto" name="texto"></textarea>
                                 </div>
                                 <div class="mb-3">
@@ -216,7 +215,7 @@
                                 </div>
                                 
 			                    <div class="modal-footer">
-			                         <button type="submit" class="btn btn-primary">Publicar</button>
+			                         <button type="submit" class="btn btn-primary" href="/home">Publicar</button>
 			                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
 			                    </div>
                             </form>

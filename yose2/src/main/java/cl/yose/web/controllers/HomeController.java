@@ -64,7 +64,6 @@ public class HomeController {
 		String email = (String) session.getAttribute("usuarioEmail");
 		Usuario usuario = usuarioServiceImpl.obtenerUsuarioEmail(email);
 		
-		
 		Posteo posteo= new Posteo();
 		posteo.setTitulo(titulo);
 		posteo.setTexto(texto);
@@ -73,7 +72,7 @@ public class HomeController {
 		
 		posteoServiceImpl.guardarPosteo(posteo);
 		model.addAttribute(posteo);
-		return "home.jsp";
+		return "redirect:/home";
 	}
 	
 	@PostMapping("/categoria")
