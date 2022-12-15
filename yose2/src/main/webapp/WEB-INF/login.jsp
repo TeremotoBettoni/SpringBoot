@@ -43,27 +43,33 @@
     </style>
 </head>
 <body id="fondo">
-    <header class="p-3 text" style="background-color: rgba(0, 0, 0, 0.2);">
-        <div class="container-fluid">
+	
+	
+    <header class="p-3 text-bg-dark">
+        <div class="container">
             <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-                
-                <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-                    <li><a class="navbar-brand" href="#">
-                        <img src="../assets/img/yose.png" alt="Logo" width="40" class="d-inline-block align-text-top"></a></li>
-                    <li><a href="#" class="nav-link px-2 text-secondary">Inicio</a></li>
-                    <li><a href="#" class="nav-link px-2 text-white">Nosotros</a></li>
-                    <li><a href="#" class="nav-link px-2 text-white">Funciones</a></li>
-                    
-                </ul>
-                <div class="text-end">
-                    <button type="button" class="btn btn-outline-light me-2">Registrarse</button>
-                    <button type="button" class="btn btn-warning">Ingresa</button>
-                </div>
+            <a href="/home" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+                <img src="../assets/img/yose.png" alt="yose" width="40">
+            </a>
+            
+            <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+                <li><a href="#" class="nav-link px-2 text-secondary">Inicio</a></li>
+                <li><a href="#" class="nav-link px-2 text-white">Acerca de</a></li>
+                <li><a href="#" class="nav-link px-2 text-white">Nuestro Equipo</a></li>
+                <li><a href="#" class="nav-link px-2 text-white">Funciones</a></li>
+                <li><a href="#" class="nav-link px-2 text-white">Contacto</a></li>
+            </ul>
+    
+            <div class="text-end">
+            	<a class="btn btn-outline-light me-2" href="/registro/login" role="button">Ingreso</a>
+            	<a class="btn btn-warning" href="/registro/usuario" role="button">Registro</a>
             </div>
         </div>
+        </div>
     </header>
+    
     <main>
-        <div class="container-fluid">
+        <div class="container">
         <c:if test="${msgError!=null}">
     		<div class="alert alert-danger" role="alert">
 		  	<c:out value="${msgError}"></c:out>

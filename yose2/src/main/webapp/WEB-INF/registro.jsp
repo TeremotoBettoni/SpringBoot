@@ -20,6 +20,12 @@
             display: inline-block; /*esto es para que se alineen por bloques uno al lado del otro*/
             vertical-align: top;/*esto es para que se alineen segun la linea superior*/
         }
+        .logo{
+            display: block;
+            margin: auto;
+            padding-top: 2%;
+            width: 60px;
+        }
     </style>
 </head>
 <body id="fondo">
@@ -45,8 +51,8 @@
             </ul>
     
             <div class="text-end">
-                <button type="button" class="btn btn-outline-light me-2">Login</button>
-                <button type="button" class="btn btn-warning">Registro</button>
+            	<a class="btn btn-outline-light me-2" href="/registro/login" role="button">Ingreso</a>
+            	<a class="btn btn-warning" href="/registro/usuario" role="button">Registro</a>
             </div>
         </div>
         </div>
@@ -97,28 +103,33 @@
         </div>
     </main>
 
-    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
-        <symbol id="bootstrap" viewBox="0 0 118 94">
-            <title>YoSe</title>
-            <path fill-rule="evenodd" clip-rule="evenodd" d="M24.509 0c-6.733 0-11.715 5.893-11.492 12.284.214 6.14-.064 14.092-2.066 20.577C8.943 39.365 5.547 43.485 0 44.014v5.972c5.547.529 8.943 4.649 10.951 11.153 2.002 6.485 2.28 14.437 2.066 20.577C12.794 88.106 17.776 94 24.51 94H93.5c6.733 0 11.714-5.893 11.491-12.284-.214-6.14.064-14.092 2.066-20.577 2.009-6.504 5.396-10.624 10.943-11.153v-5.972c-5.547-.529-8.934-4.649-10.943-11.153-2.002-6.484-2.28-14.437-2.066-20.577C105.214 5.894 100.233 0 93.5 0H24.508zM80 57.863C80 66.663 73.436 72 62.543 72H44a2 2 0 01-2-2V24a2 2 0 012-2h18.437c9.083 0 15.044 4.92 15.044 12.474 0 5.302-4.01 10.049-9.119 10.88v.277C75.317 46.394 80 51.21 80 57.863zM60.521 28.34H49.948v14.934h8.905c6.884 0 10.68-2.772 10.68-7.727 0-4.643-3.264-7.207-9.012-7.207zM49.948 49.2v16.458H60.91c7.167 0 10.964-2.876 10.964-8.281 0-5.406-3.903-8.178-11.425-8.178H49.948z"></path>
-        </symbol>
+    <footer class="text-center text-lg-start" id="fondoHF">
+        <div class="container-fluid">
+                <img src="../assets/img/LogoYoSe.png" class="logo" alt="LogoYoSe" width="40">
+                <div class="container d-flex justify-content-center py-5">
+                    <a href="https://es-la.facebook.com/" target="_blank">
+                        <img src="../assets/img/facebook.png" width="40" alt="facebook">
+                    </a>
+                    <a href="https://twitter.com/?lang=es" target="_blank">
+                        <img src="../assets/img/twitter.png" width="40" alt="twitter">
+                    </a>
+                    <a href="https://www.instagram.com/" target="_blank">
+                        <img src="../assets/img/instagram.png" width="40" alt="instagram">
+                    </a>            
+                    <a href="https://www.youtube.com/" target="_blank">
+                        <img src="../assets/img/youtube.png" width="40" alt="youtube">
+                    </a>
+                </div>
+        </div>
+                <!-- Copyright -->
+                <div class="text-center text-white p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+                    © 2022 Copyright:
+                    <a class="text-white" href="">YoSe.com</a>
+                    <button onclick="topFunction()" id="myBtn" title="Go to top">Ir arriba</button>
+                </div>
+            <!-- Copyright -->
         
-    </svg>
-    <div class="container">
-        <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
-        <p class="col-md-4 mb-0 text-muted">&copy; 2022 Company, Inc</p>
-        <a href="/" class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
-            <img src="../assets/img/yose.png" alt="yose" width="40">
-        </a>
-        <ul class="nav col-md-4 justify-content-end">
-            <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Home</a></li>
-            <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Features</a></li>
-            <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Pricing</a></li>
-            <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">FAQs</a></li>
-            <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">About</a></li>
-        </ul>
-        </footer>
-    </div>
+    </footer>
     
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
