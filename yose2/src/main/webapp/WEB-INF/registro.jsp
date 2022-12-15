@@ -26,6 +26,13 @@
             padding-top: 2%;
             width: 60px;
         }
+        #myBtn {
+            right: 30px;
+            background-color:#FFAC31; /* Set a background color */
+            color: black; /* Text color */
+            cursor: pointer;
+            border-radius: 10px;
+        }
     </style>
 </head>
 <body id="fondo">
@@ -43,7 +50,7 @@
             </a>
             
             <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-                <li><a href="#" class="nav-link px-2 text-secondary">Inicio</a></li>
+                <li><a href="/" class="nav-link px-2 text-secondary">Inicio</a></li>
                 <li><a href="#" class="nav-link px-2 text-white">Acerca de</a></li>
                 <li><a href="#" class="nav-link px-2 text-white">Nuestro Equipo</a></li>
                 <li><a href="#" class="nav-link px-2 text-white">Funciones</a></li>
