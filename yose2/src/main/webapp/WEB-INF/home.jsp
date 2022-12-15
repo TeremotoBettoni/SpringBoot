@@ -111,7 +111,7 @@
                         <input name="marca" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
                         <button class="btn btn-outline-warning" type="submit">Buscar</button>
                     </form>
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <ul class="navbar-nav mb-2 mb-lg-0 mx-2">
 	                    <li class="nav-item dropdown">
 	                            <a class="btn btn-warning" href="#" role="button" data-bs-toggle="dropdown"
 	                                aria-expanded="false">
@@ -150,7 +150,7 @@
 			                                <img class="rounded-circle" width="45" src="https://picsum.photos/50/50" alt="foto perfil">
 			                            </div>
 			                            <div class="ml-2"><!--Aqui se muestra los datos de usuario que realizon el posteo-->
-			                                <div class="h7 text-muted">
+			                                <div class="h5 text-muted">
 			                                		
 					                                <c:out value="${posteo.usuario.nombre}"></c:out>
 					                                <c:out value="${posteo.usuario.apellido}"></c:out>
@@ -164,7 +164,7 @@
 		                <div class="card-body">
 		                	<div class="card-link">
 			                	<div class="card-title">
-				                	<c:out value="${posteo.titulo}"></c:out>
+				                	<h5><c:out value="${posteo.titulo}"></c:out></h5>
 				                </div>
 			                </div>
 		                	
@@ -173,7 +173,9 @@
 		                	</div>
 		                	
 		                	<div class="card-text">
-		                		<c:out value="${posteo.url}"></c:out>
+		                		<a href="${posteo.url}">
+		                			<c:out value="${posteo.url}"></c:out>
+		                		</a>
 		                	</div>
  
 		                </div>
