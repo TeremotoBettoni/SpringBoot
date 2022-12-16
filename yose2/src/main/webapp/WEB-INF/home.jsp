@@ -150,13 +150,17 @@
 			                                <img class="rounded-circle" width="45" src="https://picsum.photos/50/50" alt="foto perfil">
 			                            </div>
 			                            <div class="ml-2"><!--Aqui se muestra los datos de usuario que realizon el posteo-->
+			                                
 			                                <div class="h5 text-muted">
 			                                		
 					                                <c:out value="${posteo.usuario.nombre}"></c:out>
 					                                <c:out value="${posteo.usuario.apellido}"></c:out>
 			                                
 			                                </div>
-			                                <div class="h5 text-muted">
+			                            </div>
+			                            <div class="ml-2"><!--Aqui se muestra los datos de categoría el posteo-->
+			                                
+			                                <div class="h5 text-muted" style="margin-left: 370px;">
 			                                		
 					                                <c:out value="${posteo.categoria.detalleCategoria}"></c:out>
 			                                
