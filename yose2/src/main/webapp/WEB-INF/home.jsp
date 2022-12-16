@@ -156,6 +156,11 @@
 					                                <c:out value="${posteo.usuario.apellido}"></c:out>
 			                                
 			                                </div>
+			                                <div class="h5 text-muted">
+			                                		
+					                                <c:out value="${posteo.categoria.detalleCategoria}"></c:out>
+			                                
+			                                </div>
 			                            </div>
 			                        </div>
 			                    </div>
@@ -203,6 +208,14 @@
                         <div class="tab-pane fade show active" id="posts" role="tabpanel"
                             aria-labelledby="posts-tab">
                             <form action="/home" method="post"> <!--introducimos la rura en la cual generara la accion-->
+                                <div class="mb-3">
+                                    <select name="detalleCategoria" id="categoria" class="form-select">
+						                 <option value= "0" selected>Categorías</option>
+						                 <c:forEach var="categoria" items="${listaCategorias}">
+						                 <option value="${categoria.id}">${categoria.detalleCategoria}</option>
+						                 </c:forEach>
+						           </select>
+                                </div>
                                 <div class="mb-3">
                                     <label for="titulo" class="col-form-label">Título:</label>
                                     <input type="text" class="form-control" id="titulo" name="titulo">

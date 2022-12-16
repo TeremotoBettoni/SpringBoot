@@ -55,16 +55,20 @@ public class HomeController {
 	}
 	
 	@PostMapping("")
-	public String guardarPosteo(@RequestParam("titulo") String titulo, 
+	public String guardarPosteo(@RequestParam("titulo") String titulo,
 			@RequestParam("texto") String texto,
 			@RequestParam("url") String url,
+			@RequestParam ("detalleCategoria") Long id,
 			Model model,
 			HttpSession session
 			) {
 		String email = (String) session.getAttribute("usuarioEmail");
 		Usuario usuario = usuarioServiceImpl.obtenerUsuarioEmail(email);
 		
+		Categoria categoria = categoriaServiceImpl.obtenerCategoria(id);
+		
 		Posteo posteo= new Posteo();
+		posteo.setCategoria(categoria);
 		posteo.setTitulo(titulo);
 		posteo.setTexto(texto);
 		posteo.setUrl(url);
