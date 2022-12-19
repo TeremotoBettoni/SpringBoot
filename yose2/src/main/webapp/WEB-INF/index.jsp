@@ -12,6 +12,33 @@
         #fondo{
             background-color: rgb(29, 34, 49);
         }
+        #inicio{
+            position: relative;
+            width: 100%;
+            height: 700px;
+            display: flex; 
+            justify-content: space-between;
+        }
+        .textoInicio{
+            color:white;
+            position: relative;
+        }
+        #texto1{
+            width: 260px;
+            margin: 100px;
+        }
+        #texto2{
+            width: 300px;
+            margin: 100px;
+            margin-top: 400px;
+        }
+        #bg-image{
+            opacity: 0.6;
+            position: absolute;
+            object-fit: cover;
+            width: 100%;
+            height: -webkit-fill-available;
+        }
         .letras{
             color: white;
         }
@@ -28,6 +55,11 @@
             cursor: pointer;
             border-radius: 10px;
         }
+        #fondoContacto{
+            background-image: url("assets/img/pexels-pixabay-416947.jpg");
+            opacity: 0.7;
+        }
+
     </style>
 </head>
 <body id="fondo">
@@ -39,7 +71,7 @@
             </a>
             
             <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-                <li><a href="/" class="nav-link px-2 text-secondary">Inicio</a></li>
+                <li><a href="#" class="nav-link px-2 text-secondary">Inicio</a></li>
                 <li><a href="#" class="nav-link px-2 text-white">Acerca de</a></li>
                 <li><a href="#" class="nav-link px-2 text-white">Nuestro Equipo</a></li>
                 <li><a href="#" class="nav-link px-2 text-white">Funciones</a></li>
@@ -55,26 +87,72 @@
     </header>
 
     <main>
-        <div class="container"> <!--Seccion de vista inicial-->
-            <div class="row">
-                <p>Seccion de vista inicial</p>
+        <div class="container-fluid"> <!--Seccion de vista inicial-->
+            <div id="inicio"> <!--Seccion de vista inicial-->
+                <img src="../assets/img/Videopromocional.gif" alt="Logo Yose" id="bg-image" />
+                <div class="col-md-3">
+                    <h1 class="textoInicio" id= "texto1">Red de aprendizaje colaborativo</h1>
+                </div>
+                <div class="col-md-3">
+                    <h2 class="textoInicio" id= "texto2">Aprendemos y crecemos juntos, apoyándonos los unos a los otros</h2>
+                </div>
+                
+                
             </div>
-        </div>
-
         </div>
         <div class="container"> <!--Seccion de vista carrusel-->
             <div class="row">
-                <p>Seccion de vista carrusel</p>
+                
             </div>
         </div>
         <div class="container"> <!--Seccion de vista nuestro equipo-->
             <div class="row">
-                <p>Seccion de vista nuestro equipo</p>
+                
             </div>
         </div>
-        <div class="container"> <!--Seccion de vista contacto-->
-            <div class="row">
-                <p>Seccion de vista contacto</p>
+        <div class="container-fluid" id="fondoContacto"> <!--Seccion de vista contacto-->
+            <div class="row" style="display: flex; justify-content: center;">
+                <div class="col-md-4 my-5">
+                    <h3 style="color: white; margin-top: 15%;">
+                        Si necesitas contactarnos para hacer alguna consulta 
+                        o simplemente para dejar tu comentario, 
+                        por favor sientete libre de hacerlo
+                    </h3>
+                    <h5 style="color: white; margin-left: 10px; margin-top: 4px;"><img src="assets/img/iconocorreo.png" alt="Iconoi Correo" style="width: 40px;"> yoselocomparto@gmail.com</h5>
+                </div>
+                <div class="col-md-4 my-5">
+                    <div class="card text-center" style="background-color: #FFAC31;">
+                        <div class="card-header">
+                            CONTACTO
+                        </div>
+                        <div class="card-body">
+                                <form>
+                                    <div class="input-group">
+                                        <span class="input-group-text">Nombre de contacto</span>
+                                        <input type="text" aria-label="First name" class="form-control">
+                                    </div>
+                                    <br>
+                                    <div class="input-group">
+                                        <span class="input-group-text">Email</span>
+                                        <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+                                    </div>
+                                    <div id="emailHelp" class="form-text">Nunca compartiremos su correo electrónico con nadie más.</div>
+                                    <br>
+                                    <div class="mb-3">
+                                        <textarea class="form-control" rows="1" placeholder="Asunto"></textarea>
+                                    </div>
+                                    <div class="mb-3">
+                                        <textarea class="form-control" rows="3" placeholder="Mensaje"></textarea>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="formFile" class="form-label"></label>
+                                        <input class="form-control" type="file" id="formFile">
+                                    </div>
+                                    <a href="#" class="btn btn-dark">Enviar</a>
+                                </form>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </main>
