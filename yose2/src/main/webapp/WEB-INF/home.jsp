@@ -158,14 +158,6 @@
                                                 
                                                 </div>
                                             </div>
-                                            <div class="ml-2"><!--Aqui se muestra los datos de categoría el posteo-->
-                                                
-                                                <div class="h5 text-muted" style="">
-                                                        
-                                                        <c:out value="${posteo.categoria.detalleCategoria}"></c:out>
-                                                
-                                                </div>
-                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -174,6 +166,14 @@
                                 <div class="card-link">
                                     <div class="card-title">
                                         <h5><c:out value="${posteo.titulo}"></c:out></h5>
+                                    <div class="ml-2"><!--Aqui se muestra los datos de categoría el posteo-->
+                                                
+                                                <div class="h6 text-muted" style="">
+                                                        
+                                                        <c:out value="${posteo.categoria.detalleCategoria}"></c:out>
+                                                
+                                                </div>
+                                    </div>
                                     </div>
                                 </div>
                                 

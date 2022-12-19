@@ -3,6 +3,7 @@ package cl.yose.web.services;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import cl.yose.web.models.Posteo;
@@ -62,7 +63,7 @@ public class PosteoServiceImpl implements PosteoService {
 
 	public List<Posteo> listaPosteo() {
 		
-		return posteoRepository.findAll();
+		return posteoRepository.findAll(Sort.by(Sort.Direction.DESC,"id"));
 	}
 	
 	
