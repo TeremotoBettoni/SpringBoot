@@ -1,8 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-    <fullyQualifiedTypeName name="cl.securityapp.web.models.User"/>
-    <fullyQualifiedTypeName name="org.springframework.data.repository.CrudRepository"/>
-    <fullyQualifiedTypeName name="cl.yose.web.repositories.UsuarioRepository"/>
     <fullyQualifiedTypeName name="cl.yose.web.models.UserDTO"/>
     <fullyQualifiedTypeName name="java.util.Optional"/>
     <fullyQualifiedTypeName name="org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter"/>
@@ -23,7 +20,6 @@
     <fullyQualifiedTypeName name="cl.yose.web.models.ValoracionComentario"/>
     <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestBody"/>
     <fullyQualifiedTypeName name="lombok.Getter"/>
-    <fullyQualifiedTypeName name="cl.generation.web.models.Usuario"/>
     <fullyQualifiedTypeName name="cl.generation.web.services.UsuarioServiceImpl"/>
     <fullyQualifiedTypeName name="java.lang.String"/>
     <fullyQualifiedTypeName name="org.mindrot.jbcrypt.BCrypt"/>
@@ -34,20 +30,14 @@
     <fullyQualifiedTypeName name="org.apache.coyote.ajp.AbstractAjpProtocol"/>
     <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.GetMapping"/>
     <fullyQualifiedTypeName name="org.springframework.stereotype.Controller"/>
-    <fullyQualifiedTypeName name="cl.yose.web.models.Usuario"/>
     <fullyQualifiedTypeName name="org.springframework.ui.Model"/>
     <fullyQualifiedTypeName name="cl.generation.web.services.AutoService"/>
     <fullyQualifiedTypeName name="cl.generation.web.services.AutoServiceImpl"/>
     <fullyQualifiedTypeName name="cl.generation.web.models.Auto"/>
     <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.PostMapping"/>
-    <fullyQualifiedTypeName name="cl.yose.web.models.Posteo"/>
-    <fullyQualifiedTypeName name="cl.yose.web.services.PosteoServiceImpl"/>
     <fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
-    <fullyQualifiedTypeName name="cl.yose.web.services.UsuarioServiceImpl"/>
     <fullyQualifiedTypeName name="cl.yose.web.services.CategoriaServiceImpl"/>
     <fullyQualifiedTypeName name="cl.yose.web.models.Categoria"/>
-    <fullyQualifiedTypeName name="java.util.ArrayList"/>
-    <fullyQualifiedTypeName name="javax.servlet.http.HttpSession"/>
     <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestMapping"/>
     <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.CrossOrigin"/>
     <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.ResponseBody"/>
@@ -56,8 +46,18 @@
     <fullyQualifiedTypeName name="org.springframework.data.domain.Sort"/>
     <fullyQualifiedTypeName name="org.springframework.data.domain.Sort.Direction"/>
     <fullyQualifiedTypeName name="java.lang.Override"/>
-    <fullyQualifiedTypeName name="java.util.List"/>
     <fullyQualifiedTypeName name="org.springframework.data.jpa.repository.Query"/>
     <fullyQualifiedTypeName name="cl.yose.web.services.PosteoService"/>
     <fullyQualifiedTypeName name="org.springframework.stereotype.Service"/>
+    <fullyQualifiedTypeName name="cl.yose.web.models.Usuario"/>
+    <fullyQualifiedTypeName name="javax.servlet.http.HttpSession"/>
+    <fullyQualifiedTypeName name="cl.yose.web.models.Posteo"/>
+    <fullyQualifiedTypeName name="cl.yose.web.services.UsuarioServiceImpl"/>
+    <fullyQualifiedTypeName name="cl.yose.web.services.PosteoServiceImpl"/>
+    <fullyQualifiedTypeName name="com.fasterxml.jackson.annotation.JsonIgnore"/>
+    <fullyQualifiedTypeName name="cl.generation.web.models.Usuario"/>
+    <fullyQualifiedTypeName name="cl.generation.web.models.Venta"/>
+    <fullyQualifiedTypeName name="cl.generation.web.dto.AutoDTO"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
 </qualifiedTypeNameHistroy>

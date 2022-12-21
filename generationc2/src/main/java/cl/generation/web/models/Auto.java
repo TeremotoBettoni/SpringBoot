@@ -27,7 +27,8 @@ public class Auto {
 	private String marca;
 	private String color;
 	
-	@OneToOne(fetch = FetchType.EAGER)
+	@JsonIgnore
+	@OneToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name="usuario_id")
 	private Usuario usuario;
 	

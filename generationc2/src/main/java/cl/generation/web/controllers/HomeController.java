@@ -65,6 +65,7 @@ public class HomeController {
 	}
 	
 	
+	
 	@PostMapping("/nav")
 	public String filtarNav(@RequestParam("marca") String marca, Model model) { // el request se especifica el name del select en jsp
 		List<Auto> listaAutos = new ArrayList<Auto>(); // creamos lista vacia

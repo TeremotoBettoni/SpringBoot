@@ -1,10 +1,12 @@
 package cl.generation.web.services;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import cl.generation.web.dto.AutoDTO;
 import cl.generation.web.models.Auto;
 import cl.generation.web.repositories.AutoRepository;
 
@@ -40,6 +42,27 @@ public class AutoServiceImpl implements AutoService{
 		return autoRepository.findAllByUsuario(nombre);
 	}
 	
+	public void eliminarAuto(Long id) {
+		// TODO Auto-generated method stub
+		autoRepository.deleteById(id);
 
+	}
+	
+	public List<AutoDTO> listarAutos() {
+		List<Auto> autos = autoRepository.findAll();
+		List<AutoDTO> autosDTO = new ArrayList<AutoDTO>();
+		for (Auto auto : autos) {
+			AutoDTO autoDTO = new AutoDTO();
+			autoDTO.setId(auto.getId());
+			autoDTO.setColor(auto.getColor());
+			autoDTO.setMarca(auto.getMarca());
+			autoDTO.setNombreUser(auto.getUsuario().getNombre());
+			autoDTO.setApellidoUser(auto.getUsuario().getApellido());
+			autosDTO.add(autoDTO);
+			
+		}
+		return autosDTO;
+	}
+	
 
 }
