@@ -67,7 +67,7 @@
 </head>
 <script>
 	function filtraPosteo() {
-	    document.getElementById("categoriaSeleccinada").value = "${posteo.id}";
+	    document.getElementById("categoriaSeleccionada").value = "${categoria.id}";
 	}
 	</script>
 <body id="fondo">
@@ -96,12 +96,16 @@
                             </a>
                         </li>
                         <li class="nav-link dropdown-toggle">
-                        	<select type="button" name="detalleCategoria" id="categoria" class="btn btn-outline-warning">
+                        <form action="/home/categoria" method="post">
+                        	<select name="categoriaSeleccionada" id="categoriaSeleccionada" class="btn btn-outline-warning">
 				                <option value= "0" selected>Categorías</option>
 				                <c:forEach var="categoria" items="${listaCategorias}">
 				                <option value="${categoria.id}">${categoria.detalleCategoria}</option>
 				                </c:forEach>
 				            </select>
+				        <button type="submit" class="btn btn-outline-secondary">Filtrar</button>
+            			</form>
+				            
                         </li>
                             
                     </ul>
@@ -140,6 +144,7 @@
             <div class="col-md-6 gedf-main">
                 <!--- \\\\\\\Post-->
                 <c:forEach items="${listaPosteos}" var="posteo">
+                	<c:if test="${posteo.categoria==categoriaSeleccionada}">
                         <div class="card gedf-card" id="Carta">
                             
                                 <div class="card-header"><!--Header de la card de posteo-->
@@ -193,6 +198,7 @@
                             </div>
                                 
                     </div>
+                    </c:if>
                 </c:forEach>
             </div> 
             <div class="col-md-3 gedf-main">

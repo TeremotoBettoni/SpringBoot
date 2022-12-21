@@ -12,5 +12,6 @@ public interface PosteoService {
 	public String actializarPosteo(Posteo posteo);
 	public Posteo obtenerPosteo(Long id);
 	public List<Posteo> listaPosteo();
+	List<Posteo> findAllByCategoriaId(Long id);
 
 }
