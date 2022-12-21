@@ -40,6 +40,7 @@
                 padding: 20px 0px;
             }
         /*termino Vista inicial*/
+        /* estilos footer*/
         .letras{
             color: white;
         }
@@ -119,7 +120,124 @@
 		    filter: none;
 		    -webkit-filter: grayscale(0);
 		}
-
+		/*Estilos carrucel*/
+		* {
+		    margin: 0;
+		    padding: 0;
+		}
+		
+		.bodyCarrusel {
+		    padding: 20px;
+		    user-select: none;
+		    }
+		
+		[type=radio] {
+		    display: none;
+		}
+		
+		#slider {
+		    height: 35vw;
+		    position: relative;
+		    perspective: 1000px;
+		    transform-style: preserve-3d;
+		}
+		
+		#slider label {
+		    margin: auto;
+		    width: 60%;
+		    height: 100%;
+		    border-radius: 4px;
+		    position: absolute;
+		    left: 0; right: 0;
+		    cursor: pointer;
+		    transition: transform 0.4s ease;
+		}
+		
+		#s1:checked ~ #slide4, #s2:checked ~ #slide5,
+		#s3:checked ~ #slide1, #s4:checked ~ #slide2,
+		#s5:checked ~ #slide3 {
+		    box-shadow: 0 1px 4px 0 rgba(0,0,0,.37);
+		    transform: translate3d(-30%,0,-200px);
+		}
+		
+		#s1:checked ~ #slide5, #s2:checked ~ #slide1,
+		#s3:checked ~ #slide2, #s4:checked ~ #slide3,
+		#s5:checked ~ #slide4 {
+		    box-shadow: 0 6px 10px 0 rgba(0,0,0,.3), 0 2px 2px 0 rgba(0,0,0,.2);
+		    transform: translate3d(-15%,0,-100px);
+		}
+		
+		#s1:checked ~ #slide1, #s2:checked ~ #slide2,
+		#s3:checked ~ #slide3, #s4:checked ~ #slide4,
+		#s5:checked ~ #slide5 {
+		    box-shadow: 0 13px 25px 0 rgba(0,0,0,.3), 0 11px 7px 0 rgba(0,0,0,.19);
+		    transform: translate3d(0,0,0);
+		}
+		
+		#s1:checked ~ #slide2, #s2:checked ~ #slide3,
+		#s3:checked ~ #slide4, #s4:checked ~ #slide5,
+		#s5:checked ~ #slide1 {
+		    box-shadow: 0 6px 10px 0 rgba(0,0,0,.3), 0 2px 2px 0 rgba(0,0,0,.2);
+		    transform: translate3d(15%,0,-100px);
+		}
+		
+		#s1:checked ~ #slide3, #s2:checked ~ #slide4,
+		#s3:checked ~ #slide5, #s4:checked ~ #slide1,
+		#s5:checked ~ #slide2 {
+		    box-shadow: 0 1px 4px 0 rgba(0,0,0,.37);
+		    transform: translate3d(30%,0,-200px);
+		}
+		
+		.color_textito{
+		    color: white;
+		}
+		.color-de-fondo{
+		    background-color: #1D2231;
+		}
+		.centrar-texto-carru{
+		    text-align: center;
+		    position: absolute;
+		    top: 10px;
+		    left: 10px;
+		    position: absolute;
+		    top: 80%;
+		    left: 50%;
+		    transform: translate(-50%, -50%);
+		    
+		}
+		/*Scroll para  redireccionar desde el header a las secciones*/
+		:root {
+		  scroll-behavior: smooth;
+		}
+		
+		body {
+		    margin: 1rem;
+		}
+		
+		.stt {
+		  position: fixed;
+		  right: 1rem;
+		  bottom: 1rem;
+		  width: 3rem;
+		  height: 3rem;
+		  border-radius: 50%;
+		  background: #FFAC31 url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 384 512'%3E%3Cpath fill='currentColor' d='M352 352c-8.188 0-16.38-3.125-22.62-9.375L192 205.3l-137.4 137.4c-12.5 12.5-32.75 12.5-45.25 0s-12.5-32.75 0-45.25l160-160c12.5-12.5 32.75-12.5 45.25 0l160 160c12.5 12.5 12.5 32.75 0 45.25C368.4 348.9 360.2 352 352 352z'%3E%3C/path%3E%3C/svg%3E") center no-repeat;
+		  box-shadow: 0 0.25rem 0.5rem 0 gray;
+		  opacity: 0.7;
+		}
+		
+		.stt:hover {
+		    transform: scale(1.2)
+		}
+		
+		.stt:focus {
+		  opacity: 0.9;
+		}
+		
+		.stt:active {
+		  opacity: 1;
+		}
+		
     </style>
 </head>
 <body id="fondo">
@@ -135,10 +253,10 @@
 	            <div class="collapse navbar-collapse" id="navbarSupportedContent">
 		            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
 		                <li class="nav-item"><a href="/" class="nav-link px-2 text-secondary">Inicio</a></li>
-		                <li class="nav-item"><a href="#" class="nav-link px-2 text-white">Acerca de</a></li>
-		                <li class="nav-item"><a href="#" class="nav-link px-2 text-white">Nuestro Equipo</a></li>
-		                <li class="nav-item"><a href="#" class="nav-link px-2 text-white">Funciones</a></li>
-		                <li class="nav-item"><a href="#" class="nav-link px-2 text-white">Contacto</a></li>
+		                <li class="nav-item"><a href="#AcercaDe" class="nav-link px-2 text-white">Acerca de</a></li>
+		                <li class="nav-item"><a href="#Funciones" class="nav-link px-2 text-white">Funciones</a></li>
+		                <li class="nav-item"><a href="#NuestroEquipo" class="nav-link px-2 text-white">Nuestro Equipo</a></li>
+		                <li class="nav-item"><a href="#Contacto" class="nav-link px-2 text-white">Contacto</a></li>
 		            </ul>
 		            
 		            <div class="d-flex">
@@ -167,74 +285,60 @@
                 </div>
             </div>
         </div>
-        <div class="container-fluid"> <!--Seccion de vista carrusel-->
-            <div class="row">
-                    <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="false">
-                    <div class="carousel-indicators">
-                        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                        <button type="button" data-bs-target="#carouselExampleCaptions"     data-bs-slide-to="1" aria-label="Slide 2"></button>
-                        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                        <button type="button" data-bs-target="#carouselExampleCaptions"     data-bs-slide-to="3" aria-label="Slide 4"></button>
-                        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="4" aria-label="Slide 5"></button>
-                        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="5" aria-label="Slide 6"></button>
-                    </div>
-                    <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            <img src="../assets/img/1.png" class="d-block w-100" alt="...">
-                            <div class="carousel-caption d-none d-md-block">
-                            <h2 class="sombra-texto">Conexiones</h2>
-                            <h4>Añade detalles respecto a tu rubro de trabajo y crea conexiones.</h4>
-                            </div>
-                        </div>
-                        <div class="carousel-item">
-                        <img src="../assets/img/2.png" class="d-block w-100" alt="...">
-                        <div class="carousel-caption d-none d-md-block">
-                            <h2 class="sombra-texto">Registrate</h2>
-                            <h4>Añade detalles respecto a tu
-                                rubro de trabajo y crea conexiones.</h4>
-                        </div>
-                        </div>
-                        <div class="carousel-item">
-                            <img src="../assets/img/3.png" class="d-block w-100 sombra-imagen" alt="...">
-                            <div class="carousel-caption d-none d-md-block">
-                            <h2 class="sombra-texto">Crea una pregunta pública</h2>
-                            <h4>¿Tienes una consulta? Haz una pregunta 
-                                a la comunidad de expertos para que te
-                                puedan ayudar.</h4>
-                            </div>
-                        </div>
-                        <div class="carousel-item active">
-                            <img src="../assets/img/4.png" class="d-block w-100 sombra-imagen" alt="...">
-                            <div class="carousel-caption d-none d-md-block">
-                            <h2 class="sombra-texto">Ingresa a las categorías de consultas</h2>
-                            <h4>Ingresa a las consultas que otros usuarios han iniciado. ¡Se el primero en responder!</h4>
-                            </div>
-                        </div>
-                        <div class="carousel-item">
-                        <img src="../assets/img/5.png" class="d-block w-100 sombra-imagen" alt="...">
-                        <div class="carousel-caption d-none d-md-block">
-                            <h2 class="sombra-texto">Guarda referencias de informacion util </h2>
-                            <h4>Si algun usuario comparte información, metodologias, o investigaciones, podras guardarlo para futuras referencias </h4>
-                        </div>
-                        </div>
-                        <div class="carousel-item">
-                            <img src="../assets/img/6.png" class="d-block w-100 sombra-imagen" alt="...">
-                            <div class="carousel-caption d-none d-md-block">
-                            <h2 class="sombra-texto">Comparte tus colaboraciones</h2>
-                            <h4>Si algun usuario comparte información, metodologias, o investigaciones, podras guardarlo para futuras referencias </h4>
-                            </div>
-                        </div>
-                    </div>
-                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Previous</span>
-                    </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Next</span>
-                    </button>
-                </div>
+        <div class="bodyCarrusel"> <!--Seccion de vista carrusel-->
+        	<div class="scroll-container">
+            <h1 style="text-align: center;" class="color_textito" id="Funciones">Funciones</h1>
             </div>
+			<br><br>
+			<section id="slider" >
+			    <input type="radio" name="slider" id="s1">
+			    <input type="radio" name="slider" id="s2">
+			    <input type="radio" name="slider" id="s3" checked>
+			    <input type="radio" name="slider" id="s4">
+			    <input type="radio" name="slider" id="s5">
+			
+			    <label for="s1" id="slide1">
+			        <img src="../assets/img/1.png" height="100%" width="100%">
+			        <div class="color_textito centrar-texto-carru">
+			            <h1>Conexiones</h1>
+			            <h4>Crea vínculos con otros usuarios</h4> 
+			            <h4>para compartir conocimiento.</h4>
+			        </div>
+			    </label>
+			    <label for="s2" id="slide2">
+			            <img src="../assets/img/3.png" height="100%" width="100%">
+			            <div class="color_textito centrar-texto-carru">
+			                <h1>¿Tienes una consulta?</h1>
+			                <h4>Haz una pregunta a la comunidad de YoSe!</h4>
+			            </div>
+			    </label>
+			    <label for="s3" id="slide3">
+			            <img src="../assets/img/4.png" height="100%" width="100%">
+			            <div class="color_textito centrar-texto-carru">
+			                <h1>Filtra por Categorías</h1>
+			                <h4>Ve las públicaciones de otros usuarios</h4> 
+			                <h4>¡Se el primero en responder!</h4>
+			            </div>
+			    </label>
+			    <label for="s4" id="slide4">
+			            <img src="../assets/img/5.png" height="100%" width="100%">
+			            <div class="color_textito centrar-texto-carru">
+			                <h1>Guarda información útil</h1>
+			                <h4>Si otro usuario postea algo interesante</h4> 
+			                <h4>guarda esa referencia para el futuro.</h4>
+			            </div>
+			    </label>
+			    <label for="s5" id="slide5">
+			            <img src="../assets/img/6.png" height="100%" width="100%">
+			            <div class="color_textito centrar-texto-carru">
+			                <h1>Comparte información</h1>
+			                <h4>Aporta conocimiento a la comunidad.</h4> 
+			                <h4>Si YO SE comparto</h4>
+			            </div>
+			    </label>
+			
+			</label>
+			</section>
         </div>
         <div class="container"> <!--Seccion de vista nuestro equipo-->
             <div class="row">
@@ -243,8 +347,10 @@
                         <div class="container">
                             <div class="row justify-content-center mb-4">
                                 <div class="col-md-7 text-center">
-                                    <h1 class="mb-3"><b>Sobre nuestro equipo</b></h1>
-
+                                <div class="scroll-container">
+                                
+                                    <h1 class="mb-3" id="NuestroEquipo"><b>Sobre nuestro equipo</b></h1>
+								</div>
                                 </div>
                             </div>
                             <div class="row">
@@ -398,14 +504,17 @@
         </div>
         <div class="container-fluid" id="fondoContacto"> <!--Seccion de vista contacto-->
             <div class="row" style="display: flex; justify-content: center;">
-                <div class="col-md-4 my-5">
+            
+                <div class="col-md-4 my-5" >
+                	<div class="scroll-container" id="Contacto">
                     <h3 style="color: white; margin-top: 15%;">
                         Si necesitas contactarnos para hacer alguna consulta 
                         o simplemente para dejar tu comentario, 
                         por favor sientete libre de hacerlo
                     </h3>
                     <h5 style="color: white; margin-left: 10px; margin-top: 4px;"><img src="assets/img/iconocorreo.png" alt="Iconoi Correo" style="width: 40px;"> yoselocomparto@gmail.com</h5>
-                </div>
+                	</div>
+             </div>
                 <div class="col-md-4 my-5">
                     <div class="card text-center" style="background-color: #FFAC31;">
                         <div class="card-header">
@@ -464,6 +573,7 @@
                 <!-- Copyright -->
                 <div class="text-center text-white p-3" style="background-color: rgba(0, 0, 0, 0.2);">
                     © 2022 Copyright:
+                    <a href='#' class="stt" title="Ir Arriba"></a>
                     <a class="text-white" href="">YoSe.com</a>
                     <button onclick="topFunction()" id="myBtn" title="Go to top">Ir arriba</button>
                 </div>

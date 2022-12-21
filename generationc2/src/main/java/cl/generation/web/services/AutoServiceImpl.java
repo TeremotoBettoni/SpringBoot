@@ -34,6 +34,11 @@ public class AutoServiceImpl implements AutoService{
 		// genero la busqueda de auto por marca
 		return autoRepository.findByMarca(marca);
 	}
+	@Override
+	public List<Auto> findAllByUsuario(String nombre) {
+		// TODO Auto-generated method stub
+		return autoRepository.findAllByUsuario(nombre);
+	}
 	
 
 

@@ -17,7 +17,7 @@ import cl.yose.web.services.PosteoServiceImpl;
 public class PosteoApiRestController {
 	
 	@Autowired
-	private PosteoServiceImpl postServiceImpl;
+	PosteoServiceImpl postServiceImpl;
 	
 	// http://localhost:9084/guardar/posteo
 	@RequestMapping("/guardar/posteo")

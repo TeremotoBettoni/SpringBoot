@@ -54,10 +54,10 @@
 	            <div class="collapse navbar-collapse" id="navbarSupportedContent">
 		            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
 		                <li class="nav-item"><a href="/" class="nav-link px-2 text-secondary">Inicio</a></li>
-		                <li class="nav-item"><a href="#" class="nav-link px-2 text-white">Acerca de</a></li>
-		                <li class="nav-item"><a href="#" class="nav-link px-2 text-white">Nuestro Equipo</a></li>
-		                <li class="nav-item"><a href="#" class="nav-link px-2 text-white">Funciones</a></li>
-		                <li class="nav-item"><a href="#" class="nav-link px-2 text-white">Contacto</a></li>
+		                <li class="nav-item"><a href="/#AcercaDe" class="nav-link px-2 text-white">Acerca de</a></li>
+		                <li class="nav-item"><a href="/#Funciones" class="nav-link px-2 text-white">Funciones</a></li>
+		                <li class="nav-item"><a href="/#NuestroEquipo" class="nav-link px-2 text-white">Nuestro Equipo</a></li>
+		                <li class="nav-item"><a href="/#Contacto" class="nav-link px-2 text-white">Contacto</a></li>
 		            </ul>
 		            
 		            <div class="d-flex">

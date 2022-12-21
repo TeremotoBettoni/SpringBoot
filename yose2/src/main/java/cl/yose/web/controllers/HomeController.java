@@ -38,11 +38,8 @@ public class HomeController {
 		if(session.getAttribute("usuarioId")!=null) {
 			String nombre = (String) session.getAttribute("usuarioNombre");
 			
-			List<Posteo> listaPosteo = posteoServiceImpl.listaPosteo();
-			model.addAttribute("listaPosteos",listaPosteo);
-			// lista para cargar el select
-			List<Posteo> listaPosteoCategoria = posteoServiceImpl.listaPosteo();
-			model.addAttribute("listaPosteosCategorias",listaPosteoCategoria);
+			List<Posteo> listaPosteos = posteoServiceImpl.listaPosteo();
+			model.addAttribute("listaPosteos",listaPosteos);
 			
 			List<Categoria> listaCategorias = categoriaServiceImpl.listaCategorias();
 			System.out.println("Lista de categorias" + listaCategorias);
@@ -82,16 +79,13 @@ public class HomeController {
 	}
 	
 	@PostMapping("/categoria")
-	public String buscarCategoria(@RequestParam ("categoriaSeleccinada") Long id, Model model) {
+	public String buscarCategoria(@RequestParam ("categoriaSeleccionada") Long id, Model model) {
 		
-		List<Categoria> listaCategorias = new ArrayList<Categoria>(); //lista vacía
-		Categoria categoria = categoriaServiceImpl.obtenerCategoria(id);
-		listaCategorias.add(categoria); //agregando categoria a la lista
-		model.addAttribute("categorias", listaCategorias); //pasar la lista de autos al JSP
+		List<Categoria> listaCategorias = categoriaServiceImpl.listaCategorias();
+		model.addAttribute("listaCategorias", listaCategorias);
 		
-		
-		List<Posteo> listaPosteoCategoria = posteoServiceImpl.findAllByCategoriaId(id);
-		model.addAttribute("listaPosteosCategorias",listaPosteoCategoria);
+		List<Posteo> listaPosteos = posteoServiceImpl.buscarPorCategoria(id);
+		model.addAttribute("listaPosteos",listaPosteos);
 
 		return "home.jsp";
 	}

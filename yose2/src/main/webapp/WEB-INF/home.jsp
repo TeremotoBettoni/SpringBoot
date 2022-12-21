@@ -62,6 +62,8 @@
         .Carta {
             background-color: #1D2231;
         }
+        /*Estilos desplegable de comentario*/
+        
     </style>
 
 </head>
@@ -117,7 +119,7 @@
 	                    <li class="nav-item dropdown">
 	                    	<a class="btn btn-warning" href="#" role="button" data-bs-toggle="dropdown"
 	                        aria-expanded="false">
-	                            <img alt="icono perfil" src="assets/img/iconoPerfil.png" width="25"><c:out value="${usuarioNombre}"></c:out>
+	                            <i class="fa fa-user" aria-hidden="true"></i><c:out value="${usuarioNombre}"></c:out>
 	                        </a>
 	                            
 	                        <ul class="dropdown-menu">
@@ -126,7 +128,7 @@
 	                        <li>
 	                            <hr class="dropdown-divider">
 	                        </li>
-	                        <li><a class="dropdown-item" href="/registro/logout">Cerar sesión</a></li>
+	                        <li><a class="dropdown-item" href="/registro/logout">Cerrar sesión</a></li>
 	                    </ul>
 	                    </li>
                     </ul>
@@ -144,7 +146,7 @@
             <div class="col-md-6 gedf-main">
                 <!--- \\\\\\\Post-->
                 <c:forEach items="${listaPosteos}" var="posteo">
-                	<c:if test="${posteo.categoria==categoriaSeleccionada}">
+                	
                         <div class="card gedf-card" id="Carta">
                             
                                 <div class="card-header"><!--Header de la card de posteo-->
@@ -174,7 +176,7 @@
                                     <div class="ml-2"><!--Aqui se muestra los datos de categoría el posteo-->
                                                 
                                                 <div class="h6 text-muted" style="">
-                                                        
+                                                        <c:out value="${posteo.categoria.id}"></c:out>
                                                         <c:out value="${posteo.categoria.detalleCategoria}"></c:out>
                                                 
                                                 </div>
@@ -193,12 +195,16 @@
                                 </div>
                             </div>
                             <div class="card-footer">
-                                <a href="#" class="card-link"><i class="fa fa-gittip"></i>Valoración</a>
-                                <a href="#" class="card-link"><i class="fa fa-comment"></i>Commentarios</a>
+                                <a href="#" class="card-link"><i class="fa fa-thumbs-o-up"></i>Valoración</a>
+                                <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne"
+                                            aria-expanded="true" aria-controls="collapseOne" ><i class="fa fa-commenting-o" aria-hidden="true"></i>
+                                            Comentarios
+                               </button>
+                               
                             </div>
                                 
                     </div>
-                    </c:if>
+                    
                 </c:forEach>
             </div> 
             <div class="col-md-3 gedf-main">
@@ -213,13 +219,13 @@
                         </h5>
                     </div>
                     <div class="card-body">
-                        <a href="#" class="card-link text-muted"><img src="assets/img/iconoPerfil.png" width="20" alt="icono perfil"> Perfil</a>
+                        <a href="#" class="card-link text-muted"><i class="fa fa-user" aria-hidden="true"></i> Perfil</a>
                         <hr>
-                        <a href="#" class="card-link text-muted"><span class="badge text-bg-secondary">4</span> Notificaciones</a>
+                        <a href="#" class="card-link text-muted"><i class="fa fa-bell-o" aria-hidden="true"></i>Notificaciones</a>
                         <hr>
-                        <a href="#" class="card-link text-muted"><img src="assets/img/iconoCarpeta.png" width="20" alt="icono Guardado"> Guardados</a>
+                        <a href="#" class="card-link text-muted"><i class="fa fa-bookmark-o" aria-hidden="true"></i> Guardados</a>
                         <hr>
-                        <a href="#" class="card-link text-muted"><img src="assets/img/iconoColegas.jpg" width="20" alt="icono Colegas"> Colegas</a>
+                        <a href="#" class="card-link text-muted"><i class="fa fa-handshake-o" aria-hidden="true"></i> Colegas</a>
                     </div>
                 </div>
             </div>       	

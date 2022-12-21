@@ -9,5 +9,5 @@ public interface AutoService {
 	public Auto obtenerAuto(Long id);
 	public List<Auto> listaAuto();
 	public Auto obtenerAutoNombre(String marca);
-	
+	public List<Auto> findAllByUsuario(String nombre);
 }
