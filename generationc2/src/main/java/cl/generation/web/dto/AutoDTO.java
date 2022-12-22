@@ -18,5 +18,6 @@ public class AutoDTO {
 	private String color;
 	private String nombreUser;
 	private String apellidoUser;
+	private Long usuarioId;
 
 }

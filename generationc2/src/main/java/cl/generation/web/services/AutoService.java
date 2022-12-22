@@ -11,6 +11,5 @@ public interface AutoService {
 	public List<Auto> listaAuto();
 	public Auto obtenerAutoNombre(String marca);
 	public List<Auto> findAllByUsuario(String nombre);
-	
-	
+
 }

@@ -2,6 +2,7 @@ package cl.generation.web.services;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -18,6 +19,9 @@ public class AutoServiceImpl implements AutoService{
 
 	@Override
 	public Auto guardarAuto(Auto auto) {
+		if (auto.getId()!= null) {//edicion
+			//logica de traspasar informacion de autoDTO a Auto
+		}
 
 		return autoRepository.save(auto);
 	}
@@ -58,11 +62,13 @@ public class AutoServiceImpl implements AutoService{
 			autoDTO.setMarca(auto.getMarca());
 			autoDTO.setNombreUser(auto.getUsuario().getNombre());
 			autoDTO.setApellidoUser(auto.getUsuario().getApellido());
+			autoDTO.setUsuarioId(auto.getUsuario().getId());
 			autosDTO.add(autoDTO);
 			
 		}
 		return autosDTO;
 	}
+
 	
 
 }
