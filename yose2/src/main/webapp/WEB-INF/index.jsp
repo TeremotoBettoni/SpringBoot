@@ -237,6 +237,25 @@
 		.stt:active {
 		  opacity: 1;
 		}
+		/*seccion de estilo de acerca de*/
+		.video-acerca-de{
+			margin: 150px;
+		    text-align: center;
+		    color:white;
+		    align-items: center;
+		    justify-content: center;  
+		}
+		.videoAcercade{
+		    align-items: center;
+		    justify-content: center;
+		    
+		}
+		​
+		.ratio-16x9 {
+		  @include media-breakpoint-up(md) {
+		    --bs-aspect-ratio: 50%; // 2x1
+		 }
+		}
 		
     </style>
 </head>
@@ -285,11 +304,16 @@
                 </div>
             </div>
         </div>
-        <div class="bodyCarrusel"> <!--Seccion de vista carrusel-->
-        	<div class="scroll-container">
-            <h1 style="text-align: center;" class="color_textito" id="Funciones">Funciones</h1>
+        <br><br>
+       <div class="row justify-content-center mb-4" id="Funciones">
+       		<div class="col-md-7 text-center">
+	           <div class="scroll-container">
+	                <h1 class="mb-3" style="color: white"><b>Funciones</b></h1>
+				</div>
             </div>
-			<br><br>
+       </div>
+        <div class="bodyCarrusel"> <!--Seccion de vista carrusel-->
+			
 			<section id="slider" >
 			    <input type="radio" name="slider" id="s1">
 			    <input type="radio" name="slider" id="s2">
@@ -340,7 +364,26 @@
 			</label>
 			</section>
         </div>
-        <div class="container"> <!--Seccion de vista nuestro equipo-->
+        <div class="video-acerca-de row" id="AcercaDe">
+	        <div class="col-6"> <!--Seccion de Acerca de-->
+		        <h1>Visión y misión de ¡YoSé!</h1>
+		        <br>
+		        <h3>Esperamos generar un espacio en el que se realicen conexiones entre personas 
+		            que deseen compartir información o consultar por ella.</h3>
+		        <br>
+		        <h3>
+		            Poder encontrar información de interés en
+		            materias específicas, o tambien resolver 
+		            dudas, fomentando así el espíritu de compartir y recibir conocimiento.
+		        </h3>
+		        <br> 
+		    </div>
+		    <div class="col-6">
+		        <iframe width="854" height="480" src="https://www.youtube.com/embed/Qdgrmb3UnYQ" title="YouTube video player" frameborder="0" title="YouTube video" allowfullscreen></iframe>
+		    </div>
+        </div>
+        
+        <div class="container" id="NuestroEquipo"> <!--Seccion de vista nuestro equipo-->
             <div class="row">
                 <div class="row">
                     <div class="py-5 team4">
@@ -349,7 +392,7 @@
                                 <div class="col-md-7 text-center">
                                 <div class="scroll-container">
                                 
-                                    <h1 class="mb-3" id="NuestroEquipo"><b>Sobre nuestro equipo</b></h1>
+                                    <h1 class="mb-3"><b>Sobre nuestro equipo</b></h1>
 								</div>
                                 </div>
                             </div>
@@ -523,13 +566,11 @@
                         <div class="card-body">
                                 <form>
                                     <div class="input-group">
-                                        <span class="input-group-text">Nombre de contacto</span>
-                                        <input type="text" aria-label="First name" class="form-control">
+                                        <input type="text" aria-label="First name" class="form-control" placeholder="Nombre">
                                     </div>
                                     <br>
                                     <div class="input-group">
-                                        <span class="input-group-text">Email</span>
-                                        <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+                                        <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Email: name@example.com">
                                     </div>
                                     <div id="emailHelp" class="form-text">Nunca compartiremos su correo electrónico con nadie más.</div>
                                     <br>

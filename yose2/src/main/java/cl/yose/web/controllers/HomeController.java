@@ -73,6 +73,7 @@ public class HomeController {
 		posteo.setUrl(url);
 		posteo.setUsuario(usuario);
 		
+		
 		posteoServiceImpl.guardarPosteo(posteo);
 		model.addAttribute(posteo);
 		return "redirect:/home";

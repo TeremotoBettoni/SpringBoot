@@ -41,11 +41,11 @@ public class Posteo {
     private Long id;
     
     @NotNull
-    @Size(min = 1, max = 40, message = "Error en el ingreso del titulo")
+    @Size(min = 1, max = 100, message = "Error en el ingreso del titulo")
     private String titulo;
     
     @NotNull
-    @Size(min = 1, max = 1000, message = "Error en el ingreso del contenido del posteo")
+    @Size(min = 1, max = 50000, message = "Error en el ingreso del contenido del posteo")
     private String texto;
     
     private String url;

@@ -133,6 +133,24 @@
             width: auto;
             height: 325px;
         }
+        
+        .stt {
+		  position: fixed;
+		  right: 1rem;
+		  bottom: 1rem;
+		  width: 3rem;
+		  height: 3rem;
+		  border-radius: 50%;
+		  background: #FFAC31 url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 384 512'%3E%3Cpath fill='currentColor' d='M352 352c-8.188 0-16.38-3.125-22.62-9.375L192 205.3l-137.4 137.4c-12.5 12.5-32.75 12.5-45.25 0s-12.5-32.75 0-45.25l160-160c12.5-12.5 32.75-12.5 45.25 0l160 160c12.5 12.5 12.5 32.75 0 45.25C368.4 348.9 360.2 352 352 352z'%3E%3C/path%3E%3C/svg%3E") center no-repeat;
+		  box-shadow: 0 0.25rem 0.5rem 0 gray;
+		  opacity: 0.7;
+		}
+		/*header{
+		position: sticky;
+		top: 0;
+		background-color: rgb(29, 34, 49);
+		}*/
+		
     </style>
 
 </head>
@@ -145,7 +163,7 @@
 	
     <header>
         <nav class="navbar navbar-expand-lg bg-nav">
-            <div class="container-fluid">
+            <div class="container">
                 <a class="navbar-brand" href="#">
                     <img src="../assets/img/yose.png" alt="Logo" width="40" class="d-inline-block align-text-top">
                 </a>
@@ -161,11 +179,6 @@
                                 <button type="button" class="btn btn-outline-warning">Inicio</button>
                             </a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">
-                            <button type="button" class="btn btn-outline-warning">Notificación</button>
-                            </a>
-                        </li>
                         <li class="nav-link dropdown-toggle">
                             <form action="/home/categoria" method="post">
                                 <select name="categoriaSeleccionada" id="categoriaSeleccionada" class="btn btn-outline-warning">
@@ -174,7 +187,7 @@
                                     <option value="${categoria.id}">${categoria.detalleCategoria}</option>
                                     </c:forEach>
                                 </select>
-                            <button type="submit" class="btn btn-outline-secondary">Filtrar</button>
+                            <button type="submit" class="btn btn-outline-warning">Filtrar</button>
                             </form>
                         </li>
                             
@@ -206,8 +219,8 @@
     </header>
     
     <main>
-        <img src="https://i.postimg.cc/MG83VMN8/Publicar.png" id=BotonPublicar type="img" class="btn" data-bs-toggle="modal"
-        data-bs-target="#staticBackdrop" width="150px" style="margin-left: 15%;">
+        <img src="https://i.postimg.cc/d1x98Y3Z/Group-45-Publi-1.png" id=BotonPublicar type="img" class="btn" data-bs-toggle="modal"
+        data-bs-target="#staticBackdrop" width="200px" style="margin-left: 15%;">
         <br>
         <div class="mainCentral">
             <div class="col-md-6 gedf-main">
@@ -235,7 +248,6 @@
                                     <h5><c:out value="${posteo.titulo}"></c:out></h5>
                                 <div class="ml-2"><!--Aqui se muestra los datos de categoría el posteo-->
                                         <div class="h6 text-muted">
-                                            <c:out value="${posteo.categoria.id}"></c:out>
                                             <c:out value="${posteo.categoria.detalleCategoria}"></c:out>
                                         </div>
                                 </div>
@@ -255,7 +267,7 @@
                         <div id="accordion">
                             <div class="card">
                                 <div class="card-footer" id="headingOne">
-                                    <a href="#" class="card-link"><i class="fa fa-thumbs-o-up"></i>Valoración</a>
+                                    <a href="#" class="card-link"><i class="fa fa-thumbs-o-up"><span class="badge text-bg-secondary"><c:out value="${posteo.valoracionesPosteos.size()}"></c:out></span></i>Valoración</a>
                                     <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne"
                                     aria-expanded="true" aria-controls="collapseOne" ><i class="fa fa-commenting-o" aria-hidden="true"></i>
                                         Comentarios
@@ -272,9 +284,13 @@
                                             <div class="commented-section mt-2">
                                                 <div class="d-flex flex-row align-items-center commented-user">
                                                     <img class="img-fluid img-responsive rounded-circle mr-2" src="https://picsum.photos/50/50" width="38">
-                                                    <h5 class="mr-2">Corey oates</h5>
+                                                    <h5 class="mr-2">
+                                                    	Pablito
+                                                    </h5>
                                                 </div>
-                                                <div class="comment-text-sm">Hola Soy un comentario</div><br>
+                                                <div class="comment-text-sm">
+                                                	Hola
+                                                </div><br>
                                                 <button class="btn btn-link" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
                                                     Todos los comentarios
                                                 </button>
@@ -310,8 +326,8 @@
                 </c:forEach>
             </div> 
             <div class="col-md-3 gedf-main">
-                <div class="card" style="width: 18rem;">
-                    <div style="display: flex; justify-content: center; align-items: center;">
+                <div class="card" style="width: 18rem; position: fixed;">
+                    <div style="display: flex; justify-content: center; align-items: center; padding-top: 20px;">
                         <img  class="rounded-circle" width="200" src="https://picsum.photos/50/50" alt="foto perfil">
                     </div>
                     <div class="card-body">
@@ -378,6 +394,7 @@
                 </div>
             </div>
         </div>
+        <a href='#' class="stt" title="Ir Arriba"></a>
     </main>
 
     <!--agregamos el js jquery-->
