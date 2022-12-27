@@ -21,7 +21,9 @@
         }
         /*Vista Inicial*/
             #vistaInicial {
-                background-color: black;
+                
+                width: 118rem;
+                
             }
 
             .textoInicio {
@@ -38,6 +40,8 @@
             #bg-image {
                 width: 100%;
                 padding: 20px 0px;
+                align-items: center;
+                justify-content: center;
             }
         /*termino Vista inicial*/
         /* estilos footer*/
@@ -290,21 +294,38 @@
     <main>
     	<!--Seccion de vista inicial-->
         <div class="container-fluid text-center" id="vistaInicial">
-                <div class="row justify-content-around">
-                    <div class="col align-self-start">
-                        <h2 id="texto1" class="textoInicio">Red de aprendizaje colaborativo</h2>
-                    </div>
-                    <div class="col align-self-center">
-                        <h4 id="texto2" class="textoInicio">Aprendemos y crecemos juntos, apoyándonos los unos a los
-                            otros</h4>
+                <div class="row" style="display: flex; justify-content: center; align-items: center;">
+                    <div class="col-4">
+                    	<h2 id="texto1" class="textoInicio">BIENVENIDO A YoSé!</h2>
+                        <h3 id="texto1" class="textoInicio">Red de aprendizaje colaborativo</h3>
                     </div>
                     <div class="col-4">
-                        <img src="../assets/img/YoseBlanco.png" alt="Logo YoSe" id="bg-image">
+                        <img src="../assets/img/Indexfotoo.png" alt="Logo YoSe" id="bg-image">
                     </div>
                 </div>
             </div>
         </div>
         <br><br>
+        
+        <div class="video-acerca-de row" id="AcercaDe">
+	        <div class="col-6"> <!--Seccion de Acerca de-->
+		        <h1>Visión y misión de ¡YoSé!</h1>
+		        <br>
+		        <h3>Esperamos generar un espacio en el que se realicen conexiones entre personas 
+		            que deseen compartir información o consultar por ella.</h3>
+		        <br>
+		        <h3>
+		            Poder encontrar información de interés en
+		            materias específicas, o tambien resolver 
+		            dudas, fomentando así el espíritu de compartir y recibir conocimiento.
+		        </h3>
+		        <br> 
+		    </div>
+		    <div class="col-6">
+		        <iframe width="854" height="480" src="https://www.youtube.com/embed/Qdgrmb3UnYQ" title="YouTube video player" frameborder="0" title="YouTube video" allowfullscreen></iframe>
+		    </div>
+        </div>
+        
        <div class="row justify-content-center mb-4" id="Funciones">
        		<div class="col-md-7 text-center">
 	           <div class="scroll-container">
@@ -333,13 +354,13 @@
 			            <img src="../assets/img/3.png" height="100%" width="100%">
 			            <div class="color_textito centrar-texto-carru">
 			                <h1>¿Tienes una consulta?</h1>
-			                <h4>Haz una pregunta a la comunidad de YoSe!</h4>
+			                <h4>Haz una pregunta a la comunidad de YoSé!</h4>
 			            </div>
 			    </label>
 			    <label for="s3" id="slide3">
 			            <img src="../assets/img/4.png" height="100%" width="100%">
 			            <div class="color_textito centrar-texto-carru">
-			                <h1>Filtra por Categorías</h1>
+			                <h1>Filtra por categorías</h1>
 			                <h4>Ve las públicaciones de otros usuarios</h4> 
 			                <h4>¡Se el primero en responder!</h4>
 			            </div>
@@ -357,32 +378,13 @@
 			            <div class="color_textito centrar-texto-carru">
 			                <h1>Comparte información</h1>
 			                <h4>Aporta conocimiento a la comunidad.</h4> 
-			                <h4>Si YO SE comparto</h4>
+			                <h4>Si, YoSé!, comparto</h4>
 			            </div>
 			    </label>
 			
 			</label>
 			</section>
         </div>
-        <div class="video-acerca-de row" id="AcercaDe">
-	        <div class="col-6"> <!--Seccion de Acerca de-->
-		        <h1>Visión y misión de ¡YoSé!</h1>
-		        <br>
-		        <h3>Esperamos generar un espacio en el que se realicen conexiones entre personas 
-		            que deseen compartir información o consultar por ella.</h3>
-		        <br>
-		        <h3>
-		            Poder encontrar información de interés en
-		            materias específicas, o tambien resolver 
-		            dudas, fomentando así el espíritu de compartir y recibir conocimiento.
-		        </h3>
-		        <br> 
-		    </div>
-		    <div class="col-6">
-		        <iframe width="854" height="480" src="https://www.youtube.com/embed/Qdgrmb3UnYQ" title="YouTube video player" frameborder="0" title="YouTube video" allowfullscreen></iframe>
-		    </div>
-        </div>
-        
         <div class="container" id="NuestroEquipo"> <!--Seccion de vista nuestro equipo-->
             <div class="row">
                 <div class="row">
@@ -615,7 +617,7 @@
                 <div class="text-center text-white p-3" style="background-color: rgba(0, 0, 0, 0.2);">
                     © 2022 Copyright:
                     <a href='#' class="stt" title="Ir Arriba"></a>
-                    <a class="text-white" href="">YoSe.com</a>
+                    <a class="text-white" href="">YoSé!.com</a>
                     <button onclick="topFunction()" id="myBtn" title="Go to top">Ir arriba</button>
                 </div>
             <!-- Copyright -->
