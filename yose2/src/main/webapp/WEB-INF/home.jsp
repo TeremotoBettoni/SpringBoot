@@ -145,11 +145,16 @@
 		  box-shadow: 0 0.25rem 0.5rem 0 gray;
 		  opacity: 0.7;
 		}
-		/*header{
-		position: sticky;
-		top: 0;
-		background-color: rgb(29, 34, 49);
-		}*/
+		
+		#scrollComentario{
+            height: 100px;
+            overflow-x: hidden; /*para manejar todo lo que se desvorda del contenedor*/
+            overflow-y: scroll;
+            
+        }
+        #scrollComentario::-webkit-scrollbar {
+            display: none;
+        }
 		
     </style>
 
@@ -223,7 +228,7 @@
         data-bs-target="#staticBackdrop" width="200px" style="margin-left: 15%;">
         <br>
         <div class="mainCentral">
-            <div class="col-md-6 gedf-main">
+           <div class="col-md-6 gedf-main">
                 <!--- \\\\\\\Post-->
                 <c:forEach items="${listaPosteos}" var="posteo">
                     <div class="card gedf-card" id="Carta">
@@ -273,24 +278,33 @@
                                         Comentarios
                                     </button>
                                 </div>
+                                <!-- Vista de los comentarios al desplegarse -->
                                 <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
                                     <div class="card-body">
                                         <div class="coment-bottom bg-white p-2 px-4">
-                                            <div class="d-flex flex-row add-comment-section mt-4 mb-4">
-                                                <img class="img-fluid img-responsive rounded-circle mr-2" src="https://picsum.photos/50/50" width="38">
-                                                <input type="text" class="form-control mr-3" placeholder="Añadir comentario">
-                                                <button class="btn btn-primary" type="button">Comentar</button>
-                                            </div>
-                                            <div class="commented-section mt-2">
-                                                <div class="d-flex flex-row align-items-center commented-user">
+                                            <form action="/comentarios" method="post">
+                                                <div class="d-flex flex-row add-comment-section mt-4 mb-4">
                                                     <img class="img-fluid img-responsive rounded-circle mr-2" src="https://picsum.photos/50/50" width="38">
-                                                    <h5 class="mr-2">
-                                                    	Pablito
-                                                    </h5>
+                                                    <input type="text" class="form-control mr-3" placeholder="Añadir comentario" id="texto" name="texto">
+                                                    <input type="hidden" name="posteo" value="${posteo.id}">
+                                                    <button class="btn btn-primary" type="submit">Comentar</button>
                                                 </div>
-                                                <div class="comment-text-sm">
-                                                	Hola
-                                                </div><br>
+                                            </form>
+                                            <div class="commented-section mt-2" >
+                                            	<div id="scrollComentario">
+	                                                <c:forEach items="${posteo.comentarios}" var="comentario">
+	                                                    <div class="d-flex flex-row align-items-center commented-user">
+	                                                        <img class="img-fluid img-responsive rounded-circle mr-2" src="https://picsum.photos/50/50" width="38">
+	                                                        <h5 class="mr-2">
+	                                                            <c:out value="${comentario.usuario.nombre}"></c:out>
+	                                                            <c:out value="${comentario.usuario.apellido}"></c:out>
+	                                                        </h5>
+	                                                    </div>
+	                                                    <div class="comment-text-sm">
+	                                                        <c:out value="${comentario.texto}"></c:out>
+	                                                    </div><br>
+	                                                </c:forEach>
+                                            	</div>
                                                 <button class="btn btn-link" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
                                                     Todos los comentarios
                                                 </button>
@@ -299,19 +313,27 @@
                                                     <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
                                                         <div class="modal-content">
                                                             <div class="modal-header">
-                                                                <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                                                                <h1 class="modal-title fs-5" id="exampleModalLabel">Comentarios</h1>
                                                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                                             </div>
                                                             <div class="modal-body">
-                                                                <div class="d-flex flex-row align-items-center commented-user">
-                                                                    <img class="img-fluid img-responsive rounded-circle mr-2" src="https://picsum.photos/50/50" width="38">
-                                                                    <h5 class="mr-2">Corey oates</h5>
-                                                                </div>
-                                                                <div class="comment-text-sm">Jajajaja muy bueno la publicación, amasaste</div><br>
+                                                            	<div id="scrollComentario">
+	                                                            	<c:forEach items="${posteo.comentarios}" var="comentario">
+		                                                                <div class="d-flex flex-row align-items-center commented-user">
+		                                                                    <img class="img-fluid img-responsive rounded-circle mr-2" src="https://picsum.photos/50/50" width="38">
+		                                                                    <h5 class="mr-2">
+		                                                                    	<c:out value="${comentario.usuario.nombre}"></c:out>
+		                                                            			<c:out value="${comentario.usuario.apellido}"></c:out>
+		                                                                    </h5>
+		                                                                </div>
+		                                                                <div class="comment-text-sm">
+		                                                                	<c:out value="${comentario.texto}"></c:out>
+		                                                                </div><br>
+		                                                        	</c:forEach>
+                                                            	</div>
                                                             </div>
                                                             <div class="modal-footer">
                                                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                                                <button type="button" class="btn btn-primary">Save changes</button>
                                                             </div>
                                                         </div>
                                                     </div>

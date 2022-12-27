@@ -3,6 +3,7 @@ package cl.yose.web.services;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import cl.yose.web.models.Comentario;
@@ -51,7 +52,7 @@ public class ComentarioServiceImpl implements ComentarioService{
 
 	public List<Comentario> listaComentario() {
 		
-		return comentarioRepository.findAll();
+		return comentarioRepository.findAll(Sort.by(Sort.Direction.DESC,"id"));
 	}
 	
 	
