@@ -25,9 +25,9 @@
     <!--agregamos el jquery-->
     <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
     <!--agregamos el bootstrap-->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-    <link rel="stylesheet" href="assets/css/style.css">
-    <title>Home Yose!</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+	<title>Home Yose!</title>
     <style>
         .mainCentral{
             display: flex;
@@ -39,12 +39,7 @@
         .container {
             background-color: #1D2231;
         }
-        .h7 {
-            font-size: 0.8rem;
-        }
-        .gedf-wrapper {
-            margin-top: 0.97rem;
-        }
+        
         @media (min-width: 992px) {
             .gedf-main {
                 padding-left: 4rem;
@@ -62,78 +57,7 @@
         .Carta {
             background-color: #1D2231;
         }
-        /*Estilos desplegable de comentario*/
-        body {
-            background: #EEEEEE;
-        }
-
-        .box-info.full {
-            padding: 0px;
-        }
-
-        .box-info:hover {
-            color: #393E48;
-        }
-
-        .box-info {
-            position: relative;
-            padding: 15px;
-            background: #fff;
-            color: #5b5b5b;
-            margin-bottom: 20px;
-            -webkit-transition: All 0.4s ease;
-            -moz-transition: All 0.4s ease;
-            transition: All 0.4s ease;
-            background: #FFFFFF;
-            margin-top: 20px;
-        }
-
-
-        .box-info .nav-tabs li.active a,
-        .box-info .nav-tabs li.active a:hover,
-        .box-info .nav-tabs li.active a:focus {
-            cursor: default;
-            border-top: none;
-            border-right: none;
-            border-left: none;
-            border-bottom: none;
-            background-color: #ffffff;
-            color: #1B1E24;
-        }
-
-        .box-info .nav-tabs li.active a i,
-        .box-info .nav-tabs li.active a:hover i,
-        .box-info .nav-tabs li.active a:focus i {
-            color: #212121;
-        }
-
-        .box-info .nav-tabs li a i {
-            color: #fff;
-        }
-
-        .box-info.full .box-footer {
-            padding: 20px 20px 15px 20px;
-        }
-
-        .box-info .media-list {
-            margin-top: 30px;
-        }
-
-        .box-info .media-list .media {
-            padding: 5px 20px;
-            border-bottom: 1px solid #eaeaea;
-        }
-
-        .box-info .media-list .media .media-object {
-            width: 50px;
-        }
-
-        .scroll-widget {
-            overflow: hidden;
-            width: auto;
-            height: 325px;
-        }
-        
+        /*Estilos desplegable de comentario*/       
         .stt {
 		  position: fixed;
 		  right: 1rem;
@@ -174,7 +98,7 @@
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="Toggle navigation">
+                    aria-expanded="false" aria-label="Toggle navigation" style="background-color: #FFac31;">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -326,7 +250,7 @@
                         </h5>
                     </div>
                     <div class="card-body">
-                        <a href="#" class="card-link text-muted"><i class="fa fa-user" aria-hidden="true"></i> Perfil</a>
+                        <a href="/home/perfil" class="card-link text-muted"><i class="fa fa-user" aria-hidden="true"></i> Perfil</a>
                         <hr>
                         <a href="#" class="card-link text-muted"><i class="fa fa-bell-o" aria-hidden="true"></i>Notificaciones</a>
                         <hr>
@@ -397,8 +321,9 @@
     </main>
 
     <!--agregamos el js jquery-->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
-
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+        crossorigin="anonymous"></script>
 </body>
 
 </html>

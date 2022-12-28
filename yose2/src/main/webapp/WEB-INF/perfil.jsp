@@ -3,17 +3,29 @@
     <%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
+	<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+        integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
 <head>
 	<meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+	
+	
 	<title>Perfil Usuario</title>
 	
 	<style>
         #fondo {
             background-color: rgb(29, 34, 49);
+        }
+        .dropdown-toggle::after {
+            content: none;
+            display: none;
+        }
+        .container {
+            background-color: #1D2231;
         }
         
         .letras {
@@ -132,7 +144,7 @@
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="Toggle navigation">
+                    aria-expanded="false" aria-label="Toggle navigation" style="background-color: #FFac31;">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -142,17 +154,7 @@
                                 <button type="button" class="btn btn-outline-warning">Inicio</button>
                             </a>
                         </li>
-                        <li class="nav-link dropdown-toggle">
-                            <form action="/home/categoria" method="post">
-                                <select name="categoriaSeleccionada" id="categoriaSeleccionada" class="btn btn-outline-warning">
-                                    <option value= "0" selected>Categorías</option>
-                                    <c:forEach var="categoria" items="${listaCategorias}">
-                                    <option value="${categoria.id}">${categoria.detalleCategoria}</option>
-                                    </c:forEach>
-                                </select>
-                            <button type="submit" class="btn btn-outline-warning">Filtrar</button>
-                            </form>
-                        </li>
+                        
                     </ul>
                     <form action="/buscar" method="post" class="d-flex" role="search">
                         <input name="palabraClave" value="${palabraClave}" id="palabraClave" class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search" required>
@@ -166,7 +168,7 @@
                             </a>
                                 
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">Perfil Usuario</a></li>
+                                <li><a class="dropdown-item" href="/home/perfil">Perfil Usuario</a></li>
                                 <li><a class="dropdown-item" href="#">Configuración</a></li>
                                 <li>
                                     <hr class="dropdown-divider">
@@ -192,8 +194,8 @@
                                         <img src="https://picsum.photos/50/50"
                                             alt="Maxwell Admin">
                                     </div>
-                                    <h5 class="user-name">Michel Espinoza</h5>
-                                    <h6 class="user-nick">@Mespinoza</h6>
+                                    <h5 class="user-name"><c:out value="${usuarioNombre}"></c:out></h5>
+                                    <h6 class="user-nick">@<c:out value="${usuarioNombre}"></c:out></h6>
                                 </div>
                                 <div class="d-grid gap-2">
                                 <button type="button" id="submit" name="submit"
