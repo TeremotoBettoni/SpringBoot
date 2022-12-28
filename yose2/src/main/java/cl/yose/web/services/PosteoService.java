@@ -15,5 +15,5 @@ public interface PosteoService {
 	public Posteo obtenerPosteo(Long id);
 	public List<Posteo> listaPosteo();
 	public List<Posteo> buscarPorCategoria(Long id);
-
+	public List<Posteo> listarPorPalabra(String palabraClave);
 }

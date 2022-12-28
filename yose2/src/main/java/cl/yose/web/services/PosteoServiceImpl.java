@@ -73,5 +73,12 @@ public class PosteoServiceImpl implements PosteoService {
 		return posteoRepository.buscarPorCategoria(id);
 	}
 	
+	@Override
+	public List<Posteo> listarPorPalabra(String palabraClave){
+		if(palabraClave != null) {
+			return posteoRepository.buscarPorPalabra(palabraClave);
+		}
+		return posteoRepository.findAll(Sort.by(Sort.Direction.DESC,"id"));
+	}
 	
 }

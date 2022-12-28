@@ -147,7 +147,7 @@
 		}
 		
 		#scrollComentario{
-            height: 100px;
+            height: 250px;
             overflow-x: hidden; /*para manejar todo lo que se desvorda del contenedor*/
             overflow-y: scroll;
             
@@ -195,11 +195,10 @@
                             <button type="submit" class="btn btn-outline-warning">Filtrar</button>
                             </form>
                         </li>
-                            
                     </ul>
-                    <form action="/home/nav" method="post" class="d-flex" role="search">
-                        <input name="marca" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                        <button class="btn btn-outline-warning" type="submit">Buscar</button>
+                    <form action="/buscar" method="post" class="d-flex" role="search">
+                        <input name="palabraClave" value="${palabraClave}" id="palabraClave" class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search" required>
+                        <input class="btn btn-outline-warning" type="submit" value= "Buscar">
                     </form>
                     <ul class="navbar-nav mb-2 mb-lg-0 mx-2">
                         <li class="nav-item dropdown">
@@ -209,7 +208,7 @@
                             </a>
                                 
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">Perfil Usuario</a></li>
+                                <li><a class="dropdown-item" href="/home/perfil">Perfil Usuario</a></li>
                                 <li><a class="dropdown-item" href="#">Configuración</a></li>
                                 <li>
                                     <hr class="dropdown-divider">
@@ -253,7 +252,8 @@
                                     <h5><c:out value="${posteo.titulo}"></c:out></h5>
                                 <div class="ml-2"><!--Aqui se muestra los datos de categoría el posteo-->
                                         <div class="h6 text-muted">
-                                            <c:out value="${posteo.categoria.detalleCategoria}"></c:out>
+                                            <c:out value="Categoria: ${posteo.categoria.detalleCategoria}"></c:out>
+                                            <c:out value="| Tipo de publicación: ${posteo.typePosteo.tipo}"></c:out>
                                         </div>
                                 </div>
                                     </div>
@@ -305,39 +305,6 @@
 	                                                    </div><br>
 	                                                </c:forEach>
                                             	</div>
-                                                <button class="btn btn-link" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                                                    Todos los comentarios
-                                                </button>
-                                                <!-- Modal -->
-                                                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                                    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
-                                                        <div class="modal-content">
-                                                            <div class="modal-header">
-                                                                <h1 class="modal-title fs-5" id="exampleModalLabel">Comentarios</h1>
-                                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                                            </div>
-                                                            <div class="modal-body">
-                                                            	<div id="scrollComentario">
-	                                                            	<c:forEach items="${posteo.comentarios}" var="comentario">
-		                                                                <div class="d-flex flex-row align-items-center commented-user">
-		                                                                    <img class="img-fluid img-responsive rounded-circle mr-2" src="https://picsum.photos/50/50" width="38">
-		                                                                    <h5 class="mr-2">
-		                                                                    	<c:out value="${comentario.usuario.nombre}"></c:out>
-		                                                            			<c:out value="${comentario.usuario.apellido}"></c:out>
-		                                                                    </h5>
-		                                                                </div>
-		                                                                <div class="comment-text-sm">
-		                                                                	<c:out value="${comentario.texto}"></c:out>
-		                                                                </div><br>
-		                                                        	</c:forEach>
-                                                            	</div>
-                                                            </div>
-                                                            <div class="modal-footer">
-                                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -384,6 +351,16 @@
                             <div class="tab-content" id="myTabContent">
                                 <div class="tab-pane fade show active" id="posts" role="tabpanel" aria-labelledby="posts-tab">
                                     <form action="/home" method="post"> <!--introducimos la rura en la cual generara la accion-->
+                                        <!-- aqui empieza el select del tipo posteo -->
+                                        <div class="mb-3">
+		                                    <select name="tipoPosteo" id="tipoPosteo" class="form-select">
+								                <option value= "0" selected>Tipo de publicacion</option>
+								                <c:forEach var="typeposteo" items="${listaTipoPosteo}">
+								                <option value="${typeposteo.id}">${typeposteo.tipo}</option>
+								                </c:forEach>
+								            </select>
+		                                </div>
+		                                <!-- aqui termina el select del tipo posteo -->
                                         <div class="mb-3">
                                                 <select name="detalleCategoria" id="categoria" class="form-select">
                                                     <option value= "0" selected>Categorías</option>

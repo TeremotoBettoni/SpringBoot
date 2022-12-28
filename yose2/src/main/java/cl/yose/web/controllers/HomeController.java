@@ -14,9 +14,11 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import cl.yose.web.models.Categoria;
 import cl.yose.web.models.Posteo;
+import cl.yose.web.models.TypePosteo;
 import cl.yose.web.models.Usuario;
 import cl.yose.web.services.CategoriaServiceImpl;
 import cl.yose.web.services.PosteoServiceImpl;
+import cl.yose.web.services.TypePosteoServiceImpl;
 import cl.yose.web.services.UsuarioServiceImpl;
 
 @Controller
@@ -31,6 +33,9 @@ public class HomeController {
 	@Autowired
 	UsuarioServiceImpl usuarioServiceImpl;
 	
+	@Autowired
+	TypePosteoServiceImpl tipoPostServImpl;
+	
 	@GetMapping("")
 	public String home(Model model, HttpSession session) {
 		
@@ -43,6 +48,9 @@ public class HomeController {
 			List<Categoria> listaCategorias = categoriaServiceImpl.listaCategorias();
 			System.out.println("Lista de categorias" + listaCategorias);
 			model.addAttribute("listaCategorias", listaCategorias);
+			
+			List<TypePosteo> listaTipoPosteo = tipoPostServImpl.listaTypePosteo();
+			model.addAttribute("listaTipoPosteo", listaTipoPosteo);
 			
 			model.addAttribute("usuarioNombre", nombre);
 			model.addAttribute("categoriaSeleccinada", null);
@@ -58,12 +66,14 @@ public class HomeController {
 			@RequestParam("texto") String texto,
 			@RequestParam("url") String url,
 			@RequestParam ("detalleCategoria") Long id,
+			@RequestParam ("tipoPosteo") Long idTP,
 			Model model,
 			HttpSession session
 			) {
 		String email = (String) session.getAttribute("usuarioEmail");
 		Usuario usuario = usuarioServiceImpl.obtenerUsuarioEmail(email);
 		Categoria categoria = categoriaServiceImpl.obtenerCategoria(id);
+		TypePosteo tipoPosteo = tipoPostServImpl.obtenerDatosTypePosteo(idTP);
 		
 		Posteo posteo= new Posteo();
 		posteo.setCategoria(categoria);
@@ -71,7 +81,7 @@ public class HomeController {
 		posteo.setTexto(texto);
 		posteo.setUrl(url);
 		posteo.setUsuario(usuario);
-		
+		posteo.setTypePosteo(tipoPosteo);
 		
 		posteoServiceImpl.guardarPosteo(posteo);
 		model.addAttribute(posteo);
@@ -88,6 +98,11 @@ public class HomeController {
 		model.addAttribute("listaPosteos",listaPosteos);
 
 		return "home.jsp";
+	}
+	
+	@GetMapping("/perfil")
+	public String editarPerfil() {
+		return "perfil.jsp";
 	}
 
 	
