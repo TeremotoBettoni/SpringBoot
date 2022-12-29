@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-    <fullyQualifiedTypeName name="org.springframework.security.core.GrantedAuthority"/>
-    <fullyQualifiedTypeName name="org.springframework.security.core.authority.SimpleGrantedAuthority"/>
     <fullyQualifiedTypeName name="javax.validation.constraints.NotNull"/>
     <fullyQualifiedTypeName name="org.springframework.stereotype.Repository"/>
     <fullyQualifiedTypeName name="org.springframework.data.jpa.repository.JpaRepository"/>
@@ -19,18 +17,12 @@
     <fullyQualifiedTypeName name="org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory"/>
     <fullyQualifiedTypeName name="org.apache.catalina.connector.Connector"/>
     <fullyQualifiedTypeName name="org.apache.coyote.ajp.AbstractAjpProtocol"/>
-    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.GetMapping"/>
     <fullyQualifiedTypeName name="cl.generation.web.services.AutoService"/>
     <fullyQualifiedTypeName name="cl.generation.web.services.AutoServiceImpl"/>
     <fullyQualifiedTypeName name="cl.generation.web.models.Auto"/>
-    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.PostMapping"/>
-    <fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
-    <fullyQualifiedTypeName name="cl.yose.web.services.CategoriaServiceImpl"/>
-    <fullyQualifiedTypeName name="cl.yose.web.models.Categoria"/>
     <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.CrossOrigin"/>
     <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.ResponseBody"/>
     <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestMethod"/>
-    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestParam"/>
     <fullyQualifiedTypeName name="org.springframework.data.domain.Sort"/>
     <fullyQualifiedTypeName name="org.springframework.data.domain.Sort.Direction"/>
     <fullyQualifiedTypeName name="java.lang.Override"/>
@@ -39,20 +31,15 @@
     <fullyQualifiedTypeName name="org.springframework.stereotype.Service"/>
     <fullyQualifiedTypeName name="cl.yose.web.models.Usuario"/>
     <fullyQualifiedTypeName name="javax.servlet.http.HttpSession"/>
-    <fullyQualifiedTypeName name="cl.yose.web.models.Posteo"/>
-    <fullyQualifiedTypeName name="cl.yose.web.services.UsuarioServiceImpl"/>
-    <fullyQualifiedTypeName name="cl.yose.web.services.PosteoServiceImpl"/>
     <fullyQualifiedTypeName name="com.fasterxml.jackson.annotation.JsonIgnore"/>
     <fullyQualifiedTypeName name="cl.generation.web.models.Usuario"/>
     <fullyQualifiedTypeName name="cl.generation.web.models.Venta"/>
     <fullyQualifiedTypeName name="cl.generation.web.dto.AutoDTO"/>
-    <fullyQualifiedTypeName name="java.util.List"/>
     <fullyQualifiedTypeName name="java.util.ArrayList"/>
     <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.PutMapping"/>
     <fullyQualifiedTypeName name="java.util.Optional"/>
     <fullyQualifiedTypeName name="org.springframework.stereotype.Controller"/>
     <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestMapping"/>
-    <fullyQualifiedTypeName name="org.springframework.ui.Model"/>
     <fullyQualifiedTypeName name="org.springframework.context.annotation.Configuration"/>
     <fullyQualifiedTypeName name="org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter"/>
     <fullyQualifiedTypeName name="org.springframework.boot.autoconfigure.web.servlet.WebMvcAutoConfiguration.WebMvcAutoConfigurationAdapter"/>
@@ -60,4 +47,17 @@
     <fullyQualifiedTypeName name="org.springframework.web.servlet.config.annotation.ViewControllerRegistry"/>
     <fullyQualifiedTypeName name="cl.yose.web.services.ComentarioServiceImpl"/>
     <fullyQualifiedTypeName name="cl.yose.web.models.Comentario"/>
+    <fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
+    <fullyQualifiedTypeName name="cl.yose.web.services.PosteoServiceImpl"/>
+    <fullyQualifiedTypeName name="cl.yose.web.services.CategoriaServiceImpl"/>
+    <fullyQualifiedTypeName name="cl.yose.web.services.UsuarioServiceImpl"/>
+    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.PostMapping"/>
+    <fullyQualifiedTypeName name="org.springframework.ui.Model"/>
+    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestParam"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="cl.yose.web.models.Categoria"/>
+    <fullyQualifiedTypeName name="cl.yose.web.models.Posteo"/>
+    <fullyQualifiedTypeName name="cl.yose.web.models.TypePosteo"/>
+    <fullyQualifiedTypeName name="cl.yose.web.services.TypePosteoServiceImpl"/>
+    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.GetMapping"/>
 </qualifiedTypeNameHistroy>

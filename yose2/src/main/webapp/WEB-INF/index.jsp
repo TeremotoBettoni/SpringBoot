@@ -8,6 +8,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     <title>YoSe</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     <style>
         #fondo{
             background-color: rgb(29, 34, 49);
@@ -20,28 +23,42 @@
             justify-content: space-between;
         }
         /*Vista Inicial*/
-            #vistaInicial {
-                
-                width: 118rem;
-                
+        #vistaInicial {
+            height: 700px;
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.com/svgjs' width='2000' height='900' preserveAspectRatio='none' viewBox='0 0 2000 900'%3e%3cg mask='url(%26quot%3b%23SvgjsMask1088%26quot%3b)' fill='none'%3e%3crect width='2000' height='900' x='0' y='0' fill='%230e2a47'%3e%3c/rect%3e%3cpath d='M942.9115674509108 547.0291209236652L801.4038582229026 498.3041091430973 799.0701951660548 734.9281788753933z' fill='rgba(28%2c 83%2c 142%2c 0.4)' class='triangle-float3'%3e%3c/path%3e%3cpath d='M738.085%2c734.159C807.953%2c738.12%2c887.021%2c736.043%2c925.645%2c677.688C967.149%2c614.982%2c954.663%2c531.125%2c914.583%2c467.499C877.065%2c407.941%2c808.475%2c379.745%2c738.085%2c379.941C668.08%2c380.136%2c597.169%2c407.221%2c563.279%2c468.476C530.248%2c528.179%2c546.566%2c601.321%2c584.069%2c658.321C617.781%2c709.559%2c676.849%2c730.687%2c738.085%2c734.159' fill='rgba(28%2c 83%2c 142%2c 0.4)' class='triangle-float1'%3e%3c/path%3e%3cpath d='M1874.3517546712715 652.9428452986638L1885.1317911603744 550.3776493115207 1725.8939789351084 585.490192571438z' fill='rgba(28%2c 83%2c 142%2c 0.4)' class='triangle-float3'%3e%3c/path%3e%3cpath d='M1755.6696730401966 548.8469943623047L1827.7518603438118 703.4277438803736 2023.5818909691075 518.0140881659163z' fill='rgba(28%2c 83%2c 142%2c 0.4)' class='triangle-float2'%3e%3c/path%3e%3cpath d='M221.3626718618769 682.1175296109111L112.51602117261893 507.55651060525247 25.3335376024138 664.8378743890688z' fill='rgba(28%2c 83%2c 142%2c 0.4)' class='triangle-float1'%3e%3c/path%3e%3cpath d='M1890.109%2c903.321C1970.102%2c907.852%2c2052.081%2c868.607%2c2087.399%2c796.691C2119.905%2c730.502%2c2081.718%2c657.169%2c2041.277%2c595.508C2005.804%2c541.422%2c1954.597%2c500.872%2c1890.109%2c495.882C1815.003%2c490.071%2c1729.84%2c503.27%2c1692.155%2c568.496C1654.457%2c633.744%2c1689.72%2c711.472%2c1728.07%2c776.338C1765.501%2c839.65%2c1816.678%2c899.162%2c1890.109%2c903.321' fill='rgba(28%2c 83%2c 142%2c 0.4)' class='triangle-float3'%3e%3c/path%3e%3cpath d='M866.6186027507184 789.5032121383304L996.0617713565072 582.350839870004 788.9093990881809 452.9076712642153 659.4662304823921 660.0600435325416z' fill='rgba(28%2c 83%2c 142%2c 0.4)' class='triangle-float2'%3e%3c/path%3e%3cpath d='M1487.8884651055703 626.1203136555961L1636.1577849893852 580.7898334481051 1494.0274047362414 381.0510937261281z' fill='rgba(28%2c 83%2c 142%2c 0.4)' class='triangle-float2'%3e%3c/path%3e%3cpath d='M861.8332659498453 509.5653089081597L788.0303074616319 632.3940584568604 910.8590570103325 706.1970169450739 984.662015498546 583.3682673963732z' fill='rgba(28%2c 83%2c 142%2c 0.4)' class='triangle-float3'%3e%3c/path%3e%3cpath d='M1461.2490563663584 90.9645920390546L1692.0429117199085 229.93906375393598 1700.2618618896788-5.420875027264145z' fill='rgba(28%2c 83%2c 142%2c 0.4)' class='triangle-float1'%3e%3c/path%3e%3cpath d='M655.403%2c90.232C684.643%2c90.269%2c706.593%2c65.488%2c719.384%2c39.194C730.548%2c16.243%2c726.781%2c-9.509%2c714.912%2c-32.103C701.945%2c-56.787%2c683.286%2c-82.729%2c655.403%2c-82.597C627.652%2c-82.466%2c609.735%2c-56.128%2c596.86%2c-31.545C585.13%2c-9.148%2c580.746%2c16.247%2c591.7%2c39.034C604.351%2c65.349%2c626.205%2c90.195%2c655.403%2c90.232' fill='rgba(28%2c 83%2c 142%2c 0.4)' class='triangle-float1'%3e%3c/path%3e%3cpath d='M712.458%2c1079C783.156%2c1081.902%2c861.856%2c1069.013%2c897.249%2c1007.743C932.651%2c946.457%2c905.492%2c871.199%2c866.688%2c812.009C832.086%2c759.227%2c775.522%2c728.35%2c712.458%2c725.867C644.157%2c723.178%2c570.76%2c740.326%2c535.652%2c798.975C499.813%2c858.844%2c514.95%2c934.578%2c552.202%2c993.578C586.84%2c1048.438%2c647.633%2c1076.339%2c712.458%2c1079' fill='rgba(28%2c 83%2c 142%2c 0.4)' class='triangle-float1'%3e%3c/path%3e%3cpath d='M1025.03%2c202.955C1066.751%2c203.708%2c1114.789%2c206.237%2c1137.425%2c171.182C1161.268%2c134.258%2c1148.524%2c85.674%2c1124.554%2c48.832C1102.819%2c15.425%2c1064.855%2c-0.023%2c1025.03%2c-1.567C981.693%2c-3.247%2c934.178%2c3.789%2c911.181%2c40.56C887.13%2c79.016%2c893.411%2c130.109%2c919.449%2c167.249C942.307%2c199.854%2c985.217%2c202.237%2c1025.03%2c202.955' fill='rgba(28%2c 83%2c 142%2c 0.4)' class='triangle-float1'%3e%3c/path%3e%3cpath d='M1118.817798154679 340.85550497036274L896.795239049545 246.61251999982494 1024.574813184141 562.8780640754967z' fill='rgba(28%2c 83%2c 142%2c 0.4)' class='triangle-float3'%3e%3c/path%3e%3cpath d='M335.9263896161292 193.5501430917097L389.3933402418528 425.1409497985731 620.9841469487162 371.67399917284956 567.5171963229926 140.08319246598614z' fill='rgba(28%2c 83%2c 142%2c 0.4)' class='triangle-float1'%3e%3c/path%3e%3cpath d='M447.88049742156403 274.7557390521551L407.53336398400353 192.03185636841226 303.62110667716956 293.91449786662446z' fill='rgba(28%2c 83%2c 142%2c 0.4)' class='triangle-float2'%3e%3c/path%3e%3cpath d='M74.45162354234427 268.63305240901525L103.1304930408576 356.89753692938723 221.18778507215887 269.7469904214312z' fill='rgba(28%2c 83%2c 142%2c 0.4)' class='triangle-float1'%3e%3c/path%3e%3c/g%3e%3cdefs%3e%3cmask id='SvgjsMask1088'%3e%3crect width='2000' height='900' fill='white'%3e%3c/rect%3e%3c/mask%3e%3cstyle%3e %40keyframes float1 %7b 0%25%7btransform: translate(0%2c 0)%7d 50%25%7btransform: translate(-10px%2c 0)%7d 100%25%7btransform: translate(0%2c 0)%7d %7d .triangle-float1 %7b animation: float1 5s infinite%3b %7d %40keyframes float2 %7b 0%25%7btransform: translate(0%2c 0)%7d 50%25%7btransform: translate(-5px%2c -5px)%7d 100%25%7btransform: translate(0%2c 0)%7d %7d .triangle-float2 %7b animation: float2 4s infinite%3b %7d %40keyframes float3 %7b 0%25%7btransform: translate(0%2c 0)%7d 50%25%7btransform: translate(0%2c -10px)%7d 100%25%7btransform: translate(0%2c 0)%7d %7d .triangle-float3 %7b animation: float3 6s infinite%3b %7d %3c/style%3e%3c/defs%3e%3c/svg%3e");
             }
 
+            .textoInicio:hover{
+                transform: scale(1.2)
+            }
             .textoInicio {
                 color: white;
                 position: relative;
                 text-align: center;
-                width: 220px;
+                transition: transform .5s ease;
             }
 
             #texto1 {
-                margin-top: 20px;
+                margin-top: 35px;
+            }
+
+            #bg-image:hover {
+                transform: scale(1.1)
             }
 
             #bg-image {
-                width: 100%;
+                width: 110%;
                 padding: 20px 0px;
-                align-items: center;
-                justify-content: center;
+                margin-top: 100px;
+                transition: transform .5s ease;
+            }
+
+            #btnInicial:hover {
+                transform: scale(1.2)
+            }
+            #btnInicial {
+                margin-top: 20px;
+                transition: transform .5s ease;
             }
         /*termino Vista inicial*/
         /* estilos footer*/
@@ -214,10 +231,6 @@
 		  scroll-behavior: smooth;
 		}
 		
-		body {
-		    margin: 1rem;
-		}
-		
 		.stt {
 		  position: fixed;
 		  right: 1rem;
@@ -260,6 +273,119 @@
 		    --bs-aspect-ratio: 50%; // 2x1
 		 }
 		}
+		/*Estilos de cert mision y vision*/
+        .imagem__background {
+            height: 70vh;
+            background-image: ;
+            background-size: 100% center;
+            background-position: center;
+            background-repeat: no-repeat;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+		.card__giratorio {
+            background-color: transparent;
+            width: 450px;
+            height: 500px;
+            perspective: 1000px;
+            cursor: pointer;
+        }
+
+        .card__giratorio-conteudo {
+            cursor: pointer;
+            position: relative;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            transition: transform 0.8s;
+            transform-style: preserve-3d;
+        }
+
+        .card__giratorio:hover .card__giratorio-conteudo {
+            transform: rotateY(180deg);
+        }
+
+        .card__giratorio-conteudo--frente,
+        .card__giratorio-conteudo--traseira {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            -webkit-backface-visibility: hidden;
+            /* Safari */
+            backface-visibility: hidden;
+            border-radius: 15px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        .card__giratorio-conteudo--frente,
+        .card__giratorio-conteudo--traseira {
+            background-color: var(--cor-background-desfocado);
+            color: white;
+            border-radius: 20px;
+            box-shadow: 0 4px 30px var(--cor-shadow-desfocado), inset 0 0 32px -11px white;
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+            border: 1px solid var(--cor-borda-desfocado);
+        }
+
+        .logo-mastercadr {
+            width: 500px;
+            height: auto;
+            filter: drop-shadow(2px 2px 5px black);
+        }
+
+        .card__giratorio-conteudo--traseira .cartao__logo-pc {
+            grid-area: cartao__logo-pc;
+            width: 50px;
+            height: auto;
+            filter: drop-shadow(2px 2px 5px black);
+        }
+
+        .card__giratorio-conteudo--traseira .cartao__numeral {
+            grid-area: cartao__numeral;
+            margin: 0;
+            font-weight: 100;
+            font-size: 1.3rem;
+        }
+
+        .card__giratorio-conteudo--traseira {
+            color: white;
+            transform: rotateY(180deg);
+            padding: 10px;
+            display: grid;
+            text-align: left;
+            grid-template-columns: 30px 1fr 50px 50px 50px 50px;
+            grid-template-rows: 1fr 20px 20px 20px 20px;
+            grid-template-areas: ". cartao__chip . . cartao__logo-pc ."
+                ". cartao__numeral cartao__numeral cartao__numeral . .";
+        }
+    /*estilo de boton de mas info*/
+        
+        .botonMasInfo {
+            border: 1px solid #FFac31;
+            border-radius: 3px;
+            padding: 1rem 2rem;
+            letter-spacing: -1px;
+            user-select: none;
+            color: #FFac31;
+            transition: all .195s ease-in-out;
+            cursor: pointer;
+            margin: 5%;
+        }
+
+        .botonMasInfo:hover {
+            border: 2px solid #FFac31;
+            box-shadow: #FFac31 0px 0px 12px 1px inset,
+            #FFac31 0px 0px 12px 1px;
+            border-radius: 15px;
+            color: #FFac31;
+        }
 		
     </style>
 </head>
@@ -294,10 +420,13 @@
     <main>
     	<!--Seccion de vista inicial-->
         <div class="container-fluid text-center" id="vistaInicial">
-                <div class="row" style="display: flex; justify-content: center; align-items: center;">
-                    <div class="col-4">
-                    	<h2 id="texto1" class="textoInicio">BIENVENIDO A YoSé!</h2>
-                        <h3 id="texto1" class="textoInicio">Red de aprendizaje colaborativo</h3>
+                <div class="row justify-content-center">
+                    <div class="col-3 align-self-start">
+                    	<h2 id="texto1" class="textoInicio">Bienvenido a YoSé!</h2>
+                    </div>
+                    <div class="col-3 align-self-center">
+                        <h1 id="texto2" class="textoInicio">Red de Aprendizaje Colaborativo</h1>
+                        <a class="btn btn-warning" href="/registro/usuario" role="button" id="btnInicial">Comencemos!</a>
                     </div>
                     <div class="col-4">
                         <img src="../assets/img/Indexfotoo.png" alt="Logo YoSe" id="bg-image">
@@ -306,24 +435,43 @@
             </div>
         </div>
         <br><br>
+            }
+        <!--termino Vista inicial-->
         
-        <div class="video-acerca-de row" id="AcercaDe">
-	        <div class="col-6"> <!--Seccion de Acerca de-->
-		        <h1>Visión y misión de ¡YoSé!</h1>
-		        <br>
-		        <h3>Esperamos generar un espacio en el que se realicen conexiones entre personas 
-		            que deseen compartir información o consultar por ella.</h3>
-		        <br>
-		        <h3>
-		            Poder encontrar información de interés en
-		            materias específicas, o tambien resolver 
-		            dudas, fomentando así el espíritu de compartir y recibir conocimiento.
-		        </h3>
-		        <br> 
-		    </div>
-		    <div class="col-6">
-		        <iframe width="854" height="480" src="https://www.youtube.com/embed/Qdgrmb3UnYQ" title="YouTube video player" frameborder="0" title="YouTube video" allowfullscreen></iframe>
-		    </div>
+        <!--parte experimental de mision y vision-->
+        <div class="imagem__background" id="AcercaDe">
+            <div class="card__giratorio col-md-4">
+                <div class="card__giratorio-conteudo">
+                    <div class="card__giratorio-conteudo--frente">
+                        <img src="https://www.fundacionjan.cl/wp-content/uploads/mision.png" alt="Logo mastercadr" class="logo-mastercadr">
+                        
+                    </div>
+                    <div class="card__giratorio-conteudo--traseira">
+                        <h2 class="">MISIÓN</h2>
+                        <img src="https://i.postimg.cc/Qd39dHGf/Vector.png" alt="Icono de mision" class="cartao__logo-pc">
+                        <h2 class="cartao__numeral">Esperamos generar un espacio en el que se realicen conexiones entre personas 
+                        que deseen compartir información o consultar por ella.</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-1"></div>
+            <div class="card__giratorio col-md-4">
+                <div class="card__giratorio-conteudo">
+                    <div class="card__giratorio-conteudo--frente">
+                        <img src="https://www.fundacionjan.cl/wp-content/uploads/vision.png" alt="Logo mastercadr" class="logo-mastercadr">
+                    </div>
+                    <div class="card__giratorio-conteudo--traseira">
+                        <h2 class="">VISIÓN</h2>
+                        <img src="https://i.postimg.cc/Qd39dHGf/Vector.png" alt="Icono de mision" class="cartao__logo-pc">
+                        <h2 class="cartao__numeral">Poder encontrar información de interés en
+                            materias específicas, o tambien resolver 
+                            dudas, fomentando así el espíritu de compartir y recibir conocimiento.</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="d-flex justify-content-center align-items-center">
+            <a href="https://www.youtube.com/embed/Qdgrmb3UnYQ" class="botonMasInfo">MÁS INFORMACIÓN</a>
         </div>
         
        <div class="row justify-content-center mb-4" id="Funciones">

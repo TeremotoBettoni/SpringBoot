@@ -196,9 +196,10 @@
                         <div id="accordion">
                             <div class="card">
                                 <div class="card-footer" id="headingOne">
-                                    <a href="#" class="card-link"><i class="fa fa-thumbs-o-up"><span class="badge text-bg-secondary"><c:out value="${posteo.valoracionesPosteos.size()}"></c:out></span></i>Valoración</a>
-                                    <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne"
-                                    aria-expanded="true" aria-controls="collapseOne" ><i class="fa fa-commenting-o" aria-hidden="true"></i>
+                                    <a href="#" class="btn btn-light"><i class="fa fa-thumbs-o-up"><span class="badge text-bg-secondary"><c:out value="${posteo.valoracionesPosteos.size()}"></c:out></span></i>Valoración</a>
+                                    <button class="btn btn-light" data-toggle="collapse" data-target="#collapseOne"
+                                    aria-expanded="true" aria-controls="collapseOne" ><i class="fa fa-commenting-o" aria-hidden="true">
+                                    <span class="badge text-bg-secondary"><c:out value="${posteo.comentarios.size()}"></c:out></span></i>
                                         Comentarios
                                     </button>
                                 </div>
