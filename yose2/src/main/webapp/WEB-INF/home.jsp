@@ -147,6 +147,9 @@
     </header>
     
     <main>
+    	<div>
+    	
+    	</div>
         <img src="https://i.postimg.cc/d1x98Y3Z/Group-45-Publi-1.png" id=BotonPublicar type="img" class="btn" data-bs-toggle="modal"
         data-bs-target="#staticBackdrop" width="200px" style="margin-left: 15%;">
         <br>

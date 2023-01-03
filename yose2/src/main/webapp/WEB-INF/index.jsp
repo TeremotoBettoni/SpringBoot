@@ -15,31 +15,10 @@
         #fondo{
             background-color: rgb(29, 34, 49);
         }
-        #inicio{
-            position: relative;
-            width: 100%;
-            height: 700px;
-            display: flex; 
-            justify-content: space-between;
-        }
         /*Vista Inicial*/
         #vistaInicial {
             height: 700px;
             background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.com/svgjs' width='2000' height='900' preserveAspectRatio='none' viewBox='0 0 2000 900'%3e%3cg mask='url(%26quot%3b%23SvgjsMask1088%26quot%3b)' fill='none'%3e%3crect width='2000' height='900' x='0' y='0' fill='%230e2a47'%3e%3c/rect%3e%3cpath d='M942.9115674509108 547.0291209236652L801.4038582229026 498.3041091430973 799.0701951660548 734.9281788753933z' fill='rgba(28%2c 83%2c 142%2c 0.4)' class='triangle-float3'%3e%3c/path%3e%3cpath d='M738.085%2c734.159C807.953%2c738.12%2c887.021%2c736.043%2c925.645%2c677.688C967.149%2c614.982%2c954.663%2c531.125%2c914.583%2c467.499C877.065%2c407.941%2c808.475%2c379.745%2c738.085%2c379.941C668.08%2c380.136%2c597.169%2c407.221%2c563.279%2c468.476C530.248%2c528.179%2c546.566%2c601.321%2c584.069%2c658.321C617.781%2c709.559%2c676.849%2c730.687%2c738.085%2c734.159' fill='rgba(28%2c 83%2c 142%2c 0.4)' class='triangle-float1'%3e%3c/path%3e%3cpath d='M1874.3517546712715 652.9428452986638L1885.1317911603744 550.3776493115207 1725.8939789351084 585.490192571438z' fill='rgba(28%2c 83%2c 142%2c 0.4)' class='triangle-float3'%3e%3c/path%3e%3cpath d='M1755.6696730401966 548.8469943623047L1827.7518603438118 703.4277438803736 2023.5818909691075 518.0140881659163z' fill='rgba(28%2c 83%2c 142%2c 0.4)' class='triangle-float2'%3e%3c/path%3e%3cpath d='M221.3626718618769 682.1175296109111L112.51602117261893 507.55651060525247 25.3335376024138 664.8378743890688z' fill='rgba(28%2c 83%2c 142%2c 0.4)' class='triangle-float1'%3e%3c/path%3e%3cpath d='M1890.109%2c903.321C1970.102%2c907.852%2c2052.081%2c868.607%2c2087.399%2c796.691C2119.905%2c730.502%2c2081.718%2c657.169%2c2041.277%2c595.508C2005.804%2c541.422%2c1954.597%2c500.872%2c1890.109%2c495.882C1815.003%2c490.071%2c1729.84%2c503.27%2c1692.155%2c568.496C1654.457%2c633.744%2c1689.72%2c711.472%2c1728.07%2c776.338C1765.501%2c839.65%2c1816.678%2c899.162%2c1890.109%2c903.321' fill='rgba(28%2c 83%2c 142%2c 0.4)' class='triangle-float3'%3e%3c/path%3e%3cpath d='M866.6186027507184 789.5032121383304L996.0617713565072 582.350839870004 788.9093990881809 452.9076712642153 659.4662304823921 660.0600435325416z' fill='rgba(28%2c 83%2c 142%2c 0.4)' class='triangle-float2'%3e%3c/path%3e%3cpath d='M1487.8884651055703 626.1203136555961L1636.1577849893852 580.7898334481051 1494.0274047362414 381.0510937261281z' fill='rgba(28%2c 83%2c 142%2c 0.4)' class='triangle-float2'%3e%3c/path%3e%3cpath d='M861.8332659498453 509.5653089081597L788.0303074616319 632.3940584568604 910.8590570103325 706.1970169450739 984.662015498546 583.3682673963732z' fill='rgba(28%2c 83%2c 142%2c 0.4)' class='triangle-float3'%3e%3c/path%3e%3cpath d='M1461.2490563663584 90.9645920390546L1692.0429117199085 229.93906375393598 1700.2618618896788-5.420875027264145z' fill='rgba(28%2c 83%2c 142%2c 0.4)' class='triangle-float1'%3e%3c/path%3e%3cpath d='M655.403%2c90.232C684.643%2c90.269%2c706.593%2c65.488%2c719.384%2c39.194C730.548%2c16.243%2c726.781%2c-9.509%2c714.912%2c-32.103C701.945%2c-56.787%2c683.286%2c-82.729%2c655.403%2c-82.597C627.652%2c-82.466%2c609.735%2c-56.128%2c596.86%2c-31.545C585.13%2c-9.148%2c580.746%2c16.247%2c591.7%2c39.034C604.351%2c65.349%2c626.205%2c90.195%2c655.403%2c90.232' fill='rgba(28%2c 83%2c 142%2c 0.4)' class='triangle-float1'%3e%3c/path%3e%3cpath d='M712.458%2c1079C783.156%2c1081.902%2c861.856%2c1069.013%2c897.249%2c1007.743C932.651%2c946.457%2c905.492%2c871.199%2c866.688%2c812.009C832.086%2c759.227%2c775.522%2c728.35%2c712.458%2c725.867C644.157%2c723.178%2c570.76%2c740.326%2c535.652%2c798.975C499.813%2c858.844%2c514.95%2c934.578%2c552.202%2c993.578C586.84%2c1048.438%2c647.633%2c1076.339%2c712.458%2c1079' fill='rgba(28%2c 83%2c 142%2c 0.4)' class='triangle-float1'%3e%3c/path%3e%3cpath d='M1025.03%2c202.955C1066.751%2c203.708%2c1114.789%2c206.237%2c1137.425%2c171.182C1161.268%2c134.258%2c1148.524%2c85.674%2c1124.554%2c48.832C1102.819%2c15.425%2c1064.855%2c-0.023%2c1025.03%2c-1.567C981.693%2c-3.247%2c934.178%2c3.789%2c911.181%2c40.56C887.13%2c79.016%2c893.411%2c130.109%2c919.449%2c167.249C942.307%2c199.854%2c985.217%2c202.237%2c1025.03%2c202.955' fill='rgba(28%2c 83%2c 142%2c 0.4)' class='triangle-float1'%3e%3c/path%3e%3cpath d='M1118.817798154679 340.85550497036274L896.795239049545 246.61251999982494 1024.574813184141 562.8780640754967z' fill='rgba(28%2c 83%2c 142%2c 0.4)' class='triangle-float3'%3e%3c/path%3e%3cpath d='M335.9263896161292 193.5501430917097L389.3933402418528 425.1409497985731 620.9841469487162 371.67399917284956 567.5171963229926 140.08319246598614z' fill='rgba(28%2c 83%2c 142%2c 0.4)' class='triangle-float1'%3e%3c/path%3e%3cpath d='M447.88049742156403 274.7557390521551L407.53336398400353 192.03185636841226 303.62110667716956 293.91449786662446z' fill='rgba(28%2c 83%2c 142%2c 0.4)' class='triangle-float2'%3e%3c/path%3e%3cpath d='M74.45162354234427 268.63305240901525L103.1304930408576 356.89753692938723 221.18778507215887 269.7469904214312z' fill='rgba(28%2c 83%2c 142%2c 0.4)' class='triangle-float1'%3e%3c/path%3e%3c/g%3e%3cdefs%3e%3cmask id='SvgjsMask1088'%3e%3crect width='2000' height='900' fill='white'%3e%3c/rect%3e%3c/mask%3e%3cstyle%3e %40keyframes float1 %7b 0%25%7btransform: translate(0%2c 0)%7d 50%25%7btransform: translate(-10px%2c 0)%7d 100%25%7btransform: translate(0%2c 0)%7d %7d .triangle-float1 %7b animation: float1 5s infinite%3b %7d %40keyframes float2 %7b 0%25%7btransform: translate(0%2c 0)%7d 50%25%7btransform: translate(-5px%2c -5px)%7d 100%25%7btransform: translate(0%2c 0)%7d %7d .triangle-float2 %7b animation: float2 4s infinite%3b %7d %40keyframes float3 %7b 0%25%7btransform: translate(0%2c 0)%7d 50%25%7btransform: translate(0%2c -10px)%7d 100%25%7btransform: translate(0%2c 0)%7d %7d .triangle-float3 %7b animation: float3 6s infinite%3b %7d %3c/style%3e%3c/defs%3e%3c/svg%3e");
-            }
-
-            .textoInicio:hover{
-                transform: scale(1.2)
-            }
-            .textoInicio {
-                color: white;
-                position: relative;
-                text-align: center;
-                transition: transform .5s ease;
-            }
-
-            #texto1 {
-                margin-top: 35px;
             }
 
             #bg-image:hover {
@@ -226,6 +205,14 @@
 		    transform: translate(-50%, -50%);
 		    
 		}
+		
+		/*estilos de resumenes de carucel*/
+		#btnBotonesCarrucel:hover {
+            transform: scale(1.2)
+        }
+        #btnBotonesCarrucel {
+            transition: transform .5s ease;
+        }
 		/*Scroll para  redireccionar desde el header a las secciones*/
 		:root {
 		  scroll-behavior: smooth;
@@ -253,25 +240,6 @@
 		
 		.stt:active {
 		  opacity: 1;
-		}
-		/*seccion de estilo de acerca de*/
-		.video-acerca-de{
-			margin: 150px;
-		    text-align: center;
-		    color:white;
-		    align-items: center;
-		    justify-content: center;  
-		}
-		.videoAcercade{
-		    align-items: center;
-		    justify-content: center;
-		    
-		}
-		​
-		.ratio-16x9 {
-		  @include media-breakpoint-up(md) {
-		    --bs-aspect-ratio: 50%; // 2x1
-		 }
 		}
 		/*Estilos de cert mision y vision*/
         .imagem__background {
@@ -334,7 +302,7 @@
             border: 1px solid var(--cor-borda-desfocado);
         }
 
-        .logo-mastercadr {
+        .logo-YoSe {
             width: 500px;
             height: auto;
             filter: drop-shadow(2px 2px 5px black);
@@ -386,6 +354,12 @@
             border-radius: 15px;
             color: #FFac31;
         }
+        h1{
+            color: white;
+        }
+        p{
+            color: white;
+        }
 		
     </style>
 </head>
@@ -417,25 +391,22 @@
 		</nav>
     </header>
 
-    <main>
+    <main >
     	<!--Seccion de vista inicial-->
-        <div class="container-fluid text-center" id="vistaInicial">
-                <div class="row justify-content-center">
-                    <div class="col-3 align-self-start">
-                    	<h2 id="texto1" class="textoInicio">Bienvenido a YoSé!</h2>
-                    </div>
-                    <div class="col-3 align-self-center">
-                        <h1 id="texto2" class="textoInicio">Red de Aprendizaje Colaborativo</h1>
+        <div class="container position-relative zindex-2 pt-5 pb-md-2 pb-lg-4 pb-xl-5">
+            <div class="row justify-content-center">
+                <div class="col-xl-5 col-md-6 pt-lg-5 text-center text-md-start mb-4 mb-md-0">
+                    <h1 class="display-3 pb-2 pb-sm-3">Red de Aprendizaje Colaborativo</h1>
+                    <p class="fs-lg d-md-none d-xl-block pb-2 pb-md-0 mb-4 mb-md-5">Bienvenido a YoSé!, compartamos conocimiento y resuelve tus dudas con el apoyo de la comunidad de YoSé!</p>
+                    <div class="d-flex justify-content-center justify-content-md-start pb-2 pt-lg-2 pt-xl-0">
                         <a class="btn btn-warning" href="/registro/usuario" role="button" id="btnInicial">Comencemos!</a>
                     </div>
-                    <div class="col-4">
-                        <img src="../assets/img/Indexfotoo.png" alt="Logo YoSe" id="bg-image">
-                    </div>
+                </div>
+                <div class="col-xl-7 col-md-6 d-md-flex justify-content-end">
+                    <img src="../assets/img/Indexfotoo.png" alt="Logo YoSe" id="bg-image">
                 </div>
             </div>
         </div>
-        <br><br>
-            }
         <!--termino Vista inicial-->
         
         <!--parte experimental de mision y vision-->
@@ -443,7 +414,7 @@
             <div class="card__giratorio col-md-4">
                 <div class="card__giratorio-conteudo">
                     <div class="card__giratorio-conteudo--frente">
-                        <img src="https://www.fundacionjan.cl/wp-content/uploads/mision.png" alt="Logo mastercadr" class="logo-mastercadr">
+                        <img src="https://www.fundacionjan.cl/wp-content/uploads/mision.png" alt="Logo mastercadr" class="logo-YoSe">
                         
                     </div>
                     <div class="card__giratorio-conteudo--traseira">
@@ -458,7 +429,7 @@
             <div class="card__giratorio col-md-4">
                 <div class="card__giratorio-conteudo">
                     <div class="card__giratorio-conteudo--frente">
-                        <img src="https://www.fundacionjan.cl/wp-content/uploads/vision.png" alt="Logo mastercadr" class="logo-mastercadr">
+                        <img src="https://www.fundacionjan.cl/wp-content/uploads/vision.png" alt="Logo mastercadr" class="logo-YoSe">
                     </div>
                     <div class="card__giratorio-conteudo--traseira">
                         <h2 class="">VISIÓN</h2>
@@ -474,21 +445,21 @@
             <a href="https://www.youtube.com/embed/Qdgrmb3UnYQ" class="botonMasInfo">MÁS INFORMACIÓN</a>
         </div>
         
-       <div class="row justify-content-center mb-4" id="Funciones">
-       		<div class="col-md-7 text-center">
-	           <div class="scroll-container">
-	                <h1 class="mb-3" style="color: white"><b>Funciones</b></h1>
-				</div>
-            </div>
-       </div>
+        <div class="row justify-content-center mb-4" id="Funciones">
+                <div class="col-md-7 text-center">
+                <div class="scroll-container">
+                        <h1 class="mb-3" style="color: white"><b>Funciones</b></h1>
+                    </div>
+                </div>
+        </div>
         <div class="bodyCarrusel"> <!--Seccion de vista carrusel-->
 			
 			<section id="slider" >
-			    <input type="radio" name="slider" id="s1">
-			    <input type="radio" name="slider" id="s2">
-			    <input type="radio" name="slider" id="s3" checked>
-			    <input type="radio" name="slider" id="s4">
-			    <input type="radio" name="slider" id="s5">
+                <input type="radio" name="slider" id="s1">
+                <input type="radio" name="slider" id="s2">
+                <input type="radio" name="slider" id="s3" checked>
+                <input type="radio" name="slider" id="s4">
+                <input type="radio" name="slider" id="s5">
 			
 			    <label for="s1" id="slide1">
 			        <img src="../assets/img/1.png" height="100%" width="100%">
@@ -533,6 +504,29 @@
 			</label>
 			</section>
         </div>
+        <!--Seccion Resumen Carrusel-->
+            <div class="row justify-content-evenly" style= "-webkit-text-fill-color: white; text-align: center;">
+                <div class="border rounded border-warning col-2 resumen" id="btnBotonesCarrucel">
+                    <img src="https://i.postimg.cc/T34pwJmh/Cursor-Click.png" alt="Conectar">
+                    <h5>Conecta</h5>
+                </div>
+                <div class="border rounded border-warning col-2 resumen" id="btnBotonesCarrucel">
+                    <img src="https://i.postimg.cc/W4qtJq68/Lamp.png" alt="Preguntar">
+                    <h5>Pregunta</h5>
+                </div>
+                <div class="border rounded border-warning col-2 resumen" id="btnBotonesCarrucel">
+                    <img src="https://i.postimg.cc/gJ9jycgW/Search.png" alt="Buscar">
+                    <h5>Busca</h5>
+                </div>
+                <div class="border rounded border-warning col-2 resumen" id="btnBotonesCarrucel">
+                    <img src="https://i.postimg.cc/RZsntBrS/Bookmark.png" alt="Guardar">
+                    <h5>Guarda</h5>
+                </div>
+                <div class="border rounded border-warning col-2 resumen" id="btnBotonesCarrucel">
+                    <img src="https://i.postimg.cc/ZRrRwkQy/Share.png" alt="Compartir">
+                    <h5>Comparte</h5>
+                </div>
+            </div>
         <div class="container" id="NuestroEquipo"> <!--Seccion de vista nuestro equipo-->
             <div class="row">
                 <div class="row">
