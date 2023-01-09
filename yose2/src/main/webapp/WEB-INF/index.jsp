@@ -409,49 +409,14 @@
         </div>
         <!--termino Vista inicial-->
         
-        <!--parte experimental de mision y vision-->
-        <div class="imagem__background" id="AcercaDe">
-            <div class="card__giratorio col-md-4">
-                <div class="card__giratorio-conteudo">
-                    <div class="card__giratorio-conteudo--frente">
-                        <img src="https://www.fundacionjan.cl/wp-content/uploads/mision.png" alt="Logo mastercadr" class="logo-YoSe">
-                        
-                    </div>
-                    <div class="card__giratorio-conteudo--traseira">
-                        <h2 class="">MISIÓN</h2>
-                        <img src="https://i.postimg.cc/Qd39dHGf/Vector.png" alt="Icono de mision" class="cartao__logo-pc">
-                        <h2 class="cartao__numeral">Esperamos generar un espacio en el que se realicen conexiones entre personas 
-                        que deseen compartir información o consultar por ella.</h2>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-1"></div>
-            <div class="card__giratorio col-md-4">
-                <div class="card__giratorio-conteudo">
-                    <div class="card__giratorio-conteudo--frente">
-                        <img src="https://www.fundacionjan.cl/wp-content/uploads/vision.png" alt="Logo mastercadr" class="logo-YoSe">
-                    </div>
-                    <div class="card__giratorio-conteudo--traseira">
-                        <h2 class="">VISIÓN</h2>
-                        <img src="https://i.postimg.cc/Qd39dHGf/Vector.png" alt="Icono de mision" class="cartao__logo-pc">
-                        <h2 class="cartao__numeral">Poder encontrar información de interés en
-                            materias específicas, o tambien resolver 
-                            dudas, fomentando así el espíritu de compartir y recibir conocimiento.</h2>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="d-flex justify-content-center align-items-center">
-            <a href="https://www.youtube.com/embed/Qdgrmb3UnYQ" class="botonMasInfo">MÁS INFORMACIÓN</a>
-        </div>
-        
-        <div class="row justify-content-center mb-4" id="Funciones">
+        <div class="row justify-content-center mb-2" id="Funciones" style="margin-top: 107px;">
                 <div class="col-md-7 text-center">
                 <div class="scroll-container">
-                        <h1 class="mb-3" style="color: white"><b>Funciones</b></h1>
+                        <h1 class="mb-3"><b>Funciones</b></h1>
                     </div>
                 </div>
         </div>
+        
         <div class="bodyCarrusel"> <!--Seccion de vista carrusel-->
 			
 			<section id="slider" >
@@ -463,6 +428,7 @@
 			
 			    <label for="s1" id="slide1">
 			        <img src="../assets/img/1.png" height="100%" width="100%">
+
 			        <div class="color_textito centrar-texto-carru">
 			            <h1>Conexiones</h1>
 			            <h4>Crea vínculos con otros usuarios</h4> 
@@ -505,7 +471,7 @@
 			</section>
         </div>
         <!--Seccion Resumen Carrusel-->
-            <div class="row justify-content-evenly" style= "-webkit-text-fill-color: white; text-align: center;">
+            <div class="row justify-content-evenly" style= "-webkit-text-fill-color: white; text-align: center; margin-bottom:25px">
                 <div class="border rounded border-warning col-2 resumen" id="btnBotonesCarrucel">
                     <img src="https://i.postimg.cc/T34pwJmh/Cursor-Click.png" alt="Conectar">
                     <h5>Conecta</h5>
@@ -527,6 +493,42 @@
                     <h5>Comparte</h5>
                 </div>
             </div>
+        <!--parte experimental de mision y vision-->
+        <div class="imagem__background" id="AcercaDe">
+            <div class="card__giratorio col-md-4">
+                <div class="card__giratorio-conteudo">
+                    <div class="card__giratorio-conteudo--frente">
+                        <img src="https://www.fundacionjan.cl/wp-content/uploads/mision.png" alt="Logo mastercadr" class="logo-YoSe">
+                        
+                    </div>
+                    <div class="card__giratorio-conteudo--traseira">
+                        <h2 class="">MISIÓN</h2>
+                        <img src="https://i.postimg.cc/Qd39dHGf/Vector.png" alt="Icono de mision" class="cartao__logo-pc">
+                        <h2 class="cartao__numeral">Esperamos generar un espacio en el que se realicen conexiones entre personas 
+                        que deseen compartir información o consultar por ella.</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-1"></div>
+            <div class="card__giratorio col-md-4">
+                <div class="card__giratorio-conteudo">
+                    <div class="card__giratorio-conteudo--frente">
+                        <img src="https://www.fundacionjan.cl/wp-content/uploads/vision.png" alt="Logo mastercadr" class="logo-YoSe">
+                    </div>
+                    <div class="card__giratorio-conteudo--traseira">
+                        <h2 class="">VISIÓN</h2>
+                        <img src="https://i.postimg.cc/Qd39dHGf/Vector.png" alt="Icono de mision" class="cartao__logo-pc">
+                        <h2 class="cartao__numeral">Poder encontrar información de interés en
+                            materias específicas, o tambien resolver 
+                            dudas, fomentando así el espíritu de compartir y recibir conocimiento.</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="d-flex justify-content-center align-items-center">
+            <a href="https://www.youtube.com/embed/Qdgrmb3UnYQ" class="botonMasInfo">MÁS INFORMACIÓN</a>
+        </div>
+   
         <div class="container" id="NuestroEquipo"> <!--Seccion de vista nuestro equipo-->
             <div class="row">
                 <div class="row">
