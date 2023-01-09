@@ -40,6 +40,13 @@
             background-color: #1D2231;
         }
         
+        .btnInicio {
+	        display: flex;
+	        align-self: center;
+        	padding: 8px 0px;
+        	text-decoration: none;
+        }
+        
         @media (min-width: 992px) {
             .gedf-main {
                 padding-left: 4rem;
@@ -104,7 +111,7 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="/home">
+                            <a class="btnInicio" aria-current="page" href="/home">
                                 <button type="button" class="btn btn-outline-warning">Inicio</button>
                             </a>
                         </li>

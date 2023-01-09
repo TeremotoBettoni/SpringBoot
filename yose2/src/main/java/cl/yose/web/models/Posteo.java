@@ -45,7 +45,7 @@ public class Posteo {
     private String titulo;
     
     @NotNull
-    @Size(min = 1, max = 50000, message = "Error en el ingreso del contenido del posteo")
+    @Size(min = 1, max = 5000, message = "Error en el ingreso del contenido del posteo")
     private String texto;
     
     private String url;
