@@ -198,9 +198,9 @@
                                     <h6 class="user-nick">@<c:out value="${usuarioNombre}"></c:out></h6>
                                 </div>
                                 <div class="d-grid gap-2">
-                                <button type="button" id="submit" name="submit"
-                                            class="btn btn-inverse btn-warning">Editar foto de perfil</button>
-                                        </div>
+	                                <button type="button" id="submit" name="submit"
+	                                class="btn btn-inverse btn-warning" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Editar foto de perfil</button>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -275,6 +275,35 @@
                                         <button type="button" id="submit" name="submit"
                                             class="btn btn-warning">Guardar</button>
                                     </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Modal -->
+        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" role="dialog" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="staticBackdropLabel">Editar foto de perfil</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="card-body">
+                            <div class="tab-content" id="myTabContent">
+                                <div class="tab-pane fade show active" id="posts" role="tabpanel" aria-labelledby="posts-tab">
+                                    <form action="" method="post"> <!--introducimos la rura en la cual generara la accion-->
+                                        <div class="mb-3">
+	                                        <label for="formFile" class="form-label"></label>
+	                                        <input class="form-control" type="file" id="formFile">
+	                                    </div>
+                                        <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                                                <button type="submit" class="btn btn-primary" href="/home">Actualizar</button>
+                                        </div>
+                                    </form>
                                 </div>
                             </div>
                         </div>

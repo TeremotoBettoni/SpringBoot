@@ -344,7 +344,7 @@
             color: #FFac31;
             transition: all .195s ease-in-out;
             cursor: pointer;
-            margin: 5%;
+            margin: 4%;
         }
 
         .botonMasInfo:hover {
@@ -359,6 +359,17 @@
         }
         p{
             color: white;
+        }
+        #back1{
+        
+        }
+        body{
+        background-image: url("https://i.postimg.cc/kMt8zJMs/6-Photo-Room-png-Photo-Room.png");
+        background-repeat: no-repeat;
+		background-size: contain;
+        }
+        .row{
+        margin-right: calc(-.0 * var(--bs-gutter-x));
         }
 		
     </style>
@@ -395,7 +406,7 @@
     	<!--Seccion de vista inicial-->
         <div class="container position-relative zindex-2 pt-5 pb-md-2 pb-lg-4 pb-xl-5">
             <div class="row justify-content-center">
-                <div class="col-xl-5 col-md-6 pt-lg-5 text-center text-md-start mb-4 mb-md-0">
+                <div class="col-xl-5 col-md-6 pt-lg-5 text-center text-md-start mb-4 mb-md-0" style="margin-top: 5%;">
                     <h1 class="display-3 pb-2 pb-sm-3">Red de Aprendizaje Colaborativo</h1>
                     <p class="fs-lg d-md-none d-xl-block pb-2 pb-md-0 mb-4 mb-md-5">Bienvenido a YoSé!, compartamos conocimiento y resuelve tus dudas con el apoyo de la comunidad de YoSé!</p>
                     <div class="d-flex justify-content-center justify-content-md-start pb-2 pt-lg-2 pt-xl-0">
@@ -407,11 +418,10 @@
                 </div>
             </div>
         </div>
-        <!--termino Vista inicial-->
-        
+        <!--termino Vista inicial--> 
         <div class="row justify-content-center mb-2" id="Funciones" style="margin-top: 107px;">
                 <div class="col-md-7 text-center">
-                <div class="scroll-container">
+                	<div class="scroll-container">
                         <h1 class="mb-3"><b>Funciones</b></h1>
                     </div>
                 </div>
@@ -445,7 +455,7 @@
 			    <label for="s3" id="slide3">
 			            <img src="../assets/img/4.png" height="100%" width="100%">
 			            <div class="color_textito centrar-texto-carru">
-			                <h1>Filtra por categorías</h1>
+			                <h1>Filtra por asignatura</h1>
 			                <h4>Ve las públicaciones de otros usuarios</h4> 
 			                <h4>¡Se el primero en responder!</h4>
 			            </div>
@@ -504,8 +514,7 @@
                     <div class="card__giratorio-conteudo--traseira">
                         <h2 class="">MISIÓN</h2>
                         <img src="https://i.postimg.cc/Qd39dHGf/Vector.png" alt="Icono de mision" class="cartao__logo-pc">
-                        <h2 class="cartao__numeral">Esperamos generar un espacio en el que se realicen conexiones entre personas 
-                        que deseen compartir información o consultar por ella.</h2>
+                        <h2 class="cartao__numeral">Generar un espacio en el que se conecten profesores y estudiantes que deseen compartir información o consultar por ella.</h2>
                     </div>
                 </div>
             </div>
@@ -518,9 +527,9 @@
                     <div class="card__giratorio-conteudo--traseira">
                         <h2 class="">VISIÓN</h2>
                         <img src="https://i.postimg.cc/Qd39dHGf/Vector.png" alt="Icono de mision" class="cartao__logo-pc">
-                        <h2 class="cartao__numeral">Poder encontrar información de interés en
-                            materias específicas, o tambien resolver 
-                            dudas, fomentando así el espíritu de compartir y recibir conocimiento.</h2>
+                        <h2 class="cartao__numeral">Encontrar información de interés en
+                                asignaturas específicas, o tambien resolver
+                                dudas, fomentando así el espíritu de compartir y recibir conocimiento.</h2>
                     </div>
                 </div>
             </div>
